@@ -1,0 +1,73 @@
+.signup > .signupContainer {
+  height: 70vh;
+  /* border: 1px solid var(--borderColor); */
+  margin: 1rem 0;
+}
+
+.signup > .signupContainer > .signupRight > .signupForm > h2 {
+  font-size: var(--h2);
+  margin: 0 0 2rem 0;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.signup > .signupContainer > .signupRight > .signupForm > form > h3 {
+  font-size: var(--h3);
+  margin: 0 0 0.5rem 0;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.signup > .signupContainer > .signupRight > .signupForm > form > input {
+  padding: 0.5rem;
+  border: 1px solid var(--borderColor);
+  outline: none;
+  width: 100%;
+  margin: 0 0 1rem 0;
+}
+
+.signup
+  > .signupContainer
+  > .signupRight
+  > .signupForm
+  > form
+  > .profileType
+  > .profile {
+  padding: 0.5rem;
+  border: 1px solid var(--mainBlue);
+  color: var(--black);
+}
+
+.signup
+  > .signupContainer
+  > .signupRight
+  > .signupForm
+  > form
+  > .profileType
+  > .profile
+  > h4 {
+  font-weight: 500;
+}
+
+.signup
+  > .signupContainer
+  > .signupRight
+  > .signupForm
+  > form
+  > .profileType
+  > .profile:hover {
+  background-color: var(--mainBlue);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+.signup > .signupContainer > .signupRight > .signupForm > form > button {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  background-color: var(--mainBlue);
+  border: none;
+  color: white;
+}
