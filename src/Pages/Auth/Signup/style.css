@@ -1,13 +1,27 @@
 .signup > .signupContainer {
+  height: 90vh;
   /* border: 1px solid var(--borderColor); */
+  background-color: var(--mainBlueBg);
   margin: 1rem 0;
 }
 
-.signup > .signupContainer > .signupRight > .signupForm > h2 {
+.signup > .signupContainer > .signupRight > .signupForm > .signupFormHead {
+  border-bottom: 1px solid var(--borderColor);
+  padding: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.signup > .signupContainer > .signupRight > .signupForm > .signupFormHead > h2 {
   font-size: var(--h2);
-  margin: 0 0 2rem 0;
+
   color: var(--black);
   font-weight: 500;
+  text-align: center;
+}
+
+.signup > .signupContainer > .signupRight > .signupForm {
+  background-color: white;
+  padding: 1rem 2rem;
 }
 
 .signup > .signupContainer > .signupRight > .signupForm > form {

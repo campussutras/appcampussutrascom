@@ -39,10 +39,11 @@ const Login = () => {
   return (
     <section className="login width100 flex alignCenter justifyCenter flexColumn">
       <div className="loginContainer width95 maxWidth flex">
-        <div className="loginLeft width50"></div>
-        <div className="loginRight width50 flex flexColumn alignCenter justifyCenter">
-          <div className="loginForm width70">
-            <h2>Login to Campus Sutras</h2>
+        <div className="loginRight width100 flex flexColumn alignCenter justifyCenter">
+          <div className="loginForm width40">
+            <div className="loginFormHead">
+              <h2>Login to Campus Sutras</h2>
+            </div>
             <form onSubmit={handleSubmit}>
               <h3>Email</h3>
               <input

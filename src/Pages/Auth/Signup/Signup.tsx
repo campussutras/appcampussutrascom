@@ -33,10 +33,11 @@ const Signup = () => {
   return (
     <section className="signup width100 flex alignCenter justifyCenter flexColumn">
       <div className="signupContainer width95 maxWidth flex">
-        <div className="signupLeft width50"></div>
-        <div className="signupRight width50 flex flexColumn alignCenter justifyCenter">
-          <div className="signupForm width70">
-            <h2>Sign Up to Campus Sutras</h2>
+        <div className="signupRight width100 flex flexColumn alignCenter justifyCenter">
+          <div className="signupForm width40">
+            <div className="signupFormHead">
+              <h2>Sign Up to Campus Sutras</h2>
+            </div>
             <form onSubmit={handleSubmit}>
               <h3>Full Name</h3>
               <input
@@ -97,6 +98,8 @@ const Signup = () => {
                 onChange={handleChange}
                 value={signupData.password}
               />
+              <h3>Confirm Password</h3>
+              <input placeholder="********" type="password" name="cPassword" />
               <button type="submit" style={{ display: "block" }}>
                 {loading ? "Sign Up..." : "Sign Up"}
               </button>
