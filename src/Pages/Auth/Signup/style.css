@@ -1,5 +1,4 @@
 .signup > .signupContainer {
-  height: 70vh;
   /* border: 1px solid var(--borderColor); */
   margin: 1rem 0;
 }
@@ -11,8 +10,17 @@
   font-weight: 500;
 }
 
+.signup > .signupContainer > .signupRight > .signupForm > form {
+  margin: 0 0 1rem 0;
+}
+
+.signup > .signupContainer > .signupRight > .signupForm > p > a {
+  color: var(--mainBlue);
+  text-decoration: underline;
+}
+
 .signup > .signupContainer > .signupRight > .signupForm > form > h3 {
-  font-size: var(--h3);
+  font-size: 1.2rem;
   margin: 0 0 0.5rem 0;
   color: var(--black);
   font-weight: 500;
@@ -36,6 +44,18 @@
   padding: 0.5rem;
   border: 1px solid var(--mainBlue);
   color: var(--black);
+}
+
+.signup
+  > .signupContainer
+  > .signupRight
+  > .signupForm
+  > form
+  > .profileType
+  > .profileSelected {
+  background-color: var(--mainBlue);
+  color: white;
+  transition: 0.3s all ease-in-out;
 }
 
 .signup
@@ -70,4 +90,5 @@
   background-color: var(--mainBlue);
   border: none;
   color: white;
+  cursor: pointer;
 }

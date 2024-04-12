@@ -1,1 +1,47 @@
+.login > .loginContainer {
+  height: 60vh;
+  /* border: 1px solid var(--borderColor); */
+  margin: 1rem 0;
+}
 
+.login > .loginContainer > .loginRight > .loginForm > h2 {
+  font-size: var(--h2);
+  margin: 0 0 2rem 0;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.login > .loginContainer > .loginRight > .loginForm > form {
+  margin: 0 0 1rem 0;
+}
+
+.login > .loginContainer > .loginRight > .loginForm > p > a {
+  color: var(--mainBlue);
+  text-decoration: underline;
+}
+
+.login > .loginContainer > .loginRight > .loginForm > form > h3 {
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  color: var(--black);
+  font-weight: 500;
+}
+
+.login > .loginContainer > .loginRight > .loginForm > form > input {
+  padding: 0.5rem;
+  border: 1px solid var(--borderColor);
+  outline: none;
+  width: 100%;
+  margin: 0 0 1rem 0;
+}
+
+.login > .loginContainer > .loginRight > .loginForm > form > button {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  background-color: var(--mainBlue);
+  border: none;
+  color: white;
+  cursor: pointer;
+}

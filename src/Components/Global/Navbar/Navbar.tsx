@@ -1,5 +1,5 @@
 import "./style.css";
-import logo from "../../../../public/media/assets/logo.png";
+import logo from "../../../assets/media/assets/logo.png";
 import { FiArrowRight } from "react-icons/fi";
 const Navbar = () => {
   return (
