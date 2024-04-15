@@ -1,7 +1,10 @@
 import "./style.css";
 import logo from "../../../assets/media/assets/logo.png";
 import { FiArrowRight } from "react-icons/fi";
+import { useRecoilValue } from "recoil";
+import { userAtom } from "../../../store/atoms/userAtom";
 const Navbar = () => {
+  const user = useRecoilValue(userAtom);
   return (
     <nav className="width100 flex alignCenter justifyCenter">
       <div className="navContainer width95 maxWidth flex alignCenter spaceBtw">
@@ -13,6 +16,7 @@ const Navbar = () => {
             <li>
               <a href="/">Courses</a>
             </li>
+            {user ? <li>{user?.name}</li> : null}
             <li>
               <a href="/">Login</a>
             </li>

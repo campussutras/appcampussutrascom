@@ -10,8 +10,45 @@ import Users from "./Pages/Admin/Users/Users";
 import User from "./Pages/Admin/User/User";
 import Navbar from "./Components/Global/Navbar/Navbar";
 import Footer from "./Components/Global/Footer/Footer";
+import { useEffect } from "react";
+import axios from "axios";
+import { useSetRecoilState } from "recoil";
+import { userAtom } from "./store/atoms/userAtom";
 
 const App = () => {
+  const setUser = useSetRecoilState(userAtom);
+  const getUser = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/profile`
+      );
+      if (response.data.status === 200) {
+        setUser(response.data);
+      } else {
+        console.log("not login");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const getAdmin = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/admin/profile`
+      );
+      if (response.data.status === 200) {
+        setUser(response.data);
+      } else if (response.data.status === 401) {
+        console.log("Not Login");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    getAdmin();
+  }, []);
   return (
     <>
       <BrowserRouter>

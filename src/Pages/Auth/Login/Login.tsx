@@ -1,7 +1,10 @@
 import { useState } from "react";
 import "./style.css";
 import axios from "axios";
+import { useSetRecoilState } from "recoil";
+import { userAtom } from "../../../store/atoms/userAtom";
 const Login = () => {
+  const setUser = useSetRecoilState(userAtom);
   const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState({
     email: "",
@@ -18,7 +21,9 @@ const Login = () => {
     try {
       setLoading(true);
       const response = await api.post(`/admin/login`, loginData);
-      console.log(response.data);
+      console.log(response);
+      setUser(response.data.data);
+
       setLoginData({
         email: "",
         password: "",

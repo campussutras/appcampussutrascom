@@ -2,5 +2,10 @@ import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
 import "./fonts/silka-regular-webfont.woff2";
+import { RecoilRoot } from "recoil";
 
-ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <RecoilRoot>
+    <App />
+  </RecoilRoot>
+);
