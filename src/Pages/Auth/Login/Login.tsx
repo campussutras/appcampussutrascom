@@ -20,7 +20,7 @@ const Login = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await api.post(`/admin/login`, loginData);
+      const response = await api.post(`/user/login`, loginData);
       console.log(response);
       setUser(response.data.data);
 

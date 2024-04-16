@@ -31,23 +31,9 @@ const App = () => {
       console.log(error);
     }
   };
-  const getAdmin = async () => {
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/api/v1/admin/profile`
-      );
-      if (response.data.status === 200) {
-        setUser(response.data);
-      } else if (response.data.status === 401) {
-        console.log("Not Login");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
-    getAdmin();
+    getUser();
   }, []);
   return (
     <>
