@@ -1,0 +1,63 @@
+.profileSideBar {
+  height: 68vh;
+}
+
+.profileSideBar > .profileHeader {
+  background-color: var(--mainBlue);
+  margin: 0 0 0.5rem 0;
+  padding: 1rem;
+  color: white;
+}
+.profileSideBar > .profileHeader > h3 {
+  font-size: var(--h3);
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+.profileSideBar > .profileHeader > h2 {
+  font-size: var(--h2);
+  font-weight: 500;
+}
+.profileSideBar > .profileMenu {
+  padding: 0.5rem;
+  background-color: var(--mainBlue);
+  height: 100%;
+}
+
+.profileSideBar > .profileMenu > ul {
+  list-style: none;
+  width: 100%;
+}
+
+.profileSideBar > .profileMenu > ul > li {
+  margin: 0 0 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.profileSideBar > .profileMenu > ul > li:hover {
+  background-color: white;
+  transition: 0.3s all ease-in-out;
+}
+.profileSideBar > .profileMenu > ul > li:hover > a {
+  color: var(--mainBlue) !important;
+}
+
+.sidebarLinkActive {
+  background-color: white;
+}
+
+.sidebarLinkActive > a {
+  color: var(--mainBlue) !important;
+}
+
+.profileSideBar > .profileMenu > ul > li > a {
+  color: white;
+}
+
+.profileSideBar > .profileMenu > button {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}

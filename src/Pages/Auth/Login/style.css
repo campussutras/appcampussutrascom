@@ -47,6 +47,11 @@
   margin: 0 0 1rem 0;
 }
 
+.login > .loginContainer > .loginRight > .loginForm > form > input:focus {
+  border: 1px solid var(--mainBlue);
+  transition: 0.3s all ease-in-out;
+}
+
 .login > .loginContainer > .loginRight > .loginForm > form > button {
   width: 100%;
   padding: 0.5rem;

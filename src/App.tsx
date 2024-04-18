@@ -10,31 +10,32 @@ import Users from "./Pages/Admin/Users/Users";
 import User from "./Pages/Admin/User/User";
 import Navbar from "./Components/Global/Navbar/Navbar";
 import Footer from "./Components/Global/Footer/Footer";
-import { useEffect } from "react";
-import axios from "axios";
-import { useSetRecoilState } from "recoil";
-import { userAtom } from "./store/atoms/userAtom";
+import AssessmentsData from "./Pages/AssessmentsData/AssessmentsData";
+// import { useEffect } from "react";
+// import axios from "axios";
+// import { useSetRecoilState } from "recoil";
+// import { userAtom } from "./store/atoms/userAtom";
 
 const App = () => {
-  const setUser = useSetRecoilState(userAtom);
-  const getUser = async () => {
-    try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/profile`
-      );
-      if (response.data.status === 200) {
-        setUser(response.data);
-      } else {
-        console.log("not login");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const setUser = useSetRecoilState(userAtom);
+  // const getUser = async () => {
+  //   try {
+  //     const response = await axios.get(
+  //       `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/profile`
+  //     );
+  //     if (response.data.status === 200) {
+  //       setUser(response.data);
+  //     } else {
+  //       console.log("not login");
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
-  useEffect(() => {
-    getUser();
-  }, []);
+  // useEffect(() => {
+  //   getUser();
+  // }, []);
   return (
     <>
       <BrowserRouter>
@@ -48,6 +49,7 @@ const App = () => {
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/assessments-data" element={<AssessmentsData />} />
           {/* admin routes */}
           <Route path="/users-assessments" element={<GetAssessments />} />
           <Route path="/users" element={<Users />} />

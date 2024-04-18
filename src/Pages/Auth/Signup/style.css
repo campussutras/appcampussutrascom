@@ -48,6 +48,11 @@
   margin: 0 0 1rem 0;
 }
 
+.signup > .signupContainer > .signupRight > .signupForm > form > input:focus {
+  border: 1px solid var(--mainBlue);
+  transition: 0.3s all ease-in-out;
+}
+
 .signup
   > .signupContainer
   > .signupRight
