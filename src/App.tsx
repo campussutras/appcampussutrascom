@@ -51,9 +51,9 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/assessments-data" element={<AssessmentsData />} />
           {/* admin routes */}
-          <Route path="/users-assessments" element={<GetAssessments />} />
+          <Route path="/user-assessments/:id" element={<GetAssessments />} />
           <Route path="/users" element={<Users />} />
-          <Route path="/user" element={<User />} />
+          <Route path="/user/:id" element={<User />} />
         </Routes>
         <Footer />
       </BrowserRouter>

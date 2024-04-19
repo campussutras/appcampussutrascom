@@ -5,6 +5,7 @@ import {
   useMaterialReactTable,
 } from "material-react-table";
 import axios from "axios";
+
 const Users = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -29,7 +30,7 @@ const Users = () => {
       {
         accessorKey: "Index", //access nested data with dot notation
         header: "Index",
-        size: 150,
+        size: 50,
       },
       {
         accessorKey: "Name", //access nested data with dot notation
@@ -67,6 +68,11 @@ const Users = () => {
         size: 150,
       },
       {
+        accessorKey: "Assessments",
+        header: "Assessments",
+        size: 100,
+      },
+      {
         accessorKey: "View",
         header: "View",
         size: 150,
@@ -85,13 +91,15 @@ const Users = () => {
       Verified: !user.isVerified ? "Not Verified" : "Verified",
       Date: user?.createdAt,
       Time: user?.createdAt,
-      Assessments: user?.assessments.name,
+      Assessments: user?.assessments.length,
       View: <a href={`/user/${user.id}`}>Profile</a>,
     })),
   });
   return (
     <section className="allUsers width100 flex alignCenter justifyCenter flexColumn">
-      <div className="allUsersHeader width95 maxWidth">header</div>
+      <div className="allUsersHeader width95 maxWidth">
+        <h1>All Users</h1>
+      </div>
       <div className="allUsersContainer width95 maxWidth">
         <MaterialReactTable table={table} />
       </div>
