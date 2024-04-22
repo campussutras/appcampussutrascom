@@ -1,4 +1,91 @@
-.userProfile {
+.myProfile {
   padding: 1rem 0;
-  height: 70vh;
+}
+.myProfile > .myProfileContainer {
+  padding: 1rem;
+  background-color: var(--bgGrey);
+}
+
+.myProfile > .myProfileContainer > h1 {
+  font-size: var(--h1);
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.myProfile > .myProfileContainer > .myProfileInfo {
+  border-top: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(--borderColor);
+  padding-top: 1rem;
+}
+
+.myProfile > .myProfileContainer > .myProfileInfo > .myProfileTab {
+  margin: 0 0 1rem 0;
+  gap: 1rem;
+}
+
+.myProfile
+  > .myProfileContainer
+  > .myProfileInfo
+  > .myProfileTab
+  > .myProfileLeft {
+  width: 10rem;
+  border-right: 1px solid var(--borderColor);
+}
+
+.myProfile
+  > .myProfileContainer
+  > .myProfileInfo
+  > .myProfileTab
+  > .myProfileLeft
+  > h3 {
+  font-size: var(--h4);
+  /* font-weight: 500; */
+}
+
+.myProfile
+  > .myProfileContainer
+  > .myProfileInfo
+  > .myProfileTab
+  > .myProfileRight
+  > p {
+  font-size: var(--h4);
+}
+.myProfile > .myProfileContainer > .myProfileButtons {
+  margin: 1rem 0 0 0;
+}
+
+.myProfile > .myProfileContainer > .myProfileButtons > .myProfileLogout {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #cc0000;
+  color: white;
+  font-size: 1rem;
+  width: 12rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.myProfile > .myProfileContainer > .myProfileButtons > .myProfileUpdate {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--mainBlue);
+  color: white;
+  font-size: 1rem;
+  width: 12rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.myProfile
+  > .myProfileContainer
+  > .myProfileButtons
+  > .myProfileChangePassword {
+  padding: 0.5rem 1rem;
+  width: 12rem;
+  cursor: pointer;
+  background-color: var(--mainBlue);
+  color: white;
+  font-size: 1rem;
+  display: inline-block;
+  text-align: center;
 }

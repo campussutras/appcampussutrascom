@@ -1,10 +1,8 @@
 import "./style.css";
-import { useEffect, useMemo, useState } from "react";
-import {
-  MaterialReactTable,
-  useMaterialReactTable,
-} from "material-react-table";
+import { useEffect, useState } from "react";
+
 import axios from "axios";
+import { RiArrowDownLine } from "react-icons/ri";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -25,83 +23,49 @@ const Users = () => {
 
     getUsers();
   }, []);
-  const columns = useMemo(
-    () => [
-      {
-        accessorKey: "Index", //access nested data with dot notation
-        header: "Index",
-        size: 50,
-      },
-      {
-        accessorKey: "Name", //access nested data with dot notation
-        header: "Name",
-        size: 150,
-      },
-      {
-        accessorKey: "Email",
-        header: "Email",
-        size: 150,
-      },
-      {
-        accessorKey: "Phone", //normal accessorKey
-        header: "Phone",
-        size: 200,
-      },
-      {
-        accessorKey: "Profile",
-        header: "Profile",
-        size: 150,
-      },
-      {
-        accessorKey: "Verified",
-        header: "Verified",
-        size: 150,
-      },
-      {
-        accessorKey: "Date",
-        header: "Date",
-        size: 150,
-      },
-      {
-        accessorKey: "Time",
-        header: "Time",
-        size: 150,
-      },
-      {
-        accessorKey: "Assessments",
-        header: "Assessments",
-        size: 100,
-      },
-      {
-        accessorKey: "View",
-        header: "View",
-        size: 150,
-      },
-    ],
-    []
-  );
-  const table = useMaterialReactTable({
-    columns,
-    data: users.map((user, index) => ({
-      Index: index,
-      Name: user?.name,
-      Email: user?.email,
-      Phone: user?.phone,
-      Profile: user?.profileType,
-      Verified: !user.isVerified ? "Not Verified" : "Verified",
-      Date: user?.createdAt,
-      Time: user?.createdAt,
-      Assessments: user?.assessments.length,
-      View: <a href={`/user/${user.id}`}>Profile</a>,
-    })),
-  });
+
   return (
     <section className="allUsers width100 flex alignCenter justifyCenter flexColumn">
-      <div className="allUsersHeader width95 maxWidth">
-        <h1>All Users</h1>
-      </div>
       <div className="allUsersContainer width95 maxWidth">
-        <MaterialReactTable table={table} />
+        <div className="allUsersHead flex alignCenter spaceBtw">
+          <h1>All Users</h1>
+          <div className="allUsersBtns flex gap05">
+            <button>Total {users?.length}</button>
+            <button>
+              Excel <RiArrowDownLine style={{ marginBottom: "-0.16rem" }} />
+            </button>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Profile</th>
+              <th>Assessments</th>
+              <th>View</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, index) => {
+              return (
+                <tr>
+                  <td>{index + 1}</td>
+                  <td>{user.name}</td>
+                  <td>{user.email}</td>
+                  <td>{user.phone}</td>
+                  <td>{user.profileType}</td>
+                  <td>{user.assessments?.length}</td>
+                  <td>
+                    <a href={`/user/${user.id}`}>Profile</a>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </section>
   );

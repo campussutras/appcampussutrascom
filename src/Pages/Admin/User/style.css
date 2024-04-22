@@ -1,0 +1,56 @@
+.adminUser {
+  padding: 1rem 0;
+}
+.adminUser > .adminUContainer {
+  padding: 1rem;
+  background-color: var(--bgGrey);
+}
+
+.adminUser > .adminUContainer > h1 {
+  font-size: var(--h1);
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.adminUser > .adminUContainer > .adminUInfo > .userInfoTab {
+  margin: 0 0 1rem 0;
+  gap: 1rem;
+}
+
+.adminUser > .adminUContainer > .adminUInfo {
+  border-top: 1px solid var(--borderColor);
+  border-bottom: 1px solid var(--borderColor);
+  padding-top: 1rem;
+}
+
+.adminUser > .adminUContainer > .adminUInfo > .userInfoTab > .userInfoLeft {
+  width: 10rem;
+  border-right: 1px solid var(--borderColor);
+}
+
+.adminUser
+  > .adminUContainer
+  > .adminUInfo
+  > .userInfoTab
+  > .userInfoLeft
+  > h3 {
+  font-size: var(--h4);
+  /* font-weight: 500; */
+}
+
+.adminUser
+  > .adminUContainer
+  > .adminUInfo
+  > .userInfoTab
+  > .userInfoRight
+  > p {
+  font-size: var(--h4);
+}
+
+.adminUser > .adminUContainer > .adminUAssessInfo > a {
+  background-color: var(--mainBlue);
+  padding: 0.5rem 1rem;
+  color: white;
+  display: inline-block;
+  margin: 1rem 0 0 0;
+}
