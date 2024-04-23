@@ -1,6 +1,10 @@
 import "./style.css";
 const ForgetPassword = () => {
-  return <>ForgetPassword</>;
+  return (
+    <>
+      <main className=""></main>
+    </>
+  );
 };
 
 export default ForgetPassword;

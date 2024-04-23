@@ -19,6 +19,11 @@ td {
   padding: 8px;
 }
 
+.assessmentsData th,
+td a {
+  color: var(--mainBlue);
+}
+
 .assessmentsData th {
   background-color: #f2f2f2;
 }

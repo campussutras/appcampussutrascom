@@ -34,14 +34,14 @@ const User = () => {
             Return <RiArrowGoBackLine style={{ marginBottom: "-0.15rem" }} />
           </a>
         </div>
-        <h1>{user.name}</h1>
+        <h1>{user.name ? user.name : "Loading..."}</h1>
         <div className="adminUInfo">
           <div className="userInfoTab flex alignStart justifyStart">
             <div className="userInfoLeft">
               <h3>Email</h3>
             </div>
             <div className="userInfoRight">
-              <p>{user.email}</p>
+              <p>{user.email ? user.email : "Loading..."}</p>
             </div>
           </div>
           <div className="userInfoTab flex alignStart justifyStart">
@@ -49,7 +49,7 @@ const User = () => {
               <h3>Phone</h3>
             </div>
             <div className="userInfoRight">
-              <p>{user.phone}</p>
+              <p>{user.phone ? user.phone : "Loading..."}</p>
             </div>
           </div>
           <div className="userInfoTab flex alignStart justifyStart">
@@ -57,7 +57,11 @@ const User = () => {
               <h3>Assessments</h3>
             </div>
             <div className="userInfoRight">
-              <p>{user.assessments?.length}</p>
+              <p>
+                {user.assessments?.length
+                  ? user.assessments.length
+                  : "Loading..."}
+              </p>
             </div>
           </div>
           <div className="userInfoTab flex alignStart justifyStart">
@@ -65,7 +69,7 @@ const User = () => {
               <h3>Profile</h3>
             </div>
             <div className="userInfoRight">
-              <p>{user.profileType}</p>
+              <p>{user.profileType ? user.profileType : "Loading..."}</p>
             </div>
           </div>
           <div className="userInfoTab flex alignStart justifyStart">
@@ -129,7 +133,9 @@ const User = () => {
               <h3>Since</h3>
             </div>
             <div className="userInfoRight">
-              <p>{user.createdAt}</p>
+              <p>
+                {user.createdAt ? user.createdAt.split("T")[0] : "Loading..."}
+              </p>
             </div>
           </div>
         </div>

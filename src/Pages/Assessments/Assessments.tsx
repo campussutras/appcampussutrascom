@@ -1,11 +1,7 @@
 import "./style.css";
 import { catalog, category } from "./Catalog";
 import React from "react";
-import {
-  RiArrowLeftDoubleFill,
-  RiArrowRightDoubleFill,
-  RiArrowRightSLine,
-} from "react-icons/ri";
+import { RiArrowLeftDoubleFill, RiArrowRightDoubleFill } from "react-icons/ri";
 import { PiArrowRight } from "react-icons/pi";
 const Assessments = () => {
   const [currentPage, setCurrentPage] = React.useState(1); // Start with page 1
@@ -14,7 +10,7 @@ const Assessments = () => {
   const assessmentsPerPage = 9;
 
   const totalPages = Math.ceil(catalog.length / assessmentsPerPage);
-  const handlePageChange = (newPage: any) => {
+  const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
   };
 

@@ -79,6 +79,12 @@ p {
   line-height: 1.4rem;
 }
 
+input,
+select,
+textarea {
+  font-family: Silka;
+}
+
 /* common classses */
 .flex {
   display: flex;

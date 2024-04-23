@@ -42,24 +42,34 @@ const GetAssessments = () => {
           <table>
             <thead>
               <tr>
-                <th>#</th>
+                <th>S.No</th>
                 <th>Name</th>
                 <th>Duration</th>
+                <th>Time</th>
                 <th>Score</th>
+                <th>Rating</th>
                 <th>Format</th>
                 <th>Date</th>
               </tr>
             </thead>
             <tbody>
               {assessments.map((assess, index) => {
+                const rating =
+                  assess.score > 8
+                    ? "Good"
+                    : assess.score > 5
+                    ? "Average"
+                    : "Poor";
                 return (
                   <tr>
-                    <td>{index}</td>
+                    <td>{index + 1}</td>
                     <td>{assess.name}</td>
                     <td>{assess.duration}</td>
+                    <td>{assess.timeTaken}</td>
                     <td>{assess.score}</td>
+                    <td>{rating}</td>
                     <td>{assess.format}</td>
-                    <td>{assess.createdAt}</td>
+                    <td>{assess.createdAt.split("T")[0]}</td>
                   </tr>
                 );
               })}
