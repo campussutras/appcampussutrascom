@@ -4,10 +4,13 @@ nav {
 
 nav > .navContainer {
   height: 5rem;
+}
+
+nav > .navContainerBorder {
   border-bottom: 1px solid var(--borderColor);
 }
 
-nav > .navContainer > .navLogo > img {
+nav > .navContainer > .navLogo > a > img {
   width: 40%;
   height: auto;
 }

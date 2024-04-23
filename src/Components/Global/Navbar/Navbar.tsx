@@ -1,15 +1,25 @@
 import "./style.css";
+import { useLocation } from "react-router-dom";
 import logo from "../../../assets/media/assets/logo.png";
 import { FiArrowRight } from "react-icons/fi";
 // import { useRecoilValue } from "recoil";
 // import { userAtom } from "../../../store/atoms/userAtom";
 const Navbar = () => {
+  const location = useLocation();
+  console.log(location.pathname);
+
   // const user = useRecoilValue(userAtom);
   return (
     <nav className="width100 flex alignCenter justifyCenter">
-      <div className="navContainer width95 maxWidth flex alignCenter spaceBtw">
+      <div
+        className={`navContainer width95 maxWidth flex alignCenter spaceBtw ${
+          location.pathname === "/assessments" ? "" : "navContainerBorder"
+        }`}
+      >
         <div className="navLogo">
-          <img src={logo} alt="Campus Sutras Logo" />
+          <a href="/">
+            <img src={logo} alt="Campus Sutras Logo" />
+          </a>
         </div>
         <div className="mainMenu flex alignCenter gap2">
           <ul className="flex gap2">

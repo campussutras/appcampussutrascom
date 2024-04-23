@@ -1,0 +1,123 @@
+.assessments > .assessHeader {
+  background-color: var(--bgGrey);
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.assessments > .assessHeader > .searchAssessBar > .searchInput {
+  width: 66.8%;
+}
+
+.assessments > .assessHeader > .searchAssessBar > .searchInput > input {
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--borderColor);
+  outline: none;
+}
+
+.assessments > .assessHeader > .searchAssessBar > .searchCategory {
+  width: 32.2%;
+}
+
+.assessments > .assessHeader > .searchAssessBar > .searchCategory > select {
+  width: 100%;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--borderColor);
+  outline: none;
+}
+
+.assessments > .assessContainer > .allAssessmentsList {
+  flex-wrap: wrap;
+  height: 33rem;
+}
+
+.assessments > .assessContainer > .allAssessmentsList > .assessmentCard {
+  width: 32.7%;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  margin: 0 0 1rem 0;
+  background-color: var(--bgGrey);
+}
+
+.assessments
+  > .assessContainer
+  > .allAssessmentsList
+  > .assessmentCard
+  > .assessmentCardContent {
+  padding: 1rem 0 1rem 1rem;
+}
+
+.assessments
+  > .assessContainer
+  > .allAssessmentsList
+  > .assessmentCard
+  > .assessmentCardContent
+  > h3 {
+  font-size: var(--h3);
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.assessments
+  > .assessContainer
+  > .allAssessmentsList
+  > .assessmentCard
+  > .assessmentCardContent
+  > .accTab
+  > .accTabLeft {
+  width: 5.5rem;
+  border-right: 1px solid var(--borderColor);
+  margin: 0 0 0.5rem 0;
+}
+
+.assessments
+  > .assessContainer
+  > .allAssessmentsList
+  > .assessmentCard
+  > .assessmentCardContent
+  > .accTab
+  > .accTabRight {
+  margin: 0 0 0 0.5rem;
+}
+
+.assessments
+  > .assessContainer
+  > .allAssessmentsList
+  > .assessmentCard
+  > .assessmentCardLink
+  > .assessmentLinkIcon {
+  background-color: var(--mainBlue);
+  color: white;
+  font-size: 2.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.assessments > .assessContainer > .pagination {
+  margin: 1rem 0 2rem 0;
+  gap: 0.2rem;
+}
+
+.assessments > .assessContainer > .pagination > button {
+  padding: 0.5rem 0.8rem;
+  font-size: 1rem;
+  border: 1px solid var(--mainBlue);
+  background-color: var(--mainBlue);
+  color: white;
+  cursor: pointer;
+}
+
+.assessments > .assessContainer > .pagination > button:hover {
+  background-color: transparent;
+  color: var(--mainBlue);
+  transition: 0.3s all ease-in-out;
+}
+
+.assessments > .assessContainer > .pagination > .active {
+  background-color: white !important;
+  color: var(--mainBlue);
+}
