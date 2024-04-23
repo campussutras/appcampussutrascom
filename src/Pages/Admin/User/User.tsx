@@ -60,7 +60,7 @@ const User = () => {
               <p>
                 {user.assessments?.length
                   ? user.assessments.length
-                  : "Loading..."}
+                  : "No Assessment Given"}
               </p>
             </div>
           </div>
