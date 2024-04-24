@@ -1,16 +1,20 @@
+import { useRecoilValue } from "recoil";
 import "./style.css";
+import { userAtom } from "../../store/atoms/userAtom";
 const Profile = () => {
+  const user = useRecoilValue(userAtom);
+
   return (
     <section className="myProfile width100 flex alignCenter justifyCenter flexColumn">
       <div className="myProfileContainer maxWidth width95">
-        <h1>Harshit Kumar</h1>
+        <h1>{user && user.name ? user.name : "Loading..."}</h1>
         <div className="myProfileInfo">
           <div className="myProfileTab flex alignStart justifyStart ">
             <div className="myProfileLeft">
               <h3>Email</h3>
             </div>
             <div className="myProfileRight">
-              <p>harshitclub@gmail.com</p>
+              <p>{user && user.email ? user.email : "Loading..."}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -18,7 +22,7 @@ const Profile = () => {
               <h3>Phone</h3>
             </div>
             <div className="myProfileRight">
-              <p>9410885485</p>
+              <p>{user && user.phone ? user.phone : "Loading..."}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -34,7 +38,9 @@ const Profile = () => {
               <h3>Profile Type</h3>
             </div>
             <div className="myProfileRight">
-              <p>Employee</p>
+              <p>
+                {user && user.profileType ? user.profileType : "Loading..."}
+              </p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -42,7 +48,7 @@ const Profile = () => {
               <h3>Company</h3>
             </div>
             <div className="myProfileRight">
-              <p>3a Learning Solutions</p>
+              <p>{user && user.company ? user.company : "Not Yet Updated"}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -50,7 +56,7 @@ const Profile = () => {
               <h3>Position</h3>
             </div>
             <div className="myProfileRight">
-              <p>Web Developer</p>
+              <p>{user && user.position ? user.position : "Not Yet Updated"}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -58,7 +64,11 @@ const Profile = () => {
               <h3>Address</h3>
             </div>
             <div className="myProfileRight">
-              <p>76/5, Mangal Puri</p>
+              <p>
+                {user && user.localAddress
+                  ? user.localAddress
+                  : "Not Yet Updated"}
+              </p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -66,7 +76,7 @@ const Profile = () => {
               <h3>City</h3>
             </div>
             <div className="myProfileRight">
-              <p>Meerut</p>
+              <p>{user && user.city ? user.city : "Not Yet Updated"}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -74,7 +84,7 @@ const Profile = () => {
               <h3>Zip</h3>
             </div>
             <div className="myProfileRight">
-              <p>250001</p>
+              <p>{user && user.zip ? user.zip : "Not Yet Updated"}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -82,7 +92,7 @@ const Profile = () => {
               <h3>State</h3>
             </div>
             <div className="myProfileRight">
-              <p>Uttar Pradesh</p>
+              <p>{user && user.state ? user.state : "Not Yet Updated"}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -90,7 +100,7 @@ const Profile = () => {
               <h3>Country</h3>
             </div>
             <div className="myProfileRight">
-              <p>India</p>
+              <p>{user && user.country ? user.country : "Not Yet Updated"}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -98,7 +108,7 @@ const Profile = () => {
               <h3>Verified</h3>
             </div>
             <div className="myProfileRight">
-              <p>No</p>
+              <p>{user && user.isVerified ? "Verified" : "Not Verified"}</p>
             </div>
           </div>
         </div>

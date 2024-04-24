@@ -9,6 +9,7 @@ const Navbar = () => {
 
   const user = useRecoilValue(userAtom);
   const isLogin = useRecoilValue(isLoginAtom);
+
   return (
     <nav className="width100 flex alignCenter justifyCenter">
       <div
@@ -26,10 +27,16 @@ const Navbar = () => {
             <li>
               <a href="/">Courses</a>
             </li>
-            {isLogin && <li>{user.name}</li>}
-            <li>
-              <a href="/">Login</a>
-            </li>
+            {!isLogin ? (
+              <li>
+                <a href="/">Login</a>
+              </li>
+            ) : (
+              <li>
+                <a href="/profile">{user.name}</a>
+              </li>
+            )}
+
             <li>
               <a href="/">Assessments</a>
             </li>
