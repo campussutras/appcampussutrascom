@@ -2,13 +2,13 @@ import "./style.css";
 import { useLocation } from "react-router-dom";
 import logo from "../../../assets/media/assets/logo.png";
 import { FiArrowRight } from "react-icons/fi";
-// import { useRecoilValue } from "recoil";
-// import { userAtom } from "../../../store/atoms/userAtom";
+import { useRecoilValue } from "recoil";
+import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
 const Navbar = () => {
   const location = useLocation();
-  console.log(location.pathname);
 
-  // const user = useRecoilValue(userAtom);
+  const user = useRecoilValue(userAtom);
+  const isLogin = useRecoilValue(isLoginAtom);
   return (
     <nav className="width100 flex alignCenter justifyCenter">
       <div
@@ -26,7 +26,7 @@ const Navbar = () => {
             <li>
               <a href="/">Courses</a>
             </li>
-            {/* {user ? <li>{user?.name}</li> : null} */}
+            {isLogin && <li>{user.name}</li>}
             <li>
               <a href="/">Login</a>
             </li>

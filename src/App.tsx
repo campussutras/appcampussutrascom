@@ -11,31 +11,36 @@ import User from "./Pages/Admin/User/User";
 import Navbar from "./Components/Global/Navbar/Navbar";
 import Footer from "./Components/Global/Footer/Footer";
 import AssessmentsData from "./Pages/AssessmentsData/AssessmentsData";
-// import { useEffect } from "react";
-// import axios from "axios";
-// import { useSetRecoilState } from "recoil";
-// import { userAtom } from "./store/atoms/userAtom";
+import { useEffect } from "react";
+import axios from "axios";
+import { useSetRecoilState } from "recoil";
+import { isLoginAtom, userAtom } from "./store/atoms/userAtom";
 
 const App = () => {
-  // const setUser = useSetRecoilState(userAtom);
-  // const getUser = async () => {
-  //   try {
-  //     const response = await axios.get(
-  //       `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/profile`
-  //     );
-  //     if (response.data.status === 200) {
-  //       setUser(response.data);
-  //     } else {
-  //       console.log("not login");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
+  const setUser = useSetRecoilState(userAtom);
+  const setAuth = useSetRecoilState(isLoginAtom);
+  const getUser = async () => {
+    try {
+      const response = await axios.get(
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/profile`,
+        {
+          withCredentials: true,
+        }
+      );
+      if (response) {
+        setUser(response.data.data);
+        setAuth(true);
+      } else {
+        console.log("no login");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  // useEffect(() => {
-  //   getUser();
-  // }, []);
+  useEffect(() => {
+    getUser();
+  }, []);
   return (
     <>
       <BrowserRouter>
