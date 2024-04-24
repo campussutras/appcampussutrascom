@@ -8,6 +8,9 @@ const Signup = () => {
     phone: "",
     password: "",
     profileType: "",
+    institute: "",
+    company: "",
+    position: "",
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -20,6 +23,9 @@ const Signup = () => {
       phone: "",
       password: "",
       profileType: "",
+      institute: "",
+      company: "",
+      position: "",
     });
     setLoading(false);
   };
@@ -90,6 +96,38 @@ const Signup = () => {
                   <h4>Employee</h4>
                 </div>
               </div>
+              {signupData.profileType === "Employee" && (
+                <>
+                  <h3>Company</h3>
+                  <input
+                    placeholder="ex. Campus Sutras Private Limited"
+                    type="text"
+                    name="company"
+                    onChange={handleChange}
+                    value={signupData.company}
+                  />
+                  <h3>Position</h3>
+                  <input
+                    placeholder="ex. Sales Manager"
+                    type="text"
+                    name="position"
+                    onChange={handleChange}
+                    value={signupData.position}
+                  />
+                </>
+              )}
+              {signupData.profileType === "Student" && (
+                <>
+                  <h3>Institute</h3>
+                  <input
+                    placeholder="Institute Name"
+                    type="text"
+                    name="institute"
+                    onChange={handleChange}
+                    value={signupData.institute}
+                  />
+                </>
+              )}
               <h3>Password</h3>
               <input
                 placeholder="********"
