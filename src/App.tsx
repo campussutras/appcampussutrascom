@@ -32,6 +32,7 @@ const App = () => {
         setAuth(true);
       } else {
         console.log("no login");
+        setAuth(false);
       }
     } catch (error) {
       console.log(error);
