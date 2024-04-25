@@ -1,5 +1,5 @@
 .signup > .signupContainer {
-  height: 90vh;
+  padding: 1rem 0;
   /* border: 1px solid var(--borderColor); */
   background-color: var(--mainBlueBg);
   margin: 1rem 0;
