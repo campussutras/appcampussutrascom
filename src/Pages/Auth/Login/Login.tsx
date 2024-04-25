@@ -1,36 +1,57 @@
 import { useState } from "react";
 import "./style.css";
 import axios from "axios";
+import { message } from "antd";
 import { useSetRecoilState } from "recoil";
-import { userAtom } from "../../../store/atoms/userAtom";
+import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const [messageApi, contextHolder] = message.useMessage();
+  const navigate = useNavigate();
   const setUser = useSetRecoilState(userAtom);
+  const setLogin = useSetRecoilState(isLoginAtom);
   const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
 
-  const api = axios.create({
-    baseURL: `${import.meta.env.VITE_BACKEND_URL}/api/v1`,
-    withCredentials: true, // Include cookies in cross-site requests
-  });
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await api.post(`/user/login`, loginData);
+      const response = await axios.post(
+        `http://localhost:3001/api/v1/user/login`,
+        loginData,
+        {
+          withCredentials: true,
+        }
+      );
+      const success = () => {
+        messageApi.open({
+          type: "success",
+          content: response.data.message,
+        });
+      };
+      success();
       console.log(response);
       setUser(response.data.data);
-
+      setLogin(true);
       setLoginData({
         email: "",
         password: "",
       });
       setLoading(false);
-    } catch (error) {
-      console.log(error);
+      navigate("/assessments");
+    } catch (e) {
+      const error = () => {
+        messageApi.open({
+          type: "error",
+          content: "Error | Try again after sometime.",
+        });
+      };
+      error();
+      setLoading(false);
     }
   };
 
@@ -43,6 +64,7 @@ const Login = () => {
 
   return (
     <section className="login width100 flex alignCenter justifyCenter flexColumn">
+      {contextHolder}
       <div className="loginContainer width95 maxWidth flex">
         <div className="loginRight width100 flex flexColumn alignCenter justifyCenter">
           <div className="loginForm width40">

@@ -13,12 +13,14 @@ import Footer from "./Components/Global/Footer/Footer";
 import AssessmentsData from "./Pages/AssessmentsData/AssessmentsData";
 import { useEffect } from "react";
 import axios from "axios";
-import { useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { isLoginAtom, userAtom } from "./store/atoms/userAtom";
+import MyAssessments from "./Pages/MyAssessments/MyAssessments";
 
 const App = () => {
   const setUser = useSetRecoilState(userAtom);
   const setAuth = useSetRecoilState(isLoginAtom);
+  const isLogin = useRecoilValue(isLoginAtom);
   const getUser = async () => {
     try {
       const response = await axios.get(
@@ -30,9 +32,9 @@ const App = () => {
       if (response) {
         setUser(response.data.data);
         setAuth(true);
+        console.log(isLogin);
       } else {
         console.log("no login");
-        setAuth(false);
       }
     } catch (error) {
       console.log(error);
@@ -55,7 +57,9 @@ const App = () => {
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/my-assessments" element={<MyAssessments />} />
           <Route path="/assessments-data" element={<AssessmentsData />} />
+
           {/* admin routes */}
           <Route path="/user-assessments/:id" element={<GetAssessments />} />
           <Route path="/users" element={<Users />} />

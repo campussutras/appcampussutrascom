@@ -1,9 +1,31 @@
-import { useRecoilValue } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import "./style.css";
-import { userAtom } from "../../store/atoms/userAtom";
-const Profile = () => {
-  const user = useRecoilValue(userAtom);
+import { isLoginAtom, userAtom } from "../../store/atoms/userAtom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
+const Profile = () => {
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const [user, setUser] = useRecoilState(userAtom);
+  const setAuth = useSetRecoilState(isLoginAtom);
+
+  const logout = async () => {
+    try {
+      setLoading(true);
+      await axios.get("http://localhost:3001/api/v1/user/logout", {
+        withCredentials: true,
+      });
+      setAuth(false);
+      setUser({});
+      navigate("/login");
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
   return (
     <section className="myProfile width100 flex alignCenter justifyCenter flexColumn">
       <div className="myProfileContainer maxWidth width95">
@@ -30,7 +52,11 @@ const Profile = () => {
               <h3>Assessments</h3>
             </div>
             <div className="myProfileRight">
-              <p>0</p>
+              <p>
+                {user && user.assessments?.length > 0
+                  ? user.assessments?.length
+                  : "0"}
+              </p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -113,9 +139,19 @@ const Profile = () => {
           </div>
         </div>
         <div className="myProfileButtons flex gap05">
-          <button className="myProfileLogout">Logout</button>
+          <button className="myProfileLogout" onClick={logout}>
+            {loading ? "Logging Out..." : "Logout"}
+          </button>
+          {user.assessments?.length > 0 ? (
+            <>
+              <a href="/my-assessments" className="myProfileChangePassword">
+                My Assessments
+              </a>
+            </>
+          ) : null}
+
           <button className="myProfileUpdate">Update Profile</button>
-          <a href="/" className="myProfileChangePassword">
+          <a href="/change-password" className="myProfileChangePassword">
             Change Password
           </a>
         </div>

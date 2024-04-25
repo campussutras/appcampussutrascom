@@ -29,7 +29,7 @@ const Navbar = () => {
             </li>
             {!isLogin ? (
               <li>
-                <a href="/">Login</a>
+                <a href="/login">Login</a>
               </li>
             ) : (
               <li>
@@ -38,7 +38,7 @@ const Navbar = () => {
             )}
 
             <li>
-              <a href="/">Assessments</a>
+              <a href="/assessments">Assessments</a>
             </li>
             <li>
               <a href="/">Events</a>
