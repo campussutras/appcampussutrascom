@@ -52,6 +52,10 @@ const Login = () => {
       };
       error();
       setLoading(false);
+      setLoginData({
+        email: "",
+        password: "",
+      });
     }
   };
 

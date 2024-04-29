@@ -1,0 +1,187 @@
+.instructions > .instHeader {
+  margin: 1rem 0 1rem 0;
+}
+
+.instructions > .instHeader > a {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: var(--mainBlue);
+  color: white;
+  width: 5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.instructions > .instContainer {
+  border: 1px solid var(--borderColor);
+  height: 60vh;
+  overflow-y: scroll;
+  padding: 1rem;
+}
+
+.instructions > .instContainer > h2 {
+  text-align: center !important;
+  font-weight: 500;
+  font-size: var(--h2);
+  display: block;
+  padding: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem 0;
+  border-bottom: 1px solid var(--borderColor);
+}
+
+.instructions > .instContainer > h3 {
+  font-weight: 500;
+  font-size: var(--h3);
+  margin: 0 0 0.5rem 0;
+}
+
+.instructions > .instContainer > p {
+  margin: 0 0 1rem 0;
+}
+
+.instructions > .hideBtnBox > button {
+  padding: 0.5rem 1rem;
+  background-color: var(--mainBlue);
+  color: white;
+  border: 1px solid var(--mainBlue);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.instructions > .hideBtnBox {
+  margin: 1rem 0;
+}
+
+.assessmentQuestions > .assessQuesContainer {
+  margin: 1rem 0;
+}
+
+.assessmentQuestions > .assessQuesContainer > h1 {
+  font-size: var(--h2);
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.assessmentQuestions > .assessQuesContainer > .pageWarning {
+  border: 1px solid #ff5f15;
+  padding: 1rem;
+  margin: 0 0 1rem 0;
+}
+
+/* .assessmentQuestions > .assessQuesContainer > .pageWarning > p {
+  margin: 0 0 1rem 0;
+} */
+
+.assessmentQuestions > .assessQuesContainer > .pageWarning > ul {
+  list-style-position: inside;
+}
+
+.assessmentQuestions > .assessQuesContainer > .pageWarning > ul > li {
+  margin: 0 0 0.5rem 0;
+}
+
+.assessmentQuestions > .assessQuesContainer > .questionBox h2 {
+  font-size: var(--h3);
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.assessmentQuestions > .assessQuesContainer > .questionBox {
+  border: 1px solid var(--borderColor);
+  padding: 1rem;
+}
+
+.assessmentQuestions > .assessQuesContainer > .questionBox > input {
+  margin: 0 0 1rem 0;
+}
+
+.assessmentQuestions > .assessQuesContainer > .question-navigation {
+  margin: 1rem 0 0 0;
+}
+
+.assessmentQuestions > .assessQuesContainer > .question-navigation > button {
+  padding: 0.5rem 1rem;
+  background-color: var(--mainBlue);
+  border: 1px solid var(--mainBlue);
+  color: white;
+  font-size: 1rem;
+  width: 6rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.border-red {
+  border: 1px solid red;
+}
+
+.border-yellow {
+  border: 1px solid orange;
+}
+
+.border-green {
+  border: 1px solid green;
+}
+
+.assessResult > .resultContainer {
+  height: 60vh;
+  margin: 1rem 0;
+}
+
+.assessResult > .resultContainer > h1 {
+  font-size: var(--h1);
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.emoji-green {
+  color: green;
+  font-size: 2rem;
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.emoji-orange {
+  color: orange;
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.emoji-red {
+  color: red;
+  font-size: 3rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.assessResult > .resultContainer > h2 {
+  font-size: var(--h3);
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+}
+progress[value] {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+  width: 300px;
+  height: 20px;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #eee;
+  border-radius: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+}
+
+progress[value]::-webkit-progress-value {
+  background-image: -webkit-linear-gradient(
+      -45deg,
+      transparent 33%,
+      rgba(0, 0, 0, 0.1) 33%,
+      rgba(0, 0, 0, 0.1) 66%,
+      transparent 66%
+    ),
+    -webkit-linear-gradient(top, rgba(255, 255, 255, 0.25), rgba(0, 0, 0, 0.25)),
+    -webkit-linear-gradient(left, #09c, #f44);
+
+  border-radius: 2px;
+  background-size: 35px 20px, 100% 100%, 100% 100%;
+}

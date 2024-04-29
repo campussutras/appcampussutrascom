@@ -3,6 +3,7 @@ import { catalog, category } from "./Catalog";
 import React from "react";
 import { RiArrowLeftDoubleFill, RiArrowRightDoubleFill } from "react-icons/ri";
 import { PiArrowRight } from "react-icons/pi";
+import { Link } from "react-router-dom";
 const Assessments = () => {
   const [currentPage, setCurrentPage] = React.useState(1); // Start with page 1
   const [searchString, setSearchString] = React.useState("");
@@ -114,7 +115,9 @@ const Assessments = () => {
                     </div>
                   </div>
                   <div className="assessmentCardLink">
-                    <PiArrowRight className="assessmentLinkIcon" />
+                    <Link to={item.link}>
+                      <PiArrowRight className="assessmentLinkIcon" />
+                    </Link>
                   </div>
                 </div>
               );

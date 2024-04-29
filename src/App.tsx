@@ -16,6 +16,7 @@ import axios from "axios";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { isLoginAtom, userAtom } from "./store/atoms/userAtom";
 import MyAssessments from "./Pages/MyAssessments/MyAssessments";
+import Assessment from "./Pages/Assessment/Assessment";
 
 const App = () => {
   const setUser = useSetRecoilState(userAtom);
@@ -64,6 +65,7 @@ const App = () => {
           <Route path="/user-assessments/:id" element={<GetAssessments />} />
           <Route path="/users" element={<Users />} />
           <Route path="/user/:id" element={<User />} />
+          <Route path="/assessment/:assessmentName" element={<Assessment />} />
         </Routes>
         <Footer />
       </BrowserRouter>

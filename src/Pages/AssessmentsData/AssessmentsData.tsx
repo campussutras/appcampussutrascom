@@ -37,7 +37,6 @@ const AssessmentsData = () => {
               <th>S.No</th>
               <th>Assessment</th>
               <th>Score</th>
-              <th>Time</th>
               <th>Rating</th>
               <th>Date</th>
               <th>User</th>
@@ -57,7 +56,6 @@ const AssessmentsData = () => {
                   <td>{index + 1}</td>
                   <td>{assessment.name}</td>
                   <td>{assessment.score}/10</td>
-                  <td>{assessment.timeTaken}</td>
                   <td>{rating}</td>
                   <td>{assessment.createdAt.split("T")[0]}</td>
                   <td>{assessment?.user.name}</td>

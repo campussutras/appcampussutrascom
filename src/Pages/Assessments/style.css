@@ -89,6 +89,7 @@
   > .allAssessmentsList
   > .assessmentCard
   > .assessmentCardLink
+  > a
   > .assessmentLinkIcon {
   background-color: var(--mainBlue);
   color: white;

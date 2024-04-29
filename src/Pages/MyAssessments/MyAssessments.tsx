@@ -38,7 +38,6 @@ const MyAssessments = () => {
                   <th>S.No</th>
                   <th>Name</th>
                   <th>Duration</th>
-                  <th>Time</th>
                   <th>Score</th>
                   <th>Rating</th>
                   <th>Format</th>
@@ -58,7 +57,6 @@ const MyAssessments = () => {
                       <td>{index + 1}</td>
                       <td>{assess.name}</td>
                       <td>{assess.duration}</td>
-                      <td>{assess.timeTaken}</td>
                       <td>{assess.score}</td>
                       <td>{rating}</td>
                       <td>{assess.format}</td>
