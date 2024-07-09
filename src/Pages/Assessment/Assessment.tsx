@@ -11,6 +11,7 @@ import { FcClock } from "react-icons/fc";
 import { assessments } from "./mcqs";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { api } from "../../Utils/Api";
 
 const Assessment = () => {
   const { assessmentName } = useParams();
@@ -78,7 +79,7 @@ const Assessment = () => {
       }
 
       const res = await axios.post(
-        "http://localhost:3001/api/v1/assessment/save-assessment",
+        api.saveAssessment,
         {
           name: assessment.title, // Use 'name' for the property in the body
           duration: "10 Minutes",

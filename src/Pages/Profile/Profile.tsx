@@ -4,6 +4,7 @@ import { isLoginAtom, userAtom } from "../../store/atoms/userAtom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { api } from "../../Utils/Api";
 
 const Profile = () => {
   const [loading, setLoading] = useState(false);
@@ -14,7 +15,7 @@ const Profile = () => {
   const logout = async () => {
     try {
       setLoading(true);
-      await axios.get("http://localhost:3001/api/v1/user/logout", {
+      await axios.get(api.logout, {
         withCredentials: true,
       });
       setAuth(false);

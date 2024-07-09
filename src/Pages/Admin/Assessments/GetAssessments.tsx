@@ -2,7 +2,7 @@ import "./style.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { RiArrowGoBackLine } from "react-icons/ri";
-
+import { api } from "../../../Utils/Api";
 import { useParams } from "react-router-dom";
 const GetAssessments = () => {
   const { id } = useParams();
@@ -11,9 +11,7 @@ const GetAssessments = () => {
   useEffect(() => {
     const getAssessments = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3001/api/v1/assessment/user-assessments/${id}`
-        );
+        const response = await axios.get(`${api.getUserAssessments}/${id}`);
         setAssessments(response.data.data);
       } catch (error) {
         console.log(error);

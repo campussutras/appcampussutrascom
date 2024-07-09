@@ -3,15 +3,14 @@ import "./style.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { RiArrowGoBackLine } from "react-icons/ri";
+import { api } from "../../../Utils/Api";
 const User = () => {
   const { id } = useParams();
   const [user, setUser] = useState({});
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3001/api/v1/user/get-user/${id}`
-        );
+        const response = await axios.get(`${api.user}/${id}`);
 
         setUser(response.data.data);
       } catch (error) {

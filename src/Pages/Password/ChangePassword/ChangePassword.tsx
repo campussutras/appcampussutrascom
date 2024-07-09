@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
 import { message } from "antd";
+import { api } from "../../../Utils/Api";
 
 const ChangePassword = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -20,13 +21,9 @@ const ChangePassword = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await axios.patch(
-        `http://localhost:3001/api/v1/user/change-password`,
-        changePData,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.patch(api.changePassword, changePData, {
+        withCredentials: true,
+      });
       const success = () => {
         messageApi.open({
           type: "success",

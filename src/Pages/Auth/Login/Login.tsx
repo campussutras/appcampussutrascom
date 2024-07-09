@@ -5,6 +5,7 @@ import { message } from "antd";
 import { useSetRecoilState } from "recoil";
 import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../../Utils/Api";
 const Login = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
@@ -20,13 +21,9 @@ const Login = () => {
     e.preventDefault();
     try {
       setLoading(true);
-      const response = await axios.post(
-        `http://localhost:3001/api/v1/user/login`,
-        loginData,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.post(api.login, loginData, {
+        withCredentials: true,
+      });
       const success = () => {
         messageApi.open({
           type: "success",

@@ -17,6 +17,7 @@ import { useRecoilValue, useSetRecoilState } from "recoil";
 import { isLoginAtom, userAtom } from "./store/atoms/userAtom";
 import MyAssessments from "./Pages/MyAssessments/MyAssessments";
 import Assessment from "./Pages/Assessment/Assessment";
+import { api } from "./Utils/Api";
 
 const App = () => {
   const setUser = useSetRecoilState(userAtom);
@@ -24,12 +25,9 @@ const App = () => {
   const isLogin = useRecoilValue(isLoginAtom);
   const getUser = async () => {
     try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/profile`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get(api.profile, {
+        withCredentials: true,
+      });
       if (response) {
         setUser(response.data.data);
         setAuth(true);

@@ -1,6 +1,6 @@
 import "./style.css";
 import { useEffect, useState } from "react";
-
+import { api } from "../../Utils/Api";
 import axios from "axios";
 import { PiArrowRight } from "react-icons/pi";
 
@@ -11,9 +11,7 @@ const AssessmentsData = () => {
     const getAssessments = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(
-          "http://localhost:3001/api/v1/assessment/get-assessments"
-        );
+        const response = await axios.get(api.getAssessments);
         // console.log(response.data.data);
 
         setAssess(response.data.data);

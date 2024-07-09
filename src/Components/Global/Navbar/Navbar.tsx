@@ -18,7 +18,7 @@ const Navbar = () => {
         }`}
       >
         <div className="navLogo">
-          <a href="/">
+          <a href="http://localhost:3000">
             <img src={logo} alt="Campus Sutras Logo" />
           </a>
         </div>

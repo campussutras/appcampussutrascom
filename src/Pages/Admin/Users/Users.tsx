@@ -1,6 +1,6 @@
 import "./style.css";
 import { useEffect, useState } from "react";
-
+import { api } from "../../../Utils/Api";
 import axios from "axios";
 import { RiArrowDownLine } from "react-icons/ri";
 
@@ -9,9 +9,7 @@ const Users = () => {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:3001/api/v1/user/get-users"
-        );
+        const response = await axios.get(api.users);
         // console.log(response.data.data);
 
         setUsers(response.data.data);

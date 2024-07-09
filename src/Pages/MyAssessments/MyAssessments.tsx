@@ -2,19 +2,16 @@ import { RiArrowGoBackLine } from "react-icons/ri";
 import "./style.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
-
+import { api } from "../../Utils/Api";
 const MyAssessments = () => {
   const [assessments, setAssessments] = useState([]);
 
   useEffect(() => {
     const getAssessments = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3001/api/v1/assessment/my-assessments`,
-          {
-            withCredentials: true,
-          }
-        );
+        const response = await axios.get(api.myAssessment, {
+          withCredentials: true,
+        });
         setAssessments(response.data.data);
       } catch (error) {
         console.log(error);
