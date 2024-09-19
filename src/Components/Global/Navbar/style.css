@@ -26,4 +26,5 @@ nav > .navContainer > .mainMenu > a {
   background-color: var(--mainBlue);
   padding: 0.5rem;
   color: white;
+  border-radius: 0.3rem;
 }

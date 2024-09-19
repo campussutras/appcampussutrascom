@@ -77,13 +77,14 @@ const Assessment = () => {
         console.error("Assessment with slug", assessmentName, "not found.");
         return; // Or throw an error if desired behavior is to interrupt execution
       }
+      console.log(result);
 
       const res = await axios.post(
         api.saveAssessment,
         {
           name: assessment.title, // Use 'name' for the property in the body
           duration: "10 Minutes",
-          score: result,
+          score: result.toString(),
           format: "MCQ",
         },
         {

@@ -24,9 +24,6 @@ const Navbar = () => {
         </div>
         <div className="mainMenu flex alignCenter gap2">
           <ul className="flex gap2">
-            <li>
-              <a href="/">Courses</a>
-            </li>
             {!isLogin ? (
               <li>
                 <a href="/login">Login</a>
@@ -41,7 +38,10 @@ const Navbar = () => {
               <a href="/assessments">Assessments</a>
             </li>
             <li>
-              <a href="/">Events</a>
+              <a href="https://localhost:3000/events">Events</a>
+            </li>
+            <li>
+              <a href="/https://localhost:3000/about">About</a>
             </li>
           </ul>
           <a href="/">

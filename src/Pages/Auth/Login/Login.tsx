@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import axios from "axios";
 import { message } from "antd";
@@ -97,7 +97,7 @@ const Login = () => {
               </button>
             </form>
             <p className="marginBottom1">
-              Don't have account - <a href="">Sign Up</a>
+              Don't have account - <a href="/signup">Sign Up</a>
             </p>
             <p>
               Forget Password - <a href="">Forget Password</a>
