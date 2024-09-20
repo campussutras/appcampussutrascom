@@ -10,14 +10,14 @@ const Footer = () => {
             <h3>Pages</h3>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <a href="http://localhost:3000">Home</a>
               </li>
 
               <li>
-                <a href="/">About</a>
+                <a href="http://localhost:3000/about">About</a>
               </li>
               <li>
-                <a href="/">Events</a>
+                <a href="http://localhost:3000/events">Events</a>
               </li>
               <li>
                 <a href="/">Blogs</a>
@@ -30,13 +30,13 @@ const Footer = () => {
             </h3>
             <ul>
               <li>
-                <a href="/">Login</a>
+                <a href="/login">Login</a>
               </li>
               <li>
-                <a href="/">Signup</a>
+                <a href="/signup">Signup</a>
               </li>
               <li>
-                <a href="/">Assessments </a>
+                <a href="/assessments">Assessments </a>
               </li>
             </ul>
           </div>
@@ -46,16 +46,18 @@ const Footer = () => {
             </h3>
             <ul>
               <li>
-                <a href="/">Linkedin </a>
+                <a href="https://www.linkedin.com/company/campussutras/">
+                  Linkedin{" "}
+                </a>
               </li>
               <li>
-                <a href="/">Facebook </a>
+                <a href="https://facebook.com/campussutras">Facebook </a>
               </li>
               <li>
-                <a href="/">Instagram </a>
+                <a href="https://instagram.com/campussutras">Instagram </a>
               </li>
               <li>
-                <a href="/">X {`(Twitter)`} </a>
+                <a href="https://twitter.com/campussutras">X {`(Twitter)`} </a>
               </li>
             </ul>
           </div>
@@ -72,10 +74,10 @@ const Footer = () => {
       </div>
       <div className="footerLegal width95 maxWidth flex alignCenter spaceBtw">
         <div className="footerLContainer flex width31 spaceBtw">
-          <a href="/">
+          <a href="http://localhost:3000/privacy-and-policy">
             Privacy Policy <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
-          <a href="/">
+          <a href="http://localhost:3000/terms-and-conditions">
             Terms & Conditions{" "}
             <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
