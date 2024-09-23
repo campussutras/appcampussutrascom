@@ -659,3 +659,47 @@ textarea {
 .font600 {
   font-weight: 600;
 }
+
+/* not found css */
+
+.notFound {
+  padding: 3rem 0;
+}
+
+.notFound > h1 {
+  font-size: 5rem;
+  margin: 0 0 1rem 0;
+  color: #dc2626;
+}
+
+.notFound > h1 > span {
+  color: var(--grey);
+}
+
+.notFound > h2 {
+  color: var(--black);
+  font-size: 2rem;
+  /* font-weight: 700; */
+  margin: 0 0 1rem 0;
+}
+
+.notFound > h3 {
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+}
+
+.notFound > a {
+  background-color: var(--mainBlue);
+  padding: 1rem;
+  border-radius: 0.3rem;
+  color: white;
+  display: inline-block;
+  border: 1px solid var(--mainBlue);
+}
+
+.notFound > a:hover {
+  border: 1px solid var(--mainBlue);
+  background-color: transparent;
+  color: var(--mainBlue);
+  transition: 0.3s all ease-in-out;
+}

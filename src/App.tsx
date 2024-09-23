@@ -18,6 +18,7 @@ import { isLoginAtom, userAtom } from "./store/atoms/userAtom";
 import MyAssessments from "./Pages/MyAssessments/MyAssessments";
 import Assessment from "./Pages/Assessment/Assessment";
 import { api } from "./Utils/Api";
+import NotFound from "./Pages/NotFound";
 
 const App = () => {
   const setUser = useSetRecoilState(userAtom);
@@ -58,7 +59,7 @@ const App = () => {
           <Route path="/profile" element={<Profile />} />
           <Route path="/my-assessments" element={<MyAssessments />} />
           <Route path="/assessments-data" element={<AssessmentsData />} />
-
+          <Route path="*" element={<NotFound />} />
           {/* admin routes */}
           <Route path="/user-assessments/:id" element={<GetAssessments />} />
           <Route path="/users" element={<Users />} />
