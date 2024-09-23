@@ -72,7 +72,7 @@ const Signup = () => {
               <h3>Occupation</h3>
               <div className="profileType flex marginBottom1 gap1">
                 <div
-                  className={`profile ${
+                  className={`profile width50 flex alignCenter justifyCenter ${
                     signupData.profileType === "Student"
                       ? "profileSelected"
                       : null
@@ -84,7 +84,7 @@ const Signup = () => {
                   <h4>Student</h4>
                 </div>
                 <div
-                  className={`profile ${
+                  className={`profile width50 flex alignCenter justifyCenter ${
                     signupData.profileType === "Employee"
                       ? "profileSelected"
                       : null
