@@ -42,10 +42,12 @@ const Signup = () => {
         <div className="signupRight width100 flex flexColumn alignCenter justifyCenter">
           <div className="signupForm width40">
             <div className="signupFormHead">
-              <h2>Sign Up to Campus Sutras</h2>
+              <h1>Sign Up</h1>
             </div>
             <form onSubmit={handleSubmit}>
-              <h3>Full Name</h3>
+              <h3>
+                Full Name<span>*</span>
+              </h3>
               <input
                 placeholder="ex. Harshit Kumar"
                 type="text"
@@ -53,7 +55,9 @@ const Signup = () => {
                 onChange={handleChange}
                 value={signupData.name}
               />
-              <h3>Email</h3>
+              <h3>
+                Email<span>*</span>
+              </h3>
               <input
                 placeholder="ex. example@email.com"
                 type="email"
@@ -61,7 +65,9 @@ const Signup = () => {
                 onChange={handleChange}
                 value={signupData.email}
               />
-              <h3>Phone</h3>
+              <h3>
+                Phone<span>*</span>
+              </h3>
               <input
                 placeholder="ex. 9876543210"
                 type="tel"
@@ -69,7 +75,9 @@ const Signup = () => {
                 onChange={handleChange}
                 value={signupData.phone}
               />
-              <h3>Occupation</h3>
+              <h3>
+                Occupation<span>*</span>
+              </h3>
               <div className="profileType flex marginBottom1 gap1">
                 <div
                   className={`profile width50 flex alignCenter justifyCenter ${
@@ -98,7 +106,9 @@ const Signup = () => {
               </div>
               {signupData.profileType === "Employee" && (
                 <>
-                  <h3>Company</h3>
+                  <h3>
+                    Company<span>*</span>
+                  </h3>
                   <input
                     placeholder="ex. Campus Sutras Private Limited"
                     type="text"
@@ -106,7 +116,9 @@ const Signup = () => {
                     onChange={handleChange}
                     value={signupData.company}
                   />
-                  <h3>Position</h3>
+                  <h3>
+                    Position<span>*</span>
+                  </h3>
                   <input
                     placeholder="ex. Sales Manager"
                     type="text"
@@ -118,7 +130,9 @@ const Signup = () => {
               )}
               {signupData.profileType === "Student" && (
                 <>
-                  <h3>Institute</h3>
+                  <h3>
+                    Institute<span>*</span>
+                  </h3>
                   <input
                     placeholder="Institute Name"
                     type="text"
@@ -128,7 +142,9 @@ const Signup = () => {
                   />
                 </>
               )}
-              <h3>Password</h3>
+              <h3>
+                Password<span>*</span>
+              </h3>
               <input
                 placeholder="********"
                 type="password"
@@ -136,14 +152,16 @@ const Signup = () => {
                 onChange={handleChange}
                 value={signupData.password}
               />
-              <h3>Confirm Password</h3>
+              <h3>
+                Confirm Password<span>*</span>
+              </h3>
               <input placeholder="********" type="password" name="cPassword" />
               <button type="submit" style={{ display: "block" }}>
                 {loading ? "Sign Up..." : "Sign Up"}
               </button>
             </form>
             <p className="marginBottom1">
-              Already have account - <a href="">Login</a>
+              Already have account - <a href="/login">Login</a>
             </p>
             <p>
               Forget Password - <a href="">Forget Password</a>

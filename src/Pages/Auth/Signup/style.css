@@ -12,11 +12,9 @@
   margin: 0 0 1.5rem 0;
 }
 
-.signup > .signupContainer > .signupRight > .signupForm > .signupFormHead > h2 {
+.signup > .signupContainer > .signupRight > .signupForm > .signupFormHead > h1 {
   font-size: var(--h2);
-
-  color: var(--black);
-  font-weight: 500;
+  color: var(--textColor3);
   text-align: center;
 }
 
@@ -30,8 +28,12 @@
   margin: 0 0 1rem 0;
 }
 
+.signup > .signupContainer > .signupRight > .signupForm > p {
+  color: var(--textColor3);
+}
+
 .signup > .signupContainer > .signupRight > .signupForm > p > a {
-  color: var(--mainBlue);
+  color: var(--textColor2);
   text-decoration: underline;
 }
 
@@ -40,6 +42,10 @@
   margin: 0 0 0.5rem 0;
   color: var(--textColor3);
   font-weight: 600;
+}
+
+.signup > .signupContainer > .signupRight > .signupForm > form > h3 > span {
+  color: #dc2626;
 }
 
 .signup > .signupContainer > .signupRight > .signupForm > form > input {

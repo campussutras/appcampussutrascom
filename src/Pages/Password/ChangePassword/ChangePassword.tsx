@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./style.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -61,10 +61,12 @@ const ChangePassword = () => {
         <div className="changePContainer width95 maxWidth flex alignCenter justifyCenter flexColumn">
           <div className="changePForm width40">
             <div className="changePFormHead">
-              <h2>Change Password</h2>
+              <h1>Change Password</h1>
             </div>
             <form onSubmit={handleSubmit}>
-              <h3>Current Password</h3>
+              <h3>
+                Current Password<span>*</span>
+              </h3>
               <input
                 placeholder="********"
                 type="password"
@@ -73,7 +75,9 @@ const ChangePassword = () => {
                 value={changePData.oldPassword}
                 required
               />
-              <h3>New Password</h3>
+              <h3>
+                New Password<span>*</span>
+              </h3>
               <input
                 placeholder="********"
                 type="password"
@@ -82,7 +86,9 @@ const ChangePassword = () => {
                 value={changePData.newPassword}
                 required
               />
-              <h3>Confirm New Password</h3>
+              <h3>
+                Confirm New Password<span>*</span>
+              </h3>
               <input placeholder="********" type="password" required />
               <button type="submit">
                 {loading ? "Changing..." : "Change Password"}

@@ -70,7 +70,7 @@ const Login = () => {
         <div className="loginRight width100 flex flexColumn alignCenter justifyCenter">
           <div className="loginForm width40">
             <div className="loginFormHead">
-              <h2>Login to Campus Sutras</h2>
+              <h1>Login</h1>
             </div>
             <form onSubmit={handleSubmit}>
               <h3>Email</h3>

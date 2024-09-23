@@ -4,6 +4,7 @@
 .myProfile > .myProfileContainer {
   padding: 1rem;
   background-color: var(--bgGrey);
+  border-radius: 0.3rem;
 }
 
 .myProfile > .myProfileContainer > h1 {
@@ -63,6 +64,7 @@
   width: 12rem;
   cursor: pointer;
   text-align: center;
+  border-radius: 0.3rem;
 }
 
 .myProfile > .myProfileContainer > .myProfileButtons > .myProfileUpdate {
@@ -74,6 +76,7 @@
   width: 12rem;
   cursor: pointer;
   text-align: center;
+  border-radius: 0.3rem;
 }
 
 .myProfile
@@ -88,4 +91,5 @@
   font-size: 1rem;
   display: inline-block;
   text-align: center;
+  border-radius: 0.3rem;
 }

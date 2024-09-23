@@ -3,6 +3,7 @@
   /* border: 1px solid var(--borderColor); */
   background-color: var(--mainBlueBg);
   margin: 1rem 0;
+  border-radius: 0.3rem;
 }
 
 .changePassword > .changePContainer > .changePForm > .changePFormHead {
@@ -11,16 +12,17 @@
   margin: 0 0 1.5rem 0;
 }
 
-.changePassword > .changePContainer > .changePForm > .changePFormHead > h2 {
+.changePassword > .changePContainer > .changePForm > .changePFormHead > h1 {
   font-size: var(--h2);
-  color: var(--black);
-  font-weight: 500;
+  color: var(--textColor2);
+  /* font-weight: 500; */
   text-align: center;
 }
 
 .changePassword > .changePContainer > .changePForm {
   background-color: white;
   padding: 1rem 2rem;
+  border-radius: 0.3rem;
 }
 
 .changePassword > .changePContainer > .changePForm > form {
@@ -35,8 +37,12 @@
 .changePassword > .changePContainer > .changePForm > form > h3 {
   font-size: 1.2rem;
   margin: 0 0 0.5rem 0;
-  color: var(--black);
-  font-weight: 500;
+  color: var(--textColor3);
+  /* font-weight: 500; */
+}
+
+.changePassword > .changePContainer > .changePForm > form > h3 > span {
+  color: #dc2626;
 }
 
 .changePassword > .changePContainer > .changePForm > form > input {
@@ -45,6 +51,7 @@
   outline: none;
   width: 100%;
   margin: 0 0 1rem 0;
+  border-radius: 0.3rem;
 }
 
 .changePassword > .changePContainer > .changePForm > form > input:focus {
@@ -61,4 +68,5 @@
   border: none;
   color: white;
   cursor: pointer;
+  border-radius: 0.3rem;
 }
