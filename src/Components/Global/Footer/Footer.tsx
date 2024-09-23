@@ -20,7 +20,7 @@ const Footer = () => {
                 <a href="http://localhost:3000/events">Events</a>
               </li>
               <li>
-                <a href="/">Blogs</a>
+                <a href="http://localhost:3000/contact">Contact</a>
               </li>
             </ul>
           </div>
