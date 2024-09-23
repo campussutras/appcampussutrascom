@@ -73,13 +73,16 @@ const Footer = () => {
         </div>
       </div>
       <div className="footerLegal width95 maxWidth flex alignCenter spaceBtw">
-        <div className="footerLContainer flex width31 spaceBtw">
+        <div className="footerLContainer flex width45 spaceBtw">
           <a href="http://localhost:3000/privacy-and-policy">
             Privacy Policy <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
           <a href="http://localhost:3000/terms-and-conditions">
             Terms & Conditions{" "}
             <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
+          </a>
+          <a href="http://localhost:3000/cookie-policy">
+            Cookie Policy <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
         </div>
         <div className="footerLEmail">
