@@ -38,10 +38,10 @@ const Navbar = () => {
               <a href="/assessments">Assessments</a>
             </li>
             <li>
-              <a href="https://localhost:3000/events">Events</a>
+              <a href="http://localhost:3000/events">Events</a>
             </li>
             <li>
-              <a href="/https://localhost:3000/about">About</a>
+              <a href="http://localhost:3000/about">About</a>
             </li>
           </ul>
           <a href="/">
