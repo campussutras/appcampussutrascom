@@ -6,7 +6,7 @@ footer > .footer {
 
 footer > .footer > .footerLeft > .footerTab > h3 {
   margin: 0 0 1rem 0;
-  color: var(--black);
+  color: var(--textColor3);
 }
 footer > .footer > .footerLeft > .footerTab > ul {
   list-style: none;
@@ -16,6 +16,11 @@ footer > .footer > .footerLeft > .footerTab > ul > li {
 }
 
 footer > .footer > .footerLeft > .footerTab > ul > li > a {
+  transition: 0.2s all ease-in-out;
+  color: var(--textColor3);
+}
+
+footer > .footer > .footerLeft > .footerTab > ul > li > a:hover {
   color: var(--black);
 }
 
@@ -36,10 +41,20 @@ footer > .footerLegal > .footerLContainer {
 }
 
 footer > .footerLegal > .footerLContainer > a {
+  color: var(--textColor3);
+  transition: 0.2s all ease-in-out;
+}
+
+footer > .footerLegal > .footerLContainer > a:hover {
   color: var(--black);
 }
 
 footer > .footerLegal > .footerLEmail > a {
+  color: var(--textColor3);
+  transition: 0.2s all ease-in-out;
+}
+
+footer > .footerLegal > .footerLEmail > a:hover {
   color: var(--black);
 }
 
@@ -47,4 +62,5 @@ footer > .footerLegal > .footerLEmail > a {
 
 footer > .footerCopyright {
   padding: 2rem 0;
+  color: var(--textColor3);
 }

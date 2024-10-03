@@ -1,40 +1,23 @@
-.row {
-  display: grid;
-  grid-template-columns: 1fr 2fr 3fr 1fr 1fr;
-  grid-template-rows: 100px;
-  gap: 10px;
+/* table loading */
+.tableLoading {
+  height: 50vh;
+  text-align: center;
+  width: 100% !important;
 }
 
-.skeleton {
-  background: #e1e1e1;
-  border-radius: 4px;
-  height: 50px;
-  position: relative;
-  overflow: hidden;
+.spinner {
+  width: 11.2px;
+  height: 11.2px;
+  animation: spinner-z355kx 1s infinite linear;
+  border-radius: 11.2px;
+  box-shadow: 28px 0px 0 0 #002255, 17.4px 21.8px 0 0 #002255,
+    -6.2px 27.2px 0 0 #002255, -25.2px 12px 0 0 #002255,
+    -25.2px -12px 0 0 #002255, -6.2px -27.2px 0 0 #002255,
+    17.4px -21.8px 0 0 #002255;
 }
 
-.skeleton::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: -150px;
-  top: 0;
-  height: 100%;
-  width: 150px;
-  background: linear-gradient(
-    to right,
-    transparent 0%,
-    #e8e8e8 50%,
-    transparent 100%
-  );
-  animation: load 1s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-}
-
-@keyframes load {
-  from {
-    left: -150px;
-  }
+@keyframes spinner-z355kx {
   to {
-    left: 100%;
+    transform: rotate(360deg);
   }
 }

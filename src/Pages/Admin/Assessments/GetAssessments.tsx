@@ -4,10 +4,18 @@ import { useEffect, useState } from "react";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import { api } from "../../../Utils/Api";
 import { useParams } from "react-router-dom";
+import TableLoading from "../../../Components/Local/Loading/TableLoading/TableLoading";
 const GetAssessments = () => {
+  interface Assessment {
+    name: string;
+    duration: string; // Or string depending on format
+    score: string;
+    format: string;
+    createdAt: string;
+  }
   const { id } = useParams();
 
-  const [assessments, setAssessments] = useState([]);
+  const [assessments, setAssessments] = useState<Assessment[]>([]);
   useEffect(() => {
     const getAssessments = async () => {
       try {
@@ -21,15 +29,6 @@ const GetAssessments = () => {
   }, []);
   return (
     <section className="usersAssessment width100 flex alignCenter justifyCenter flexColumn">
-      {/* <div className="usersAssessContainer width95 maxWidth">
-        {assessments.map((assess, index) => {
-          return (
-            <>
-              <h1>{assess.name}</h1>
-            </>
-          );
-        })}
-      </div> */}
       <div className="usersAssessContainer width95 maxWidth">
         <div className="usersAssessBread marginBottom1">
           <a href="/assessments-data">
@@ -37,42 +36,45 @@ const GetAssessments = () => {
           </a>
         </div>
         <div className="userAssessInfo">
-          <table>
-            <thead>
-              <tr>
-                <th>S.No</th>
-                <th>Name</th>
-                <th>Duration</th>
-                <th>Time</th>
-                <th>Score</th>
-                <th>Rating</th>
-                <th>Format</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              {assessments.map((assess, index) => {
-                const rating =
-                  assess.score > 8
-                    ? "Good"
-                    : assess.score > 5
-                    ? "Average"
-                    : "Poor";
-                return (
-                  <tr>
-                    <td>{index + 1}</td>
-                    <td>{assess.name}</td>
-                    <td>{assess.duration}</td>
-                    <td>{assess.timeTaken}</td>
-                    <td>{assess.score}</td>
-                    <td>{rating}</td>
-                    <td>{assess.format}</td>
-                    <td>{assess.createdAt.split("T")[0]}</td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          {assessments.length > 0 ? (
+            <table>
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>Name</th>
+                  <th>Duration</th>
+                  <th>Score</th>
+                  <th>Rating</th>
+                  <th>Format</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {assessments.map((assess, index) => {
+                  const rating =
+                    parseInt(assess.score) > 8
+                      ? "Good"
+                      : parseInt(assess.score) > 5
+                      ? "Average"
+                      : "Poor";
+                  return (
+                    <tr>
+                      <td>{index + 1}</td>
+                      <td>{assess.name}</td>
+                      <td>{assess.duration}</td>
+                      <td>{assess.score}</td>
+                      <td>{rating}</td>{" "}
+                      {/* Assuming calculateRating function */}
+                      <td>{assess.format}</td>
+                      <td>{assess.createdAt.split("T")[0]}</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          ) : (
+            <TableLoading /> // Display loading component when no data
+          )}
         </div>
       </div>
     </section>
