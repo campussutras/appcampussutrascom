@@ -79,6 +79,10 @@
   border-radius: 0.3rem;
 }
 
+.myProfile > .myProfileContainer > .myProfileButtons > .myProfileUpdate > a {
+  color: white;
+}
+
 .myProfile
   > .myProfileContainer
   > .myProfileButtons

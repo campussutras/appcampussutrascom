@@ -151,7 +151,9 @@ const Profile = () => {
             </>
           ) : null}
 
-          <button className="myProfileUpdate">Update Profile</button>
+          <button className="myProfileUpdate">
+            <a href="/update">Update Profile</a>
+          </button>
           <a href="/change-password" className="myProfileChangePassword">
             Change Password
           </a>

@@ -14,7 +14,7 @@ const AssessmentsData = () => {
     format: string;
     createdAt: string;
     user: {
-      name: string;
+      name: string;  
       id: string;
     };
   }

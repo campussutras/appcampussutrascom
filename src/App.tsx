@@ -19,6 +19,7 @@ import MyAssessments from "./Pages/MyAssessments/MyAssessments";
 import Assessment from "./Pages/Assessment/Assessment";
 import { api } from "./Utils/Api";
 import NotFound from "./Pages/NotFound";
+import UpdateUser from "./Pages/Auth/UpdateUser/UpdateUser";
 
 const App = () => {
   const setUser = useSetRecoilState(userAtom);
@@ -65,6 +66,7 @@ const App = () => {
           <Route path="/users" element={<Users />} />
           <Route path="/user/:id" element={<User />} />
           <Route path="/assessment/:assessmentName" element={<Assessment />} />
+          <Route path="update" element={<UpdateUser />} />
         </Routes>
         <Footer />
       </BrowserRouter>
