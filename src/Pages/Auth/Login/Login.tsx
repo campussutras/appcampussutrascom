@@ -40,19 +40,46 @@ const Login = () => {
       });
       setLoading(false);
       navigate("/assessments");
-    } catch (e) {
-      const error = () => {
-        messageApi.open({
-          type: "error",
-          content: "Error | Try again after sometime.",
-        });
-      };
-      error();
+    } catch (error: any) {
+      console.log(error);
+
       setLoading(false);
       setLoginData({
         email: "",
         password: "",
       });
+      if (error.response) {
+        // Access and display specific error message from server response
+        const errorMessage = error.response.data.error || "Error logging in.";
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content: errorMessage,
+          });
+        };
+        errorContent();
+      } else if (error.request) {
+        // Handle network or request issues
+        console.error("Network error:", error.request);
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content:
+              "Network error. Please check your connection and try again.",
+          });
+        };
+        errorContent();
+      } else {
+        // Handle other errors (e.g., setting up the request)
+        console.error("Other error:", error.message);
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content: "An unexpected error occurred. Please try again later.",
+          });
+        };
+        errorContent();
+      }
     }
   };
 

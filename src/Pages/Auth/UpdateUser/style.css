@@ -45,7 +45,8 @@
   color: #dc2626;
 }
 
-.updateUser > .uPContainer > .uPForm > form > input {
+.updateUser > .uPContainer > .uPForm > form > input,
+textarea {
   padding: 0.5rem;
   border: 1px solid var(--borderColor);
   outline: none;
@@ -54,7 +55,8 @@
   border-radius: 0.3rem;
 }
 
-.updateUser > .uPContainer > .uPForm > form > input:focus {
+.updateUser > .uPContainer > .uPForm > form > input:focus,
+textarea:focus {
   border: 1px solid var(--mainBlue);
   transition: 0.3s all ease-in-out;
 }
@@ -69,4 +71,30 @@
   color: white;
   cursor: pointer;
   border-radius: 0.3rem;
+}
+
+/*  */
+
+.updateUser > .uPContainer > .uPForm > form > .profileType > .profile {
+  padding: 0.5rem;
+  border: 1px solid var(--mainBlue);
+  color: var(--black);
+  border-radius: 0.3rem;
+}
+
+.updateUser > .uPContainer > .uPForm > form > .profileType > .profileSelected {
+  background-color: var(--mainBlue);
+  color: white;
+  transition: 0.3s all ease-in-out;
+}
+
+.updateUser > .uPContainer > .uPForm > form > .profileType > .profile > h4 {
+  font-weight: 500;
+}
+
+.updateUser > .uPContainer > .uPForm > form > .profileType > .profile:hover {
+  background-color: var(--mainBlue);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
 }
