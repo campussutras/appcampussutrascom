@@ -41,8 +41,6 @@ const Login = () => {
       setLoading(false);
       navigate("/assessments");
     } catch (error: any) {
-      console.log(error);
-
       setLoading(false);
       setLoginData({
         email: "",
@@ -91,9 +89,9 @@ const Login = () => {
   };
 
   return (
-    <section className="login width100 flex alignCenter justifyCenter flexColumn">
+    <main className="login width100 flex alignCenter justifyCenter flexColumn">
       {contextHolder}
-      <div className="loginContainer width95 maxWidth flex">
+      <section className="loginContainer width95 maxWidth flex">
         <div className="loginRight width100 flex flexColumn alignCenter justifyCenter">
           <div className="loginForm width40">
             <div className="loginFormHead">
@@ -127,12 +125,12 @@ const Login = () => {
               Don't have account - <a href="/signup">Sign Up</a>
             </p>
             <p>
-              Forget Password - <a href="">Forget Password</a>
+              Forget Password - <a href="/forget-password">Forget Password</a>
             </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   );
 };
 

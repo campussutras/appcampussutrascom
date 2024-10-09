@@ -20,6 +20,7 @@ import Assessment from "./Pages/Assessment/Assessment";
 import { api } from "./Utils/Api";
 import NotFound from "./Pages/NotFound";
 import UpdateUser from "./Pages/Auth/UpdateUser/UpdateUser";
+import ResetPassword from "./Pages/Password/ResetPassword/ResetPassword";
 
 const App = () => {
   const setUser = useSetRecoilState(userAtom);
@@ -57,6 +58,7 @@ const App = () => {
           {/* user routes */}
           <Route path="/change-password" element={<ChangePassword />} />
           <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route path="/reset/:token" element={<ResetPassword />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/my-assessments" element={<MyAssessments />} />
           <Route path="/assessments-data" element={<AssessmentsData />} />

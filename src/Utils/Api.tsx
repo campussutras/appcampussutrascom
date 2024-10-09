@@ -12,4 +12,6 @@ export const api = {
   getUserAssessments: `${assessUrl}/user-assessments`,
   users: `${userUrl}/get-users`,
   user: `${userUrl}/get-user`,
+  forgetPassword: `${userUrl}/forget-password`,
+  update: `${userUrl}/update`,
 };

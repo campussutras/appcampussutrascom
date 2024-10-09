@@ -1,9 +1,14 @@
+import axios from "axios";
 import "./style.css";
 import React, { useState } from "react";
+import { api } from "../../../Utils/Api";
+import { message } from "antd";
+import { useSetRecoilState } from "recoil";
+import { userAtom } from "../../../store/atoms/userAtom";
 
-// import { message } from "antd";
 const UpdateUser = () => {
-  //   const [messageApi, contextHolder] = message.useMessage();
+  const [messageApi, contextHolder] = message.useMessage();
+  const setUser = useSetRecoilState(userAtom);
   const [updateUserData, setUpdateUserData] = useState({
     name: "",
     phone: "",
@@ -19,11 +24,99 @@ const UpdateUser = () => {
   });
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const constructUpdateData = (updateUserData: any) => {
+    const updatedFields: any = {};
+
+    for (const field in updateUserData) {
+      if (updateUserData[field] !== "") {
+        updatedFields[field] = updateUserData[field];
+      }
+    }
+
+    return updatedFields;
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     setLoading(true);
-    console.log(updateUserData);
+    try {
+      const updatedData = constructUpdateData(updateUserData);
+      const response = await axios.patch(api.update, updatedData, {
+        withCredentials: true,
+      });
+      const success = () => {
+        messageApi.open({
+          type: "success",
+          content: response.data.message,
+        });
+      };
+      success();
+      setUser(response.data.data);
+      console.log(updateUserData);
+
+      // setUpdateUserData({
+      //   name: "",
+      //   phone: "",
+      //   profileType: "",
+      //   institute: "",
+      //   company: "",
+      //   position: "",
+      //   localAddress: "",
+      //   city: "",
+      //   zip: "",
+      //   state: "",
+      //   country: "",
+      // });
+      setLoading(false);
+    } catch (error: any) {
+      // setUpdateUserData({
+      //   name: "",
+      //   phone: "",
+      //   profileType: "",
+      //   institute: "",
+      //   company: "",
+      //   position: "",
+      //   localAddress: "",
+      //   city: "",
+      //   zip: "",
+      //   state: "",
+      //   country: "",
+      // });
+      if (error.response) {
+        // Access and display specific error message from server response
+        const errorMessage =
+          error.response.data.error || "Error updating user.";
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content: errorMessage,
+          });
+        };
+        errorContent();
+      } else if (error.request) {
+        // Handle network or request issues
+        console.error("Network error:", error.request);
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content:
+              "Network error. Please check your connection and try again.",
+          });
+        };
+        errorContent();
+      } else {
+        // Handle other errors (e.g., setting up the request)
+        console.error("Other error:", error.message);
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content: "An unexpected error occurred. Please try again later.",
+          });
+        };
+        errorContent();
+      }
+    }
     setUpdateUserData({
       name: "",
       phone: "",
@@ -50,7 +143,7 @@ const UpdateUser = () => {
   return (
     <>
       <main className="updateUser width100 flex alignCenter justifyCenter flexColumn">
-        {/* {contextHolder} */}
+        {contextHolder}
         <div className="uPContainer width95 maxWidth flex alignCenter justifyCenter flexColumn">
           <div className="uPForm width40">
             <div className="uPFormHead">
