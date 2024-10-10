@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import "./style.css";
+import { api } from "../../../Utils/Api";
+import axios from "axios";
+import { message } from "antd";
+import { useNavigate } from "react-router-dom";
+import { useSetRecoilState } from "recoil";
+import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
 const Signup = () => {
+  const [messageApi, contextHolder] = message.useMessage();
+  const navigate = useNavigate();
+  const setUser = useSetRecoilState(userAtom);
+  const setLogin = useSetRecoilState(isLoginAtom);
   const [loading, setLoading] = useState(false);
   const [signupData, setSignupData] = useState({
     name: "",
@@ -13,21 +23,60 @@ const Signup = () => {
     position: "",
   });
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    console.log(signupData);
-    setSignupData({
-      name: "",
-      email: "",
-      phone: "",
-      password: "",
-      profileType: "",
-      institute: "",
-      company: "",
-      position: "",
-    });
-    setLoading(false);
+    try {
+      const response = await axios.post(api.signup, signupData, {
+        withCredentials: true,
+      });
+      const success = () => {
+        messageApi.open({
+          type: "success",
+          content: response.data.message,
+        });
+      };
+      success();
+      setUser(response.data.data);
+      setLogin(true);
+      setLoading(false);
+      navigate("/assessments");
+    } catch (error: any) {
+      setLoading(false);
+      if (error.response) {
+        // Access and display specific error message from server response
+        const errorMessage =
+          error.response.data.error || "Error registering user.";
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content: errorMessage,
+          });
+        };
+        errorContent();
+      } else if (error.request) {
+        // Handle network or request issues
+        console.error("Network error:", error.request);
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content:
+              "Network error. Please check your connection and try again.",
+          });
+        };
+        errorContent();
+      } else {
+        // Handle other errors (e.g., setting up the request)
+        console.error("Other error:", error.message);
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content: "An unexpected error occurred. Please try again later.",
+          });
+        };
+        errorContent();
+      }
+    }
   };
 
   const handleChange = (
@@ -38,6 +87,7 @@ const Signup = () => {
   };
   return (
     <section className="signup width100 flex alignCenter justifyCenter flexColumn">
+      {contextHolder}
       <div className="signupContainer width95 maxWidth flex">
         <div className="signupRight width100 flex flexColumn alignCenter justifyCenter">
           <div className="signupForm width40">

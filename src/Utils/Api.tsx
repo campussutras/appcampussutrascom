@@ -1,6 +1,7 @@
 const userUrl = `${import.meta.env.VITE_BACKEND_URL}/api/v1/user`;
 const assessUrl = `${import.meta.env.VITE_BACKEND_URL}/api/v1/assessment`;
 export const api = {
+  signup: `${userUrl}/signup`,
   login: `${userUrl}/login`,
   logout: `${userUrl}/logout`,
   profile: `${userUrl}/profile`,
@@ -14,4 +15,5 @@ export const api = {
   user: `${userUrl}/get-user`,
   forgetPassword: `${userUrl}/forget-password`,
   update: `${userUrl}/update`,
+  resetPassword: `${userUrl}/forget-change-password`,
 };

@@ -31,7 +31,6 @@ const Login = () => {
         });
       };
       success();
-      console.log(response);
       setUser(response.data.data);
       setLogin(true);
       setLoginData({

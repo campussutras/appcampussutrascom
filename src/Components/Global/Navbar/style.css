@@ -20,6 +20,7 @@ nav > .navContainer > .mainMenu > ul {
 
 nav > .navContainer > .mainMenu > ul > li > a {
   color: var(--mainBlue);
+  font-weight: 600;
 }
 
 nav > .navContainer > .mainMenu > a {
