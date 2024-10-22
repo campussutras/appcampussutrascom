@@ -10,6 +10,7 @@
   width: 5rem;
   text-align: center;
   cursor: pointer;
+  border-radius: 0.3rem;
 }
 
 .instructions > .instContainer {
@@ -17,6 +18,7 @@
   height: 60vh;
   overflow-y: scroll;
   padding: 1rem;
+  border-radius: 0.3rem;
 }
 
 .instructions > .instContainer > h2 {
@@ -46,6 +48,7 @@
   border: 1px solid var(--mainBlue);
   font-size: 1rem;
   cursor: pointer;
+  border-radius: 0.3rem;
 }
 
 .instructions > .hideBtnBox {
@@ -63,9 +66,10 @@
 }
 
 .assessmentQuestions > .assessQuesContainer > .pageWarning {
-  border: 1px solid #ff5f15;
   padding: 1rem;
   margin: 0 0 1rem 0;
+  border-radius: 0.3rem;
+  background-color: rgba(220, 38, 38, 0.3);
 }
 
 /* .assessmentQuestions > .assessQuesContainer > .pageWarning > p {
@@ -83,16 +87,17 @@
 .assessmentQuestions > .assessQuesContainer > .questionBox h2 {
   font-size: var(--h3);
   font-weight: 500;
-  margin: 0 0 1rem 0;
+  margin: 0 0 0.5rem 0;
 }
 
 .assessmentQuestions > .assessQuesContainer > .questionBox {
   border: 1px solid var(--borderColor);
   padding: 1rem;
+  border-radius: 0.3rem;
 }
 
 .assessmentQuestions > .assessQuesContainer > .questionBox > input {
-  margin: 0 0 1rem 0;
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .assessmentQuestions > .assessQuesContainer > .question-navigation {
@@ -108,29 +113,36 @@
   width: 6rem;
   text-align: center;
   cursor: pointer;
+  border-radius: 0.3rem;
 }
 
 .border-red {
-  border: 1px solid red;
+  background-color: rgba(220, 38, 38, 0.3);
 }
 
 .border-yellow {
-  border: 1px solid orange;
+  background-color: rgba(251, 191, 36, 0.3);
 }
 
 .border-green {
-  border: 1px solid green;
+  background-color: rgba(22, 163, 74, 0.3);
+}
+
+.assessResult > .resultContainer {
+  padding: 1rem;
 }
 
 .assessResult > .resultContainer {
   height: 60vh;
   margin: 1rem 0;
+  border-radius: 0.3rem;
 }
 
 .assessResult > .resultContainer > h1 {
   font-size: var(--h1);
   font-weight: 500;
   margin: 0 0 1rem 0;
+  text-align: center;
 }
 
 .emoji-green {
@@ -184,4 +196,96 @@ progress[value]::-webkit-progress-value {
 
   border-radius: 2px;
   background-size: 35px 20px, 100% 100%, 100% 100%;
+}
+
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  .instructions > .instHeader {
+    justify-content: space-between;
+    margin: 0.5rem 0;
+  }
+  .instructions > .instHeader > a {
+    width: 50%;
+    padding: 1rem;
+  }
+  .instructions > .hideBtnBox {
+    margin: 0.5rem 0;
+  }
+  .instructions > .hideBtnBox > button {
+    width: 100%;
+    padding: 1rem;
+  }
+  .instructions > .instContainer > h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  .instructions > .instContainer > h3 {
+    font-size: 1.3rem;
+  }
+  .assessmentQuestions > .assessQuesContainer {
+    margin: 1rem 0 0.5rem 0;
+  }
+  .assessmentQuestions > .assessQuesContainer > h1 {
+    font-size: 1.8rem;
+    background-color: rgba(203, 213, 225, 0.7);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    margin: 0 0 0.5rem 0;
+    text-align: center;
+  }
+  .assessmentQuestions > .assessQuesContainer > .questionBox {
+    border: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+  }
+  .assessmentQuestions > .assessQuesContainer > .questionBox h2 {
+    font-size: 1.1rem;
+    background-color: rgba(0, 34, 85, 0.2);
+    border-radius: 0.3rem;
+    padding: 1rem;
+    margin: 0 0 1rem 0;
+  }
+  .assessmentQuestions > .assessQuesContainer > .questionBox > input {
+    margin: 0.5rem 0 0.5rem 0.5rem;
+  }
+  .assessmentQuestions > .assessQuesContainer > .pageWarning {
+    margin: 0 0 0.5rem 0;
+  }
+  .assessmentQuestions
+    > .assessQuesContainer
+    > .pageWarning
+    > .pWarningHeading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+    border-bottom: 1px solid white;
+    padding: 0 0 1rem 0;
+  }
+  .assessmentQuestions > .assessQuesContainer > .pageWarning > ul {
+    list-style: none;
+  }
+  .assessmentQuestions > .assessQuesContainer > .pageWarning > ul > li {
+    border-bottom: 1px solid white;
+    padding: 0 0 0.5rem 0;
+    text-align: justify;
+  }
+  .assessmentQuestions > .assessQuesContainer > .question-navigation {
+    margin: 0.5rem 0 0 0;
+  }
+  .assessmentQuestions > .assessQuesContainer > .question-navigation > button {
+    width: 50%;
+    padding: 1rem;
+  }
+  .assessResult > .resultContainer > h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 0 2rem 0;
+  }
+  .assessResult > .resultContainer {
+    height: auto;
+    padding: 5rem 0;
+  }
+  .border-red {
+    padding: 1rem;
+  }
 }

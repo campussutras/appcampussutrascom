@@ -128,3 +128,26 @@
   background-color: white !important;
   color: var(--mainBlue);
 }
+
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  .assessments > .assessHeader > .searchAssessBar {
+    flex-direction: column;
+  }
+  .assessments > .assessHeader > .searchAssessBar > .searchInput {
+    width: 100%;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .assessments > .assessHeader > .searchAssessBar > .searchCategory {
+    width: 100%;
+  }
+
+  .assessments > .assessContainer > .allAssessmentsList {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+  }
+  .assessments > .assessContainer > .allAssessmentsList > .assessmentCard {
+    width: 100%;
+  }
+}

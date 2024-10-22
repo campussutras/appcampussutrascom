@@ -25,6 +25,11 @@ const Assessment = () => {
     // function to show and hide the instruction
     setShowInstructions(false);
     setShowMcqs(true);
+    vibrate();
+  };
+
+  const vibrate = () => {
+    navigator.vibrate(100);
   };
 
   const handleOptionChange = (event: any, questionIndex: any) => {
@@ -64,6 +69,7 @@ const Assessment = () => {
     setShowResult(true);
     setShowMcqs(false);
     sendAssessData(newScore);
+    vibrate();
   };
 
   const sendAssessData = async (result: number) => {
@@ -98,6 +104,7 @@ const Assessment = () => {
   };
 
   const handleTimerCompletion = () => {
+    vibrate();
     calculateScore();
     setShowResult(true);
     setShowMcqs(false);
@@ -120,6 +127,7 @@ const Assessment = () => {
   }, [timeRemaining]);
 
   const nextQuestion = () => {
+    vibrate();
     if (
       currentAssessment &&
       currentQuestionIndex < currentAssessment.questions.length - 1
@@ -129,6 +137,7 @@ const Assessment = () => {
   };
 
   const prevQuestion = () => {
+    vibrate();
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
@@ -228,7 +237,9 @@ const Assessment = () => {
                 <div className="assessQuesContainer width95 maxWidth">
                   <h1>{currentAssessment.title}</h1>
                   <div className="pageWarning">
-                    <p className="marginBottom1">Instructions:</p>
+                    <p className="marginBottom1 pWarningHeading">
+                      Instructions:
+                    </p>
                     <ul>
                       <li>You have 10 minutes to complete the assessment.</li>
                       <li>
@@ -268,6 +279,7 @@ const Assessment = () => {
                           onChange={(event) =>
                             handleOptionChange(event, currentQuestionIndex)
                           }
+                          onClick={vibrate}
                         />{" "}
                         <span>{opt}</span>
                         <br />

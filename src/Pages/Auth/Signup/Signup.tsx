@@ -214,7 +214,7 @@ const Signup = () => {
               Already have account - <a href="/login">Login</a>
             </p>
             <p>
-              Forget Password - <a href="">Forget Password</a>
+              Forget Password - <a href="/forget-password">Forget Password</a>
             </p>
           </div>
         </div>

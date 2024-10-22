@@ -122,3 +122,13 @@
   cursor: pointer;
   border-radius: 0.3rem;
 }
+
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  .signup > .signupContainer {
+    padding: 0.1rem;
+  }
+  .signup > .signupContainer > .signupRight > .signupForm {
+    width: 100%;
+    padding: 1rem;
+  }
+}

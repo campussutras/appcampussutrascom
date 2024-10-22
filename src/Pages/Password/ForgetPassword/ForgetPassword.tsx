@@ -3,7 +3,9 @@ import "./style.css";
 import axios from "axios";
 import { message } from "antd";
 import { api } from "../../../Utils/Api";
+import { RiMailFill } from "react-icons/ri";
 const ForgetPassword = () => {
+  const [vLayout, setVLayout] = useState(false);
   const [messageApi, contextHolder] = message.useMessage();
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState({
@@ -25,9 +27,7 @@ const ForgetPassword = () => {
         });
       };
       success();
-      setEmail({
-        email: "",
-      });
+      setVLayout(true);
     } catch (error: any) {
       setLoading(false);
       setEmail({
@@ -83,39 +83,58 @@ const ForgetPassword = () => {
   };
   return (
     <>
-      <main className="fp flex alignCenter justifyCenter">
-        {contextHolder}
-        <section className="fpContainer width95 maxWidth flex">
-          <div className="fpRight width100 flex flexColumn alignCenter justifyCenter">
-            <div className="fpForm width40">
-              <div className="fpFormHead">
-                <h1>Forget Password</h1>
-              </div>
-              <form onSubmit={handleSubmit}>
-                <h3>Email</h3>
-                <input
-                  placeholder="ex. example@email.com"
-                  type="email"
-                  name="email"
-                  onChange={handleChange}
-                  value={email.email}
-                  required
-                />
+      {!vLayout ? (
+        <>
+          <main className="fp flex alignCenter justifyCenter">
+            {contextHolder}
+            <section className="fpContainer width95 maxWidth flex">
+              <div className="fpRight width100 flex flexColumn alignCenter justifyCenter">
+                <div className="fpForm width40">
+                  <div className="fpFormHead">
+                    <h1>Forget Password</h1>
+                  </div>
+                  <form onSubmit={handleSubmit}>
+                    <h3>Email</h3>
+                    <input
+                      placeholder="ex. example@email.com"
+                      type="email"
+                      name="email"
+                      onChange={handleChange}
+                      value={email.email}
+                      required
+                    />
 
-                <button type="submit" style={{ display: "block" }}>
-                  {loading ? "Sending Link..." : "Submit"}
-                </button>
-              </form>
-              <p className="marginBottom1">
-                Don't have account - <a href="/signup">Sign Up</a>
-              </p>
-              <p>
-                Already account - <a href="/login">Login</a>
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
+                    <button type="submit" style={{ display: "block" }}>
+                      {loading ? "Sending Link..." : "Submit"}
+                    </button>
+                  </form>
+                  <p className="marginBottom1">
+                    Don't have account - <a href="/signup">Sign Up</a>
+                  </p>
+                  <p>
+                    Already account - <a href="/login">Login</a>
+                  </p>
+                </div>
+              </div>
+            </section>
+          </main>
+        </>
+      ) : (
+        <>
+          <main className="fp flex alignCenter justifyCenter">
+            <section className="fpContainer width95 maxWidth flex alignCenter justifyCenter">
+              <div className="fpContainerChild flex alignCenter justifyCenter flexColumn">
+                <RiMailFill className="vLayoutIcon" />
+                <h2>Check your email</h2>
+                <p>
+                  We've sent instruction on how to reset your <br />
+                  password on your mail.
+                </p>
+              </div>
+            </section>
+          </main>
+        </>
+      )}
     </>
   );
 };

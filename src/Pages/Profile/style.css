@@ -40,7 +40,7 @@
   > .myProfileLeft
   > h3 {
   font-size: var(--h4);
-  /* font-weight: 500; */
+  font-weight: 600;
 }
 
 .myProfile
@@ -96,4 +96,44 @@
   display: inline-block;
   text-align: center;
   border-radius: 0.3rem;
+}
+
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  .myProfile > .myProfileContainer > h1 {
+    font-size: 1.7rem;
+  }
+  .myProfile
+    > .myProfileContainer
+    > .myProfileInfo
+    > .myProfileTab
+    > .myProfileLeft
+    > h3 {
+    font-size: 1rem;
+  }
+  .myProfile
+    > .myProfileContainer
+    > .myProfileInfo
+    > .myProfileTab
+    > .myProfileRight
+    > p {
+    font-size: 1rem;
+  }
+  .myProfile > .myProfileContainer > .myProfileButtons {
+    flex-direction: column;
+  }
+  .myProfile > .myProfileContainer > .myProfileButtons > .myProfileLogout {
+    width: 100%;
+    padding: 1rem;
+  }
+  .myProfile > .myProfileContainer > .myProfileButtons > .myProfileUpdate {
+    width: 100%;
+    padding: 1rem;
+  }
+  .myProfile
+    > .myProfileContainer
+    > .myProfileButtons
+    > .myProfileChangePassword {
+    width: 100%;
+    padding: 1rem;
+  }
 }

@@ -8,6 +8,7 @@ const Navbar = () => {
   const location = useLocation();
 
   const user = useRecoilValue(userAtom);
+
   const isLogin = useRecoilValue(isLoginAtom);
 
   return (
@@ -33,7 +34,11 @@ const Navbar = () => {
                 <a href="/profile">{user.name}</a>
               </li>
             )}
-
+            {/* {user && user.isAdmin ? (
+              <li>
+                <a href="/users">Users</a>
+              </li>
+            ) : null} */}
             <li>
               <a href="/assessments">Assessments</a>
             </li>

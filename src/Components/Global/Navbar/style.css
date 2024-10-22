@@ -20,7 +20,7 @@ nav > .navContainer > .mainMenu > ul {
 
 nav > .navContainer > .mainMenu > ul > li > a {
   color: var(--mainBlue);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 nav > .navContainer > .mainMenu > a {
@@ -28,4 +28,13 @@ nav > .navContainer > .mainMenu > a {
   padding: 0.5rem;
   color: white;
   border-radius: 0.3rem;
+}
+
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  nav {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
 }

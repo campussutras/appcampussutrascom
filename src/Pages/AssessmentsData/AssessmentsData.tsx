@@ -14,7 +14,7 @@ const AssessmentsData = () => {
     format: string;
     createdAt: string;
     user: {
-      name: string;  
+      name: string;
       id: string;
     };
   }
@@ -66,7 +66,7 @@ const AssessmentsData = () => {
                     <td>{assess.score}/10</td>
                     <td>{rating}</td> <td>{assess.createdAt.split("T")[0]}</td>
                     <td>{assess?.user.name}</td>
-                    <td>
+                    <td className="aProfileBtn">
                       <a href={`/user/${assess?.user.id}`}>
                         View{" "}
                         <PiArrowRight

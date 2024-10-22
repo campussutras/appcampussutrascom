@@ -140,7 +140,7 @@ textarea {
 /* -------widths------------------ */
 
 .maxWidth {
-  max-width: 1500px;
+  max-width: 1700px;
 }
 
 .width5 {
@@ -706,4 +706,16 @@ textarea {
   background-color: transparent;
   color: var(--mainBlue);
   transition: 0.3s all ease-in-out;
+}
+
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  .width95 {
+    width: 90%;
+  }
+  .notFound > h1 {
+    font-size: 3rem;
+  }
+  .notFound > h2 {
+    font-size: 1.5rem;
+  }
 }

@@ -28,6 +28,20 @@ td a {
   background-color: #f2f2f2;
 }
 
+.aProfileBtn {
+  background-color: rgba(0, 34, 85, 0.7);
+  text-align: center;
+  transition: 0.2s all ease-in-out;
+}
+
+.aProfileBtn:hover {
+  background-color: var(--mainBlue);
+}
+
+.aProfileBtn > a {
+  color: white;
+}
+
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
   .assessmentsData th,

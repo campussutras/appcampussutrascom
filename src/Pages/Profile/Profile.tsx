@@ -5,11 +5,27 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../../Utils/Api";
-
+export interface UserProfileInterface {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  profileType: string;
+  company?: string; // Make company optional using ?
+  position?: string; // Make position optional using ?
+  localAddress?: string; // Make localAddress optional using ?
+  city?: string; // Make city optional using ?
+  zip?: string; // Make zip optional using ?
+  state?: string; // Make state optional using ?
+  country?: string; // Make country optional using ?
+  isVerified: boolean;
+}
 const Profile = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [user, setUser] = useRecoilState(userAtom);
+  console.log(user);
+
   const setAuth = useSetRecoilState(isLoginAtom);
 
   const logout = async () => {

@@ -70,3 +70,35 @@
   border-radius: 0.3rem;
   margin: 0 0 1rem 0;
 }
+
+.fp > .fpContainer > .fpContainerChild {
+  background-color: white;
+  height: 20rem;
+  border-radius: 0.3rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.fp > .fpContainer > .fpContainerChild > .vLayoutIcon {
+  color: var(--mainBlue);
+  font-size: 3rem;
+  margin: 0 0 1rem 0;
+}
+
+.fp > .fpContainer > .fpContainerChild > h2 {
+  margin: 0 0 2rem 0;
+}
+
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  .fp > .fpContainer > .fpRight > .fpForm > .fpFormHead > h1 {
+    font-size: 1.7rem;
+  }
+  .fp > .fpContainer {
+    height: auto;
+    padding: 0.1rem;
+  }
+  .fp > .fpContainer > .fpRight > .fpForm {
+    width: 100%;
+    padding: 1rem;
+  }
+}

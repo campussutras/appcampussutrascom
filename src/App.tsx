@@ -21,6 +21,7 @@ import { api } from "./Utils/Api";
 import NotFound from "./Pages/NotFound";
 import UpdateUser from "./Pages/Auth/UpdateUser/UpdateUser";
 import ResetPassword from "./Pages/Password/ResetPassword/ResetPassword";
+import VerifyEmail from "./Pages/Auth/VerifyEmail/VerifyEmail";
 
 const App = () => {
   const setUser = useSetRecoilState(userAtom);
@@ -35,8 +36,9 @@ const App = () => {
         setUser(response.data.data);
         setAuth(true);
         console.log(isLogin);
+        console.log(isLogin);
       } else {
-        console.log("no login");
+        console.log("No login data found");
       }
     } catch (error) {
       console.log(error);
@@ -46,6 +48,7 @@ const App = () => {
   useEffect(() => {
     getUser();
   }, []);
+
   return (
     <>
       <BrowserRouter>
@@ -69,6 +72,7 @@ const App = () => {
           <Route path="/user/:id" element={<User />} />
           <Route path="/assessment/:assessmentName" element={<Assessment />} />
           <Route path="update" element={<UpdateUser />} />
+          <Route path="/verify/:token" element={<VerifyEmail />} />
         </Routes>
         <Footer />
       </BrowserRouter>

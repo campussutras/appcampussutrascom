@@ -10,7 +10,7 @@ import {
 const Footer = () => {
   return (
     <footer className="width100 flex alignCenter justifyCenter flexColumn">
-      <div className="footer width95 maxWidth flex alignStart spaceBtw">
+      <div className="footer width95 maxWidth flex alignStart spaceBtw ">
         <div className="footerLeft flex alignStart spaceBtw width31">
           <div className="footerTab">
             <h3>Pages</h3>

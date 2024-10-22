@@ -59,7 +59,7 @@ const User = () => {
               <p>
                 {user.assessments?.length
                   ? user.assessments.length
-                  : "No Assessment Given"}
+                  : "No Assessment"}
               </p>
             </div>
           </div>

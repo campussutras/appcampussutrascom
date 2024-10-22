@@ -16,6 +16,7 @@
   border: 1px solid #ddd;
   margin: 0 0 1rem 0;
   padding: 1rem;
+  border-radius: 0.3rem;
 }
 
 .allUsers > .allUsersContainer > .allUsersHead > .allUsersBtns > button {
@@ -25,17 +26,20 @@
   color: white;
   cursor: pointer;
   font-size: 1rem;
+  border-radius: 0.3rem;
 }
 
 .allUsers table {
   width: 100%;
   border-collapse: collapse;
+  /* border-radius: 0.3rem; */
 }
 
 .allUsers table,
 th,
 td {
   border: 1px solid #ddd;
+  /* border-radius: 0.3rem; */
 }
 
 .allUsers th,
@@ -46,6 +50,7 @@ td {
 
 .allUsers th {
   background-color: #f2f2f2;
+  /* border-radius: 0.3rem; */
 }
 
 /* Responsive adjustments */

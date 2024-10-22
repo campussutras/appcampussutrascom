@@ -54,3 +54,25 @@
   display: inline-block;
   margin: 1rem 0 0 0;
 }
+
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  .adminUser > .adminUContainer > h1 {
+    font-size: 1.7rem;
+  }
+  .adminUser
+    > .adminUContainer
+    > .adminUInfo
+    > .userInfoTab
+    > .userInfoLeft
+    > h3 {
+    font-size: 1rem;
+  }
+  .adminUser
+    > .adminUContainer
+    > .adminUInfo
+    > .userInfoTab
+    > .userInfoRight
+    > p {
+    font-size: 1rem;
+  }
+}

@@ -98,3 +98,16 @@ textarea:focus {
   cursor: pointer;
   transition: 0.3s all ease-in-out;
 }
+
+@media screen and (min-width: 200px) and (max-width: 480px) {
+  .updateUser > .uPContainer > .uPForm > .uPFormHead > h1 {
+    font-size: 1.7rem;
+  }
+  .updateUser > .uPContainer {
+    padding: 0.1rem;
+  }
+  .updateUser > .uPContainer > .uPForm {
+    width: 100%;
+    padding: 1rem;
+  }
+}
