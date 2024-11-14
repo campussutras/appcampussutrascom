@@ -4,6 +4,7 @@ import { api } from "../../../Utils/Api";
 import axios from "axios";
 import { RiArrowDownLine } from "react-icons/ri";
 import TableLoading from "../../../Components/Local/Loading/TableLoading/TableLoading";
+import { CSVLink } from "react-csv";
 
 interface User {
   id: string;
@@ -17,14 +18,17 @@ interface User {
 }
 
 const Users = () => {
+  const [loading, setLoading] = useState(false);
   const [users, setUsers] = useState<User[]>([]);
   useEffect(() => {
     const getUsers = async () => {
       try {
+        setLoading(true);
         const response = await axios.get(api.users);
         console.log(response.data.data);
 
         setUsers(response.data.data);
+        setLoading(false);
         // console.log(assess);
       } catch (error) {
         console.log(error);
@@ -34,6 +38,18 @@ const Users = () => {
     getUsers();
   }, []);
 
+  const fileName = "Campus-Sutras-Users";
+
+  const headers = [
+    { label: "Id", key: "id" },
+    { label: "Name", key: "name" },
+    { label: "Email", key: "email" },
+    { label: "Phone", key: "phone" },
+    { label: "Profile Type", key: "profileType" },
+    { label: "Verified", key: "isVerified" },
+    { label: "createdAt", key: "createdAt" },
+  ];
+
   return (
     <section className="allUsers width100 flex alignCenter justifyCenter flexColumn">
       <div className="allUsersContainer width95 maxWidth">
@@ -42,7 +58,16 @@ const Users = () => {
           <div className="allUsersBtns flex gap05">
             <button>Total {users?.length}</button>
             <button>
-              Excel <RiArrowDownLine style={{ marginBottom: "-0.16rem" }} />
+              <CSVLink
+                headers={headers}
+                data={users}
+                filename={fileName}
+                style={{ textDecoration: "none", color: "#fff" }}
+              >
+                {" "}
+                {loading ? "Loading csv..." : "Download Excel File"}
+                <RiArrowDownLine style={{ marginBottom: "-0.16rem" }} />
+              </CSVLink>
             </button>
           </div>
         </div>

@@ -34,15 +34,22 @@
 }
 
 .assessments > .assessContainer > .allAssessmentsList {
-  flex-wrap: wrap;
+  /* display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap; */
   height: 33rem;
+  /* gap: 1rem; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+  gap: 1rem;
 }
 
 .assessments > .assessContainer > .allAssessmentsList > .assessmentCard {
-  width: 32.7%;
+  flex-basis: 32.7%;
+  /* flex-grow: 1; */
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  margin: 0 0 1rem 0;
+  /* margin: 0 0 1rem 0; */
   background-color: var(--bgGrey);
   border-radius: 0.3rem;
 }
@@ -104,7 +111,7 @@
 }
 
 .assessments > .assessContainer > .pagination {
-  margin: 1rem 0 2rem 0;
+  margin: 2rem 0 2rem 0;
   gap: 0.2rem;
 }
 

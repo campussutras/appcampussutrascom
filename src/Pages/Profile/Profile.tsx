@@ -46,7 +46,10 @@ const Profile = () => {
   return (
     <section className="myProfile width100 flex alignCenter justifyCenter flexColumn">
       <div className="myProfileContainer maxWidth width95">
-        <h1>{user && user.name ? user.name : "Loading..."}</h1>
+        <h1>
+          {user && user.name ? user.name : "Loading..."}{" "}
+          {user.isAdmin ? <span>(Admin)</span> : ""}
+        </h1>
         <div className="myProfileInfo">
           <div className="myProfileTab flex alignStart justifyStart ">
             <div className="myProfileLeft">
@@ -173,6 +176,20 @@ const Profile = () => {
           <a href="/change-password" className="myProfileChangePassword">
             Change Password
           </a>
+          {user.isAdmin ? (
+            <>
+              <a className="myProfileChangePassword" href="/users">
+                All Users
+              </a>
+            </>
+          ) : null}
+          {user.isAdmin ? (
+            <>
+              <a className="myProfileChangePassword" href="/assessments-data">
+                All Assessments
+              </a>
+            </>
+          ) : null}
         </div>
       </div>
     </section>

@@ -78,7 +78,7 @@ const Assessments = () => {
         </div>
       </div>
       <div className="assessContainer width95 maxWidth flex alignCenter justifyCenter flexColumn">
-        <div className="allAssessmentsList width100 flex alignStart spaceBtw">
+        <div className="allAssessmentsList width100 flex alignStart justifyStart">
           {filteredCatalog
             .slice(
               currentPage * assessmentsPerPage - assessmentsPerPage,
@@ -137,7 +137,7 @@ const Assessments = () => {
           {pageNumbers.map((pageNumber, index) => (
             <button
               key={index}
-              onClick={() => handlePageChange(pageNumber)}
+              onClick={() => handlePageChange(pageNumber as number)}
               className={currentPage === pageNumber ? "active" : ""}
               disabled={pageNumber === "..."}
             >
