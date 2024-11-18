@@ -36,7 +36,6 @@ const App = () => {
         setUser(response.data.data);
         setAuth(true);
         console.log(isLogin);
-        console.log(isLogin);
       } else {
         console.log("No login data found");
       }

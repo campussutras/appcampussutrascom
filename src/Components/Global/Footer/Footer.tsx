@@ -7,7 +7,10 @@ import {
   AiFillLinkedin,
   AiFillTwitterSquare,
 } from "react-icons/ai";
+import { userAtom } from "../../../store/atoms/userAtom";
+import { useRecoilValue } from "recoil";
 const Footer = () => {
+  const user = useRecoilValue(userAtom);
   return (
     <footer className="width100 flex alignCenter justifyCenter flexColumn">
       <div className="footer width95 maxWidth flex alignStart spaceBtw ">
@@ -16,17 +19,17 @@ const Footer = () => {
             <h3>Pages</h3>
             <ul>
               <li>
-                <a href="http://localhost:3000">Home</a>
+                <a href={`${import.meta.env.VITE_COM_URL}`}>Home</a>
               </li>
 
               <li>
-                <a href="http://localhost:3000/about">About</a>
+                <a href={`${import.meta.env.VITE_COM_URL}/about`}>About</a>
               </li>
               <li>
-                <a href="http://localhost:3000/events">Events</a>
+                <a href={`${import.meta.env.VITE_COM_URL}/events`}>Events</a>
               </li>
               <li>
-                <a href="http://localhost:3000/contact">Contact</a>
+                <a href={`${import.meta.env.VITE_COM_URL}/contact`}>Contact</a>
               </li>
             </ul>
           </div>
@@ -35,18 +38,29 @@ const Footer = () => {
               Platform <FiArrowUpRight style={{ marginBottom: "-0.18rem" }} />
             </h3>
             <ul>
-              <li>
-                <a href="/login">Login</a>
-              </li>
-              <li>
-                <a href="/signup">Signup</a>
-              </li>
+              {user && user.name ? (
+                <>
+                  <li>
+                    <a href="/profile">Profile</a>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <a href="/login">Login</a>
+                  </li>
+                  <li>
+                    <a href="/signup">Signup</a>
+                  </li>
+                </>
+              )}
+
               <li>
                 <a href="/assessments">Assessments </a>
               </li>
-              <li>
+              {/* <li>
                 <a href="/hire-from-us">Hire From Us</a>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="footerTab">
@@ -93,14 +107,14 @@ const Footer = () => {
       </div>
       <div className="footerLegal width95 maxWidth flex alignCenter spaceBtw">
         <div className="footerLContainer flex width45 spaceBtw">
-          <a href="http://localhost:3000/privacy-and-policy">
+          <a href={`${import.meta.env.VITE_COM_URL}/privacy-and-policy`}>
             Privacy Policy <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
-          <a href="http://localhost:3000/terms-and-conditions">
+          <a href={`${import.meta.env.VITE_COM_URL}/terms-and-conditions`}>
             Terms & Conditions{" "}
             <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
-          <a href="http://localhost:3000/cookie-policy">
+          <a href={`${import.meta.env.VITE_COM_URL}/cookie-policy`}>
             Cookie Policy <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
         </div>

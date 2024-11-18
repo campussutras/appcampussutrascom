@@ -6,6 +6,7 @@ import { message } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
+import { Helmet } from "react-helmet";
 const Signup = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
@@ -88,6 +89,13 @@ const Signup = () => {
   return (
     <section className="signup width100 flex alignCenter justifyCenter flexColumn">
       {contextHolder}
+      <Helmet>
+        <title>Sign Up - Campus Sutras</title>
+        <meta
+          name="description"
+          content="Sign up for a Campus Sutras account to start your learning journey. Create your account today!"
+        />
+      </Helmet>
       <div className="signupContainer width95 maxWidth flex">
         <div className="signupRight width100 flex flexColumn alignCenter justifyCenter">
           <div className="signupForm width40">

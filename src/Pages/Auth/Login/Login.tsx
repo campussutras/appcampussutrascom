@@ -6,6 +6,7 @@ import { useSetRecoilState } from "recoil";
 import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../../Utils/Api";
+import { Helmet } from "react-helmet";
 const Login = () => {
   const [messageApi, contextHolder] = message.useMessage();
   const navigate = useNavigate();
@@ -90,6 +91,13 @@ const Login = () => {
   return (
     <main className="login width100 flex alignCenter justifyCenter flexColumn">
       {contextHolder}
+      <Helmet>
+        <title>Login - Campus Sutras</title>
+        <meta
+          name="description"
+          content="Login to your Campus Sutras account to access your personalized learning experience."
+        />
+      </Helmet>
       <section className="loginContainer width95 maxWidth flex">
         <div className="loginRight width100 flex flexColumn alignCenter justifyCenter">
           <div className="loginForm width40">

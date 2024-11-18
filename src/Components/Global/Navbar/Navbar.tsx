@@ -19,7 +19,7 @@ const Navbar = () => {
         }`}
       >
         <div className="navLogo">
-          <a href="http://localhost:3000">
+          <a href={`${import.meta.env.VITE_COM_URL}`}>
             <img src={logo} alt="Campus Sutras Logo" />
           </a>
         </div>

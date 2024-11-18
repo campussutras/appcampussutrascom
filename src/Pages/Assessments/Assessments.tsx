@@ -4,6 +4,7 @@ import React from "react";
 import { RiArrowLeftDoubleFill, RiArrowRightDoubleFill } from "react-icons/ri";
 import { PiArrowRight } from "react-icons/pi";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 const Assessments = () => {
   const [currentPage, setCurrentPage] = React.useState(1); // Start with page 1
   const [searchString, setSearchString] = React.useState("");
@@ -48,6 +49,13 @@ const Assessments = () => {
   }, [currentPage]);
   return (
     <section className="assessments width100 flex alignCenter justifyCenter flexColumn">
+      <Helmet>
+        <title>Assessments - Campus Sutras</title>
+        <meta
+          name="description"
+          content="Test your knowledge with Campus Sutras' assessments. Take quizzes and practice tests on various topics to gauge your understanding."
+        />
+      </Helmet>
       <div className="assessHeader width95 maxWidth">
         <div className="searchAssessBar flex alignCenter spaceBtw">
           <div className="searchInput">

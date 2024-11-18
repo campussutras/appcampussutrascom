@@ -1,4 +1,4 @@
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import "./style.css";
 import { isLoginAtom, userAtom } from "../../store/atoms/userAtom";
 import axios from "axios";
@@ -43,6 +43,7 @@ const Profile = () => {
       setLoading(false);
     }
   };
+
   return (
     <section className="myProfile width100 flex alignCenter justifyCenter flexColumn">
       <div className="myProfileContainer maxWidth width95">
