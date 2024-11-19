@@ -14,7 +14,12 @@ import AssessmentsData from "./Pages/AssessmentsData/AssessmentsData";
 import { useEffect } from "react";
 import axios from "axios";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { isLoginAtom, userAtom, authLoadingAtom } from "./store/atoms/userAtom";
+import {
+  isLoginAtom,
+  userAtom,
+  authLoadingAtom,
+  isAdminAtom,
+} from "./store/atoms/userAtom";
 import MyAssessments from "./Pages/MyAssessments/MyAssessments";
 import Assessment from "./Pages/Assessment/Assessment";
 import { api } from "./Utils/Api";
@@ -24,12 +29,14 @@ import ResetPassword from "./Pages/Password/ResetPassword/ResetPassword";
 import VerifyEmail from "./Pages/Auth/VerifyEmail/VerifyEmail";
 import ProtectedRoute from "./Utils/ProtectedRoutes";
 import UnProtectedRoute from "./Utils/UnProtectedRoutes";
+import AdminProtectedRoute from "./Utils/AdminRoutes";
 
 const App = () => {
   const setUser = useSetRecoilState(userAtom);
   const setAuth = useSetRecoilState(isLoginAtom);
-  const isLogin = useRecoilValue(isLoginAtom);
+  // const isLogin = useRecoilValue(isLoginAtom);
   const setAuthLoading = useSetRecoilState(authLoadingAtom);
+  const setAdminAtom = useSetRecoilState(isAdminAtom);
   const getUser = async () => {
     try {
       const response = await axios.get(api.profile, {
@@ -38,7 +45,14 @@ const App = () => {
       if (response) {
         setUser(response.data.data);
         setAuth(true);
-        console.log(isLogin);
+        // console.log(isLogin);
+        // console.log(response.data.data.isAdmin);
+
+        if (response.data.data.isAdmin === true) {
+          setAdminAtom(true);
+        } else {
+          setAdminAtom(false);
+        }
       } else {
         console.log("No login data found");
       }
@@ -89,7 +103,10 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
           {/* admin routes */}
           <Route path="/user-assessments/:id" element={<GetAssessments />} />
-          <Route path="/users" element={<Users />} />
+          <Route
+            path="/users"
+            element={<AdminProtectedRoute element={<Users />} />}
+          />
           <Route path="/user/:id" element={<User />} />
           <Route
             path="/assessment/:assessmentName"

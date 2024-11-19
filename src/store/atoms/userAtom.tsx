@@ -15,3 +15,8 @@ export const authLoadingAtom = atom({
   key: "authLoadingAtom",
   default: true, // Assume loading until the check is complete
 });
+
+export const isAdminAtom = atom({
+  key: "isAdminAtom",
+  default: false,
+});

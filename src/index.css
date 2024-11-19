@@ -670,8 +670,9 @@ textarea {
 
 .renderLoader {
   width: 120px;
-  height: 20px;
-  background: linear-gradient(#000 0 0) 0/0% no-repeat #ddd;
+  height: 15px;
+  border-radius: 0.3rem;
+  background: linear-gradient(#002255 0 0) 0/0% no-repeat #ddd;
   animation: l1 2s infinite linear;
 }
 @keyframes l1 {
