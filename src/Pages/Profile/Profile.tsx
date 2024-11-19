@@ -5,6 +5,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../../Utils/Api";
+import { message } from "antd";
 export interface UserProfileInterface {
   id: string;
   name: string;
@@ -21,11 +22,66 @@ export interface UserProfileInterface {
   isVerified: boolean;
 }
 const Profile = () => {
+  const [messageApi, contextHolder] = message.useMessage();
+  const [vLoading, setVLoading] = useState(false);
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [user, setUser] = useRecoilState(userAtom);
   console.log(user);
-
+  const sendVCode = async () => {
+    try {
+      setVLoading(true);
+      const response = await axios.patch(
+        `${api.sendVerificationCode}`,
+        { email: user.email },
+        {
+          withCredentials: true,
+        }
+      );
+      const success = () => {
+        messageApi.open({
+          type: "success",
+          content: response.data.message,
+        });
+      };
+      success();
+      setVLoading(false);
+    } catch (error: any) {
+      setVLoading(false);
+      if (error.response) {
+        // Access and display specific error message from server response
+        const errorMessage = error.response.data.error || "Error logging in.";
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content: errorMessage,
+          });
+        };
+        errorContent();
+      } else if (error.request) {
+        // Handle network or request issues
+        console.error("Network error:", error.request);
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content:
+              "Network error. Please check your connection and try again.",
+          });
+        };
+        errorContent();
+      } else {
+        // Handle other errors (e.g., setting up the request)
+        console.error("Other error:", error.message);
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content: "An unexpected error occurred. Please try again later.",
+          });
+        };
+        errorContent();
+      }
+    }
+  };
   const setAuth = useSetRecoilState(isLoginAtom);
 
   const logout = async () => {
@@ -46,6 +102,7 @@ const Profile = () => {
 
   return (
     <section className="myProfile width100 flex alignCenter justifyCenter flexColumn">
+      {contextHolder}
       <div className="myProfileContainer maxWidth width95">
         <h1>
           {user && user.name ? user.name : "Loading..."}{" "}
@@ -155,7 +212,17 @@ const Profile = () => {
               <h3>Verified</h3>
             </div>
             <div className="myProfileRight">
-              <p>{user && user.isVerified ? "Verified" : "Not Verified"}</p>
+              <p>
+                {user && user.isVerified ? (
+                  "Verified"
+                ) : (
+                  <>
+                    <button className="sendVCode" onClick={sendVCode}>
+                      {vLoading ? "Sending..." : "Verify Email"}
+                    </button>
+                  </>
+                )}
+              </p>
             </div>
           </div>
         </div>

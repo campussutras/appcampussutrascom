@@ -16,5 +16,6 @@ export const api = {
   forgetPassword: `${userUrl}/forget-password`,
   update: `${userUrl}/update`,
   resetPassword: `${userUrl}/forget-change-password`,
+  sendVerificationCode: `${userUrl}/send-verification-code`,
   verifyEmail: `${userUrl}/verify-email`,
 };

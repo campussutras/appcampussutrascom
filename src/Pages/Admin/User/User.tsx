@@ -4,15 +4,38 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import { api } from "../../../Utils/Api";
+interface UserInterface {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  profileType: string;
+  institute?: string;
+  company?: string;
+  position?: string;
+  localAddress?: string;
+  city?: string;
+  zip?: string;
+  state?: string;
+  country?: string;
+  isVerified: boolean;
+  isAdmin: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+  _count: {
+    assessments: number;
+  };
+}
 const User = () => {
   const { id } = useParams();
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState<Partial<UserInterface>>({});
   useEffect(() => {
     const getUser = async () => {
       try {
         const response = await axios.get(`${api.user}/${id}`);
 
         setUser(response.data.data);
+        console.log(response.data.data);
       } catch (error) {
         console.log(error);
       }
@@ -22,11 +45,6 @@ const User = () => {
   }, []);
   return (
     <section className="adminUser width100 flex alignCenter justifyCenter flexColumn">
-      {/* <div className="adminUserHeader width95 maxWidth ">
-        <h1>User</h1>
-      </div>
-      <div className="adminUserContainer width95 maxWidth">{user.name}</div>
-      <a href={`/user-assessments/${user.id}`}>User Assessments</a> */}
       <div className="adminUContainer width95 maxWidth">
         <div className="aUserBread">
           <a href="/">
@@ -57,9 +75,7 @@ const User = () => {
             </div>
             <div className="userInfoRight">
               <p>
-                {user.assessments?.length
-                  ? user.assessments.length
-                  : "No Assessment"}
+                {user && user._count ? user._count.assessments : "Loading..."}
               </p>
             </div>
           </div>
@@ -133,12 +149,14 @@ const User = () => {
             </div>
             <div className="userInfoRight">
               <p>
-                {user.createdAt ? user.createdAt.split("T")[0] : "Loading..."}
+                {user.createdAt
+                  ? new Date(user.createdAt).toLocaleDateString()
+                  : "Loading..."}
               </p>
             </div>
           </div>
         </div>
-        {user.assessments?.length > 0 ? (
+        {user && user._count && user._count.assessments > 0 ? (
           <>
             <div className="adminUAssessInfo">
               <a href={`/user-assessments/${user.id}`}>User's Assessments</a>

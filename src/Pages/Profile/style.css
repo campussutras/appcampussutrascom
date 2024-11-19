@@ -71,6 +71,18 @@
   border-radius: 0.3rem;
 }
 
+.sendVCode {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--mainBlue);
+  color: white;
+  font-size: 1rem;
+  width: 12rem;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+
 .myProfile > .myProfileContainer > .myProfileButtons > .myProfileUpdate {
   padding: 0.5rem 1rem;
   border: none;

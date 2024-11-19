@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import { userAtom } from "../../../store/atoms/userAtom";
 import { useRecoilValue } from "recoil";
+import { Link } from "react-router-dom";
 const Footer = () => {
   const user = useRecoilValue(userAtom);
   return (
@@ -19,17 +20,21 @@ const Footer = () => {
             <h3>Pages</h3>
             <ul>
               <li>
-                <a href={`${import.meta.env.VITE_COM_URL}`}>Home</a>
+                <Link to={`${import.meta.env.VITE_COM_URL}`}>Home</Link>
               </li>
 
               <li>
-                <a href={`${import.meta.env.VITE_COM_URL}/about`}>About</a>
+                <Link to={`${import.meta.env.VITE_COM_URL}/about`}>About</Link>
               </li>
               <li>
-                <a href={`${import.meta.env.VITE_COM_URL}/events`}>Events</a>
+                <Link to={`${import.meta.env.VITE_COM_URL}/events`}>
+                  Events
+                </Link>
               </li>
               <li>
-                <a href={`${import.meta.env.VITE_COM_URL}/contact`}>Contact</a>
+                <Link to={`${import.meta.env.VITE_COM_URL}/contact`}>
+                  Contact
+                </Link>
               </li>
             </ul>
           </div>
@@ -41,22 +46,22 @@ const Footer = () => {
               {user && user.name ? (
                 <>
                   <li>
-                    <a href="/profile">Profile</a>
+                    <Link to="/profile">Profile</Link>
                   </li>
                 </>
               ) : (
                 <>
                   <li>
-                    <a href="/login">Login</a>
+                    <Link to="/login">Login</Link>
                   </li>
                   <li>
-                    <a href="/signup">Signup</a>
+                    <Link to="/signup">Signup</Link>
                   </li>
                 </>
               )}
 
               <li>
-                <a href="/assessments">Assessments </a>
+                <Link to="/assessments">Assessments </Link>
               </li>
               {/* <li>
                 <a href="/hire-from-us">Hire From Us</a>
@@ -69,28 +74,28 @@ const Footer = () => {
             </h3>
             <ul>
               <li>
-                <a href="https://www.linkedin.com/company/campussutras/">
+                <Link to="https://www.linkedin.com/company/campussutras/">
                   <AiFillLinkedin style={{ marginBottom: "-0.18rem" }} />{" "}
                   Linkedin{" "}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="https://facebook.com/campussutras">
+                <Link to="https://facebook.com/campussutras">
                   <AiFillFacebook style={{ marginBottom: "-0.18rem" }} />{" "}
                   Facebook{" "}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="https://instagram.com/campussutras">
+                <Link to="https://instagram.com/campussutras">
                   <AiFillInstagram style={{ marginBottom: "-0.18rem" }} />{" "}
                   Instagram{" "}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="https://twitter.com/campussutras">
+                <Link to="https://twitter.com/campussutras">
                   <AiFillTwitterSquare style={{ marginBottom: "-0.18rem" }} /> X{" "}
                   {`(Twitter)`}{" "}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -98,9 +103,9 @@ const Footer = () => {
         <div className="footerRight">
           <div className="footerTab">
             <div className="footerLogo">
-              <a href="/" className="flex alignEnd justifyEnd">
+              <Link to="/" className="flex alignEnd justifyEnd">
                 <img src={logo} alt="Campus Sutras Footer Logo" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import axios from "axios";
 import { message } from "antd";
 import { useSetRecoilState } from "recoil";
 import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../../Utils/Api";
 import { Helmet } from "react-helmet";
 const Login = () => {
@@ -129,10 +129,11 @@ const Login = () => {
               </button>
             </form>
             <p className="marginBottom1">
-              Don't have account - <a href="/signup">Sign Up</a>
+              Don't have account - <Link to="/signup">Sign Up</Link>
             </p>
             <p>
-              Forget Password - <a href="/forget-password">Forget Password</a>
+              Forget Password -{" "}
+              <Link to="/forget-password">Forget Password</Link>
             </p>
           </div>
         </div>

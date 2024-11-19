@@ -1,5 +1,5 @@
 import "./style.css";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../../../assets/media/assets/logo.png";
 import { FiArrowRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
@@ -19,19 +19,19 @@ const Navbar = () => {
         }`}
       >
         <div className="navLogo">
-          <a href={`${import.meta.env.VITE_COM_URL}`}>
+          <Link to={`${import.meta.env.VITE_COM_URL}`}>
             <img src={logo} alt="Campus Sutras Logo" />
-          </a>
+          </Link>
         </div>
         <div className="mainMenu flex alignCenter gap2">
           <ul className="flex gap2">
             {!isLogin ? (
               <li>
-                <a href="/login">Login</a>
+                <Link to="/login">Login</Link>
               </li>
             ) : (
               <li>
-                <a href="/profile">{user.name}</a>
+                <Link to="/profile">{user.name}</Link>
               </li>
             )}
             {/* {user && user.isAdmin ? (
@@ -40,18 +40,18 @@ const Navbar = () => {
               </li>
             ) : null} */}
             <li>
-              <a href="/assessments">Assessments</a>
+              <Link to="/assessments">Assessments</Link>
             </li>
             <li>
-              <a href="http://localhost:3000/events">Events</a>
+              <Link to="http://localhost:3000/events">Events</Link>
             </li>
             <li>
-              <a href="http://localhost:3000/about">About</a>
+              <Link to="http://localhost:3000/about">About</Link>
             </li>
           </ul>
-          <a href="/">
+          <Link to={`${import.meta.env.VITE_COM_URL}/contact`}>
             Contact <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

@@ -4,3 +4,23 @@
   margin: 1rem 0;
   border-radius: 0.3rem;
 }
+
+.vSuccess {
+  flex-direction: column;
+}
+
+.vSuccess > h1 {
+  border-bottom: 1px solid var(--best1);
+  padding: 0 0 1rem 0;
+  color: var(--textColor3);
+}
+
+.vSuccess > p {
+  color: var(--textColor3);
+  margin: 1rem 0 0 0;
+}
+
+.verifyIcon {
+  font-size: 2rem;
+  margin: 0 0 -0.5rem 0;
+}

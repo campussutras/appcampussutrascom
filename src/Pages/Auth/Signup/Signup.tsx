@@ -3,7 +3,7 @@ import "./style.css";
 import { api } from "../../../Utils/Api";
 import axios from "axios";
 import { message } from "antd";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSetRecoilState } from "recoil";
 import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
 import { Helmet } from "react-helmet";
@@ -219,10 +219,11 @@ const Signup = () => {
               </button>
             </form>
             <p className="marginBottom1">
-              Already have account - <a href="/login">Login</a>
+              Already have account - <Link to="/login">Login</Link>
             </p>
             <p>
-              Forget Password - <a href="/forget-password">Forget Password</a>
+              Forget Password -{" "}
+              <Link to="/forget-password">Forget Password</Link>
             </p>
           </div>
         </div>
