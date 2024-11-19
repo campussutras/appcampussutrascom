@@ -23,6 +23,7 @@ import UpdateUser from "./Pages/Auth/UpdateUser/UpdateUser";
 import ResetPassword from "./Pages/Password/ResetPassword/ResetPassword";
 import VerifyEmail from "./Pages/Auth/VerifyEmail/VerifyEmail";
 import ProtectedRoute from "./Utils/ProtectedRoutes";
+import UnProtectedRoute from "./Utils/UnProtectedRoutes";
 
 const App = () => {
   const setUser = useSetRecoilState(userAtom);
@@ -59,8 +60,14 @@ const App = () => {
         <Routes>
           {/* common routes */}
           <Route path="/" element={<Navigate to="/profile" replace />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/login"
+            element={<UnProtectedRoute element={<Login />} />}
+          />
+          <Route
+            path="/signup"
+            element={<UnProtectedRoute element={<Signup />} />}
+          />
           <Route path="/assessments" element={<Assessments />} />
           {/* user routes */}
           <Route
