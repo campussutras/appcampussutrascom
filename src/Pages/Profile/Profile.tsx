@@ -1,4 +1,4 @@
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import "./style.css";
 import { isLoginAtom, userAtom } from "../../store/atoms/userAtom";
 import axios from "axios";
@@ -6,20 +6,28 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../../Utils/Api";
 import { message } from "antd";
-export interface UserProfileInterface {
+export interface User {
   id: string;
   name: string;
   email: string;
   phone: string;
   profileType: string;
-  company?: string; // Make company optional using ?
-  position?: string; // Make position optional using ?
-  localAddress?: string; // Make localAddress optional using ?
-  city?: string; // Make city optional using ?
-  zip?: string; // Make zip optional using ?
-  state?: string; // Make state optional using ?
-  country?: string; // Make country optional using ?
+  institute?: string; // Optional property
+  company?: string; // Optional property
+  position?: string; // Optional property
+  localAddress?: string; // Optional property
+  city?: string; // Optional property
+  zip?: string; // Optional property
+  state?: string; // Optional property
+  country?: string; // Optional property
   isVerified: boolean;
+  isAdmin: boolean;
+  createdAt: string; // ISO 8601 format
+  assessments: Assessment[]; // Array of assessment objects
+}
+
+interface Assessment {
+  id: string;
 }
 const Profile = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -91,7 +99,7 @@ const Profile = () => {
         withCredentials: true,
       });
       setAuth(false);
-      setUser({});
+      setUser({} as User);
       navigate("/login");
       setLoading(false);
     } catch (error) {

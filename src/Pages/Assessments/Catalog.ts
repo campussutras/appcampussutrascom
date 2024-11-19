@@ -8,8 +8,301 @@ export const category = [
   { id: 7, catName: "Microsoft" },
 ];
 
+// export const catalog = [
+//   {
+//     id:1,
+//     title: "Basic Excel",
+//     category: "Microsoft",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/basic-excel",
+//   },
+//   {
+//     id:2,
+//     title: "Basic PowerPoint",
+//     category: "Microsoft",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/basic-powerpoint",
+//   },
+//   {
+//     id:3,
+//     title: "Digital Marketing",
+//     category: "Digital Marketing",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/digital-marketing",
+//   },
+//   {
+//     id:4,
+//     title: "Generative AI",
+//     category: "AI",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/generative-ai",
+//   },
+//   {
+//     id:5,
+//     title: "Hibernate Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/hibernate",
+//   },
+//   {
+//     id:6,
+//     title: "Spring Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/spring",
+//   },
+//   {
+//     id:7,
+//     title: "Django Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/django",
+//   },
+//   {
+//     id:8,
+//     title: "Flask Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/flask",
+//   },
+//   {
+//     title: "Ember.js Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/emberjs",
+//   },
+//   {
+//     title: "Backbone.js Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/backbonejs",
+//   },
+//   {
+//     title: "Polymer Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/polymer",
+//   },
+//   {
+//     title: "Aurelia Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/aurelia",
+//   },
+//   {
+//     title: "Meteor Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/meteor",
+//   },
+//   {
+//     title: "jQuery Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/jquery",
+//   },
+//   {
+//     title: "Go Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/golang",
+//   },
+//   {
+//     title: "C# Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/csharp",
+//   },
+//   {
+//     title: "Swift Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/swift",
+//   },
+//   {
+//     title: "R Programming Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/r",
+//   },
+//   {
+//     title: "Ruby Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/ruby",
+//   },
+//   {
+//     title: "MATLAB Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/matlab",
+//   },
+//   {
+//     title: "TypeScript Assessment",
+//     category: "Programming Languages",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/typescript",
+//   },
+//   {
+//     title: "Scala Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/scala",
+//   },
+//   {
+//     title: "SQL Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/sql",
+//   },
+//   {
+//     title: "NoSQL Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/nosql",
+//   },
+//   {
+//     title: "Rust Programming Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/rust",
+//   },
+//   {
+//     title: "Perl Programming Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/perl",
+//   },
+//   {
+//     title: "C++ Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/cplusplus",
+//   },
+//   {
+//     title: "MongoDB Assessment",
+//     category: "Database",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/mongodb",
+//   },
+//   {
+//     title: "English Language",
+//     category: "Soft Skills",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/english-language",
+//   },
+//   {
+//     title: "JavaScript Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/javascript",
+//   },
+//   {
+//     title: "Python Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/python",
+//   },
+//   {
+//     title: "Java Assessment",
+//     category: "Programming Language",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/java",
+//   },
+
+//   {
+//     title: "React.js Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/reactjs",
+//   },
+//   {
+//     title: "Node.js Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/nodejs",
+//   },
+//   {
+//     title: "Angular.js Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/angularjs",
+//   },
+//   {
+//     title: "Vue.js Assessment",
+//     category: "Framework",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/vuejs",
+//   },
+//   {
+//     title: "RDBMS Assessment",
+//     category: "Database",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/rdbms",
+//   },
+//   {
+//     title: "Negotiation Attitude",
+//     category: "Soft Skills",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/negotiation-attitude",
+//   },
+//   {
+//     title: "Data Analytics",
+//     category: "Data Analytics",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/data-analytics",
+//   },
+//   {
+//     title: "Cyber Security",
+//     category: "Security",
+//     time: "10 Minutes",
+//     format: "MCQs",
+//     link: "/assessment/cybersecurity",
+//   },
+// ];
+
 export const catalog = [
   {
+    id: 1,
     title: "Basic Excel",
     category: "Microsoft",
     time: "10 Minutes",
@@ -17,6 +310,7 @@ export const catalog = [
     link: "/assessment/basic-excel",
   },
   {
+    id: 2,
     title: "Basic PowerPoint",
     category: "Microsoft",
     time: "10 Minutes",
@@ -24,6 +318,7 @@ export const catalog = [
     link: "/assessment/basic-powerpoint",
   },
   {
+    id: 3,
     title: "Digital Marketing",
     category: "Digital Marketing",
     time: "10 Minutes",
@@ -31,6 +326,7 @@ export const catalog = [
     link: "/assessment/digital-marketing",
   },
   {
+    id: 4,
     title: "Generative AI",
     category: "AI",
     time: "10 Minutes",
@@ -38,6 +334,7 @@ export const catalog = [
     link: "/assessment/generative-ai",
   },
   {
+    id: 5,
     title: "Hibernate Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -45,6 +342,7 @@ export const catalog = [
     link: "/assessment/hibernate",
   },
   {
+    id: 6,
     title: "Spring Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -52,6 +350,7 @@ export const catalog = [
     link: "/assessment/spring",
   },
   {
+    id: 7,
     title: "Django Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -59,6 +358,7 @@ export const catalog = [
     link: "/assessment/django",
   },
   {
+    id: 8,
     title: "Flask Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -66,6 +366,7 @@ export const catalog = [
     link: "/assessment/flask",
   },
   {
+    id: 9,
     title: "Ember.js Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -73,6 +374,7 @@ export const catalog = [
     link: "/assessment/emberjs",
   },
   {
+    id: 10,
     title: "Backbone.js Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -80,6 +382,7 @@ export const catalog = [
     link: "/assessment/backbonejs",
   },
   {
+    id: 11,
     title: "Polymer Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -87,6 +390,7 @@ export const catalog = [
     link: "/assessment/polymer",
   },
   {
+    id: 12,
     title: "Aurelia Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -94,6 +398,7 @@ export const catalog = [
     link: "/assessment/aurelia",
   },
   {
+    id: 13,
     title: "Meteor Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -101,6 +406,7 @@ export const catalog = [
     link: "/assessment/meteor",
   },
   {
+    id: 14,
     title: "jQuery Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -108,6 +414,7 @@ export const catalog = [
     link: "/assessment/jquery",
   },
   {
+    id: 15,
     title: "Go Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -115,6 +422,7 @@ export const catalog = [
     link: "/assessment/golang",
   },
   {
+    id: 16,
     title: "C# Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -122,6 +430,7 @@ export const catalog = [
     link: "/assessment/csharp",
   },
   {
+    id: 17,
     title: "Swift Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -129,6 +438,7 @@ export const catalog = [
     link: "/assessment/swift",
   },
   {
+    id: 18,
     title: "R Programming Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -136,6 +446,7 @@ export const catalog = [
     link: "/assessment/r",
   },
   {
+    id: 19,
     title: "Ruby Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -143,6 +454,7 @@ export const catalog = [
     link: "/assessment/ruby",
   },
   {
+    id: 20,
     title: "MATLAB Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -150,6 +462,7 @@ export const catalog = [
     link: "/assessment/matlab",
   },
   {
+    id: 21,
     title: "TypeScript Assessment",
     category: "Programming Languages",
     time: "10 Minutes",
@@ -157,6 +470,7 @@ export const catalog = [
     link: "/assessment/typescript",
   },
   {
+    id: 22,
     title: "Scala Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -164,6 +478,7 @@ export const catalog = [
     link: "/assessment/scala",
   },
   {
+    id: 23,
     title: "SQL Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -171,6 +486,7 @@ export const catalog = [
     link: "/assessment/sql",
   },
   {
+    id: 24,
     title: "NoSQL Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -178,6 +494,7 @@ export const catalog = [
     link: "/assessment/nosql",
   },
   {
+    id: 25,
     title: "Rust Programming Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -185,6 +502,7 @@ export const catalog = [
     link: "/assessment/rust",
   },
   {
+    id: 26,
     title: "Perl Programming Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -192,6 +510,7 @@ export const catalog = [
     link: "/assessment/perl",
   },
   {
+    id: 27,
     title: "C++ Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -199,6 +518,7 @@ export const catalog = [
     link: "/assessment/cplusplus",
   },
   {
+    id: 28,
     title: "MongoDB Assessment",
     category: "Database",
     time: "10 Minutes",
@@ -206,6 +526,7 @@ export const catalog = [
     link: "/assessment/mongodb",
   },
   {
+    id: 29,
     title: "English Language",
     category: "Soft Skills",
     time: "10 Minutes",
@@ -213,6 +534,7 @@ export const catalog = [
     link: "/assessment/english-language",
   },
   {
+    id: 30,
     title: "JavaScript Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -220,6 +542,7 @@ export const catalog = [
     link: "/assessment/javascript",
   },
   {
+    id: 31,
     title: "Python Assessment",
     category: "Programming Language",
     time: "10 Minutes",
@@ -227,14 +550,15 @@ export const catalog = [
     link: "/assessment/python",
   },
   {
+    id: 32,
     title: "Java Assessment",
     category: "Programming Language",
     time: "10 Minutes",
     format: "MCQs",
     link: "/assessment/java",
   },
-
   {
+    id: 33,
     title: "React.js Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -242,6 +566,7 @@ export const catalog = [
     link: "/assessment/reactjs",
   },
   {
+    id: 34,
     title: "Node.js Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -249,6 +574,7 @@ export const catalog = [
     link: "/assessment/nodejs",
   },
   {
+    id: 35,
     title: "Angular.js Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -256,6 +582,7 @@ export const catalog = [
     link: "/assessment/angularjs",
   },
   {
+    id: 36,
     title: "Vue.js Assessment",
     category: "Framework",
     time: "10 Minutes",
@@ -263,6 +590,7 @@ export const catalog = [
     link: "/assessment/vuejs",
   },
   {
+    id: 37,
     title: "RDBMS Assessment",
     category: "Database",
     time: "10 Minutes",
@@ -270,6 +598,7 @@ export const catalog = [
     link: "/assessment/rdbms",
   },
   {
+    id: 38,
     title: "Negotiation Attitude",
     category: "Soft Skills",
     time: "10 Minutes",
@@ -277,6 +606,7 @@ export const catalog = [
     link: "/assessment/negotiation-attitude",
   },
   {
+    id: 39,
     title: "Data Analytics",
     category: "Data Analytics",
     time: "10 Minutes",
@@ -284,6 +614,7 @@ export const catalog = [
     link: "/assessment/data-analytics",
   },
   {
+    id: 40,
     title: "Cyber Security",
     category: "Security",
     time: "10 Minutes",

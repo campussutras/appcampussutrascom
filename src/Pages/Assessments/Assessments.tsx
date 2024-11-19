@@ -72,10 +72,10 @@ const Assessments = () => {
               onChange={(e) => setSelectedCategory(e.target.value)}
             >
               <option value="All">All Category</option>
-              {category.map((item, index) => {
+              {category.map((item) => {
                 return (
                   <>
-                    <option key={index} value={item.catName}>
+                    <option key={item.id} value={item.catName}>
                       {item.catName}
                     </option>
                   </>
@@ -92,9 +92,9 @@ const Assessments = () => {
               currentPage * assessmentsPerPage - assessmentsPerPage,
               currentPage * assessmentsPerPage
             )
-            .map((item, index) => {
+            .map((item) => {
               return (
-                <div className="assessmentCard flex spaceBtw" key={index}>
+                <div className="assessmentCard flex spaceBtw" key={item.id}>
                   <div className="assessmentCardContent">
                     <h3>{item.title}</h3>
                     <div className="accTab flex">

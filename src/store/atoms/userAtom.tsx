@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import { User } from "../../Pages/Profile/Profile";
 
 export const isLoginAtom = atom({
   key: "isLoginAtom",
@@ -7,5 +8,10 @@ export const isLoginAtom = atom({
 
 export const userAtom = atom({
   key: "userAtom",
-  default: {},
+  default: {} as User,
+});
+
+export const authLoadingAtom = atom({
+  key: "authLoadingAtom",
+  default: true, // Assume loading until the check is complete
 });
