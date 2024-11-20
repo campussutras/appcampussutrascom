@@ -105,7 +105,7 @@ const ForgetPassword = () => {
                     />
 
                     <button type="submit" style={{ display: "block" }}>
-                      {loading ? "Sending Link..." : "Submit"}
+                      {loading ? <span className="btnLoader"></span> : "Submit"}
                     </button>
                   </form>
                   <p className="marginBottom1">

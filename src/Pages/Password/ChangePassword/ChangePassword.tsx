@@ -6,6 +6,7 @@ import { useSetRecoilState } from "recoil";
 import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
 import { message } from "antd";
 import { api } from "../../../Utils/Api";
+import { User } from "../../Profile/Profile";
 
 const ChangePassword = () => {
   const [messageApi, contextHolder] = message.useMessage();
@@ -33,7 +34,7 @@ const ChangePassword = () => {
       success();
       console.log(response);
       setAuth(false);
-      setUser({});
+      setUser({} as User);
       setLoading(false);
       navigate("/login");
     } catch (e) {
@@ -91,7 +92,11 @@ const ChangePassword = () => {
               </h3>
               <input placeholder="********" type="password" required />
               <button type="submit">
-                {loading ? "Changing..." : "Change Password"}
+                {loading ? (
+                  <span className="btnLoader"></span>
+                ) : (
+                  "Change Password"
+                )}
               </button>
             </form>
           </div>

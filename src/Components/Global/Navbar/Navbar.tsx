@@ -117,9 +117,15 @@ const Navbar = () => {
         </div>
         <div className="pMenuBtn mMenus">
           {!showMenu ? (
-            <RiMenuFill onClick={menuClick} />
+            <RiMenuFill
+              onClick={menuClick}
+              style={{ marginBottom: "-0.25rem" }}
+            />
           ) : (
-            <RiCloseFill onClick={menuClick} />
+            <RiCloseFill
+              onClick={menuClick}
+              style={{ marginBottom: "-0.25rem" }}
+            />
           )}
         </div>
       </div>

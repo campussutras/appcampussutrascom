@@ -150,8 +150,7 @@
   }
 
   .assessments > .assessContainer > .allAssessmentsList {
-    flex-direction: column;
-    flex-wrap: nowrap;
+    grid-template-columns: repeat(1, 1fr);
     height: auto;
   }
   .assessments > .assessContainer > .allAssessmentsList > .assessmentCard {

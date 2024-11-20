@@ -35,6 +35,10 @@ nav > .navContainer > .mainMenu > a {
 }
 
 @media screen and (min-width: 200px) and (max-width: 480px) {
+  nav > .navContainer > .navLogo > a > img {
+    width: 60%;
+    height: auto;
+  }
   .mMenus {
     display: block;
   }
@@ -93,6 +97,9 @@ nav > .navContainer > .mainMenu > a {
   nav > .navContainer > .mainMenu > .mLegal {
     border-top: 1px solid white;
     padding: 1rem 0 0 0;
+  }
+  .pMenuBtn {
+    font-size: 2rem;
   }
 }
 

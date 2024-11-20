@@ -13,7 +13,7 @@ import Footer from "./Components/Global/Footer/Footer";
 import AssessmentsData from "./Pages/AssessmentsData/AssessmentsData";
 import { useEffect } from "react";
 import axios from "axios";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useSetRecoilState } from "recoil";
 import {
   isLoginAtom,
   userAtom,

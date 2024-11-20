@@ -13,6 +13,7 @@ export interface User {
   phone: string;
   profileType: string;
   institute?: string; // Optional property
+  course?: string;
   company?: string; // Optional property
   position?: string; // Optional property
   localAddress?: string; // Optional property
@@ -155,31 +156,57 @@ const Profile = () => {
               </p>
             </div>
           </div>
-          <div className="myProfileTab flex alignStart justifyStart">
-            <div className="myProfileLeft">
-              <h3>Company</h3>
-            </div>
-            <div className="myProfileRight">
-              <p>{user && user.company ? user.company : "Not Yet Updated"}</p>
-            </div>
-          </div>
-          <div className="myProfileTab flex alignStart justifyStart">
-            <div className="myProfileLeft">
-              <h3>Position</h3>
-            </div>
-            <div className="myProfileRight">
-              <p>{user && user.position ? user.position : "Not Yet Updated"}</p>
-            </div>
-          </div>
+          {user && user.profileType === "Employee" ? (
+            <>
+              <div className="myProfileTab flex alignStart justifyStart">
+                <div className="myProfileLeft">
+                  <h3>Company</h3>
+                </div>
+                <div className="myProfileRight">
+                  <p>{user && user.company ? user.company : "Add Company"}</p>
+                </div>
+              </div>
+              <div className="myProfileTab flex alignStart justifyStart">
+                <div className="myProfileLeft">
+                  <h3>Position</h3>
+                </div>
+                <div className="myProfileRight">
+                  <p>
+                    {user && user.position ? user.position : "Set Position"}
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <div className="myProfileTab flex alignStart justifyStart">
+                <div className="myProfileLeft">
+                  <h3>Institute</h3>
+                </div>
+                <div className="myProfileRight">
+                  <p>
+                    {user && user.institute ? user.institute : "Add Institute"}
+                  </p>
+                </div>
+              </div>
+              <div className="myProfileTab flex alignStart justifyStart">
+                <div className="myProfileLeft">
+                  <h3>Course</h3>
+                </div>
+                <div className="myProfileRight">
+                  <p>{user && user.course ? user.course : "Set Course"}</p>
+                </div>
+              </div>
+            </>
+          )}
+
           <div className="myProfileTab flex alignStart justifyStart">
             <div className="myProfileLeft">
               <h3>Address</h3>
             </div>
             <div className="myProfileRight">
               <p>
-                {user && user.localAddress
-                  ? user.localAddress
-                  : "Not Yet Updated"}
+                {user && user.localAddress ? user.localAddress : "Set Address"}
               </p>
             </div>
           </div>
@@ -188,7 +215,7 @@ const Profile = () => {
               <h3>City</h3>
             </div>
             <div className="myProfileRight">
-              <p>{user && user.city ? user.city : "Not Yet Updated"}</p>
+              <p>{user && user.city ? user.city : "Add City"}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -196,7 +223,7 @@ const Profile = () => {
               <h3>Zip</h3>
             </div>
             <div className="myProfileRight">
-              <p>{user && user.zip ? user.zip : "Not Yet Updated"}</p>
+              <p>{user && user.zip ? user.zip : "Add Postal Code"}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -204,7 +231,7 @@ const Profile = () => {
               <h3>State</h3>
             </div>
             <div className="myProfileRight">
-              <p>{user && user.state ? user.state : "Not Yet Updated"}</p>
+              <p>{user && user.state ? user.state : "Add State"}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">
@@ -212,7 +239,7 @@ const Profile = () => {
               <h3>Country</h3>
             </div>
             <div className="myProfileRight">
-              <p>{user && user.country ? user.country : "Not Yet Updated"}</p>
+              <p>{user && user.country ? user.country : "Add Country"}</p>
             </div>
           </div>
           <div className="myProfileTab flex alignStart justifyStart">

@@ -126,14 +126,29 @@
   .myProfile > .myProfileContainer > h1 {
     font-size: 1.7rem;
   }
+
+  .myProfile > .myProfileContainer > .myProfileInfo > .myProfileTab {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .myProfile
+    > .myProfileContainer
+    > .myProfileInfo
+    > .myProfileTab
+    > .myProfileLeft {
+    border: none;
+  }
+
   .myProfile
     > .myProfileContainer
     > .myProfileInfo
     > .myProfileTab
     > .myProfileLeft
     > h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
+
   .myProfile
     > .myProfileContainer
     > .myProfileInfo

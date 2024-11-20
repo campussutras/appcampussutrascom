@@ -215,7 +215,7 @@ const Signup = () => {
               </h3>
               <input placeholder="********" type="password" name="cPassword" />
               <button type="submit" style={{ display: "block" }}>
-                {loading ? "Sign Up..." : "Sign Up"}
+                {loading ? <span className="btnLoader"></span> : "Sign Up"}
               </button>
             </form>
             <p className="marginBottom1">

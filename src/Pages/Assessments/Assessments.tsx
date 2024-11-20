@@ -5,6 +5,7 @@ import { RiArrowLeftDoubleFill, RiArrowRightDoubleFill } from "react-icons/ri";
 import { PiArrowRight } from "react-icons/pi";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Vibrate from "../../Utils/Vibrate";
 const Assessments = () => {
   const [currentPage, setCurrentPage] = React.useState(1); // Start with page 1
   const [searchString, setSearchString] = React.useState("");
@@ -123,7 +124,7 @@ const Assessments = () => {
                     </div>
                   </div>
                   <div className="assessmentCardLink">
-                    <Link to={item.link}>
+                    <Link to={item.link} onClick={Vibrate}>
                       <PiArrowRight className="assessmentLinkIcon" />
                     </Link>
                   </div>
@@ -133,7 +134,10 @@ const Assessments = () => {
         </div>
         <div className="pagination flex alignCenter justifyCenter">
           <button
-            onClick={() => handlePageChange(currentPage - 1)}
+            onClick={() => {
+              Vibrate();
+              handlePageChange(currentPage - 1);
+            }}
             disabled={currentPage === 1}
             className="arrowBtns"
           >
@@ -145,7 +149,10 @@ const Assessments = () => {
           {pageNumbers.map((pageNumber, index) => (
             <button
               key={index}
-              onClick={() => handlePageChange(pageNumber as number)}
+              onClick={() => {
+                Vibrate();
+                handlePageChange(pageNumber as number);
+              }}
               className={currentPage === pageNumber ? "active" : ""}
               disabled={pageNumber === "..."}
             >
@@ -153,7 +160,10 @@ const Assessments = () => {
             </button>
           ))}
           <button
-            onClick={() => handlePageChange(currentPage + 1)}
+            onClick={() => {
+              Vibrate();
+              handlePageChange(currentPage + 1);
+            }}
             disabled={currentPage === totalPages}
             className="arrowBtns"
           >

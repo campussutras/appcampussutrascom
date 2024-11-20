@@ -12,6 +12,7 @@ import { assessments } from "./mcqs";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { api } from "../../Utils/Api";
+import Vibrate from "../../Utils/Vibrate";
 
 const Assessment = () => {
   const { assessmentName } = useParams();
@@ -25,11 +26,6 @@ const Assessment = () => {
     // function to show and hide the instruction
     setShowInstructions(false);
     setShowMcqs(true);
-    vibrate();
-  };
-
-  const vibrate = () => {
-    navigator.vibrate(100);
   };
 
   const handleOptionChange = (event: any, questionIndex: any) => {
@@ -69,7 +65,7 @@ const Assessment = () => {
     setShowResult(true);
     setShowMcqs(false);
     sendAssessData(newScore);
-    vibrate();
+    Vibrate();
   };
 
   const sendAssessData = async (result: number) => {
@@ -104,7 +100,7 @@ const Assessment = () => {
   };
 
   const handleTimerCompletion = () => {
-    vibrate();
+    Vibrate();
     calculateScore();
     setShowResult(true);
     setShowMcqs(false);
@@ -127,7 +123,7 @@ const Assessment = () => {
   }, [timeRemaining]);
 
   const nextQuestion = () => {
-    vibrate();
+    Vibrate();
     if (
       currentAssessment &&
       currentQuestionIndex < currentAssessment.questions.length - 1
@@ -137,7 +133,7 @@ const Assessment = () => {
   };
 
   const prevQuestion = () => {
-    vibrate();
+    Vibrate();
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
     }
@@ -279,7 +275,7 @@ const Assessment = () => {
                           onChange={(event) =>
                             handleOptionChange(event, currentQuestionIndex)
                           }
-                          onClick={vibrate}
+                          onClick={Vibrate}
                         />{" "}
                         <span>{opt}</span>
                         <br />

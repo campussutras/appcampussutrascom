@@ -125,7 +125,7 @@ const Login = () => {
                 required
               />
               <button type="submit" style={{ display: "block" }}>
-                {loading ? "Logging..." : "Login"}
+                {loading ? <span className="btnLoader"></span> : "Login"}
               </button>
             </form>
             <p className="marginBottom1">

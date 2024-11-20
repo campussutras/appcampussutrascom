@@ -14,6 +14,7 @@ const UpdateUser = () => {
     phone: "",
     profileType: "",
     institute: "",
+    course: "",
     company: "",
     position: "",
     localAddress: "",
@@ -55,34 +56,8 @@ const UpdateUser = () => {
       setUser(response.data.data);
       console.log(updateUserData);
 
-      // setUpdateUserData({
-      //   name: "",
-      //   phone: "",
-      //   profileType: "",
-      //   institute: "",
-      //   company: "",
-      //   position: "",
-      //   localAddress: "",
-      //   city: "",
-      //   zip: "",
-      //   state: "",
-      //   country: "",
-      // });
       setLoading(false);
     } catch (error: any) {
-      // setUpdateUserData({
-      //   name: "",
-      //   phone: "",
-      //   profileType: "",
-      //   institute: "",
-      //   company: "",
-      //   position: "",
-      //   localAddress: "",
-      //   city: "",
-      //   zip: "",
-      //   state: "",
-      //   country: "",
-      // });
       if (error.response) {
         // Access and display specific error message from server response
         const errorMessage =
@@ -122,6 +97,7 @@ const UpdateUser = () => {
       phone: "",
       profileType: "",
       institute: "",
+      course: "",
       company: "",
       position: "",
       localAddress: "",
@@ -229,6 +205,14 @@ const UpdateUser = () => {
                     onChange={handleChange}
                     value={updateUserData.institute}
                   />
+                  <h3>Course</h3>
+                  <input
+                    placeholder="Institute Name"
+                    type="text"
+                    name="course"
+                    onChange={handleChange}
+                    value={updateUserData.course}
+                  />
                 </>
               )}
               <h3>Country</h3>
@@ -272,7 +256,7 @@ const UpdateUser = () => {
                 value={updateUserData.localAddress}
               />
               <button type="submit">
-                {loading ? "Updating..." : "Update User"}
+                {loading ? <span className="btnLoader"></span> : "Update"}
               </button>
             </form>
           </div>

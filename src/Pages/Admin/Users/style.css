@@ -55,6 +55,21 @@ td {
 
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
+  .allUsers > .allUsersContainer > .allUsersHead {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+  }
+  .allUsers > .allUsersContainer > .allUsersHead > h1 {
+    margin: 0 0 1rem 0;
+  }
+  .allUsers > .allUsersContainer > .allUsersHead > .allUsersBtns {
+    width: 100%;
+  }
+  .allUsers > .allUsersContainer > .allUsersHead > .allUsersBtns > button {
+    width: 50%;
+    padding: 0.5rem;
+  }
   .allUsers th,
   td {
     display: block;

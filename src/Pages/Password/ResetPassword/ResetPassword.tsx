@@ -102,7 +102,7 @@ const ResetPassword = () => {
             />
 
             <button type="submit">
-              {loading ? "Changing..." : "Reset Password"}
+              {loading ? <span className="btnLoader"></span> : "Reset Password"}
             </button>
           </form>
         </div>

@@ -731,6 +731,48 @@ textarea {
   transition: 0.3s all ease-in-out;
 }
 
+.btnLoader {
+  width: 13px;
+  height: 13px;
+  border: 2px solid #fff;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.pagination {
+  margin: 0.5rem 0;
+}
+
+.pagination > button {
+  background-color: var(--mainBlue);
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  border-radius: 0.3rem;
+}
+
+.pagination > .pArrowBtn {
+  width: 5rem;
+
+  padding: 0.5rem;
+}
+
+.pagination > .pNumberBtn {
+  padding: 0.5rem 1rem !important;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 @media screen and (min-width: 200px) and (max-width: 480px) {
   .width95 {
     width: 90%;

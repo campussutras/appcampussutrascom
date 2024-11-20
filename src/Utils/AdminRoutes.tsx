@@ -21,7 +21,13 @@ const AdminProtectedRoute = ({ element }: { element: any }) => {
     );
   }
 
-  return !isLogin && !isAdmin ? element : <Navigate to="/profile" replace />;
+  // Redirect if not logged in or not an admin
+  if (!isLogin || !isAdmin) {
+    return <Navigate to="/login" replace />;
+  }
+
+  // Render the protected component for admins
+  return element;
 };
 
 export default AdminProtectedRoute;

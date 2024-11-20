@@ -1,5 +1,8 @@
 .assessmentsData {
   padding: 1rem 0;
+}
+
+.assessmentsData > .assessDContainer {
   min-height: 50vh;
 }
 .assessHead > h1 {
@@ -66,6 +69,21 @@ td a {
 
 /* Responsive adjustments */
 @media screen and (max-width: 600px) {
+  .assessHead {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+  }
+  .assessHead > h1 {
+    margin: 0 0 1rem 0;
+  }
+  .assessHead > .allAssessBtns {
+    width: 100%;
+  }
+  .assessHead > .allAssessBtns > button {
+    width: 50%;
+    padding: 0.5rem;
+  }
   .assessmentsData th,
   td {
     display: block;
