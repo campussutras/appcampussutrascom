@@ -681,6 +681,12 @@ textarea {
   }
 }
 
+/* helper classes */
+.mainBlueHoverBtn:hover {
+  transition: 0.2s all ease-in-out;
+  background-color: rgba(0, 34, 85, 0.9) !important;
+}
+
 /* not found css */
 
 .notFound {

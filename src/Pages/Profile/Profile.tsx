@@ -240,28 +240,40 @@ const Profile = () => {
           </button>
           {user.assessments?.length > 0 ? (
             <>
-              <a href="/my-assessments" className="myProfileChangePassword">
+              <a
+                href="/my-assessments"
+                className="myProfileChangePassword mainBlueHoverBtn"
+              >
                 My Assessments
               </a>
             </>
           ) : null}
 
-          <button className="myProfileUpdate">
+          <button className="myProfileUpdate mainBlueHoverBtn">
             <a href="/update">Update Profile</a>
           </button>
-          <a href="/change-password" className="myProfileChangePassword">
+          <a
+            href="/change-password"
+            className="myProfileChangePassword mainBlueHoverBtn"
+          >
             Change Password
           </a>
           {user.isAdmin ? (
             <>
-              <a className="myProfileChangePassword" href="/users">
+              <a
+                className="myProfileChangePassword mainBlueHoverBtn"
+                href="/users"
+              >
                 All Users
               </a>
             </>
           ) : null}
           {user.isAdmin ? (
             <>
-              <a className="myProfileChangePassword" href="/assessments-data">
+              <a
+                className="myProfileChangePassword mainBlueHoverBtn"
+                href="/assessments-data"
+              >
                 All Assessments
               </a>
             </>

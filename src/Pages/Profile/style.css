@@ -69,6 +69,11 @@
   cursor: pointer;
   text-align: center;
   border-radius: 0.3rem;
+  transition: 0.2s all ease-in-out;
+}
+
+.myProfile > .myProfileContainer > .myProfileButtons > .myProfileLogout:hover {
+  background-color: #ef4444;
 }
 
 .sendVCode {
@@ -81,6 +86,7 @@
   cursor: pointer;
   text-align: center;
   border-radius: 0.3rem;
+  transition: 0.2s all ease-in-out;
 }
 
 .myProfile > .myProfileContainer > .myProfileButtons > .myProfileUpdate {
@@ -93,6 +99,7 @@
   cursor: pointer;
   text-align: center;
   border-radius: 0.3rem;
+  transition: 0.2s all ease-in-out;
 }
 
 .myProfile > .myProfileContainer > .myProfileButtons > .myProfileUpdate > a {
@@ -112,6 +119,7 @@
   display: inline-block;
   text-align: center;
   border-radius: 0.3rem;
+  transition: 0.2s all ease-in-out;
 }
 
 @media screen and (min-width: 200px) and (max-width: 480px) {
