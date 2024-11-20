@@ -1,5 +1,5 @@
 import "./style.css";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import logo from "../../../assets/media/assets/logo.png";
 import { FiArrowRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
@@ -37,9 +37,9 @@ const Navbar = () => {
         }`}
       >
         <div className="navLogo">
-          <Link to={`${import.meta.env.VITE_COM_URL}`}>
+          <a href={`${import.meta.env.VITE_COM_URL}`}>
             <img src={logo} alt="Campus Sutras Logo" />
-          </Link>
+          </a>
         </div>
         <div
           className={`mainMenu flex alignCenter gap2 ${
@@ -49,69 +49,69 @@ const Navbar = () => {
           <ul className="flex gap2">
             {!isLogin ? (
               <li>
-                <Link to="/login">Login</Link>
+                <a href="/login">Login</a>
               </li>
             ) : (
               <li>
-                <Link to="/profile">{user.name}</Link>
+                <a href="/profile">{user.name}</a>
               </li>
             )}
 
             <li>
-              <Link to="/assessments">Assessments</Link>
+              <a href="/assessments">Assessments</a>
             </li>
             <li>
-              <Link to={`${import.meta.env.VITE_COM_URL}/events`}>Events</Link>
+              <a href={`${import.meta.env.VITE_COM_URL}/events`}>Events</a>
             </li>
             <li>
-              <Link to={`${import.meta.env.VITE_COM_URL}/about`}>About</Link>
+              <a href={`${import.meta.env.VITE_COM_URL}/about`}>About</a>
             </li>
           </ul>
-          <Link to={`${import.meta.env.VITE_COM_URL}/contact`}>
+          <a href={`${import.meta.env.VITE_COM_URL}/contact`}>
             Contact <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
-          </Link>
+          </a>
           <ul className="mMenus">
             <li>
-              <Link to="https://www.linkedin.com/company/campussutras/">
+              <a href="https://www.linkedin.com/company/campussutras/">
                 <AiFillLinkedin style={{ marginBottom: "-0.18rem" }} /> Linkedin{" "}
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="https://facebook.com/campussutras">
+              <a href="https://facebook.com/campussutras">
                 <AiFillFacebook style={{ marginBottom: "-0.18rem" }} /> Facebook{" "}
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="https://instagram.com/campussutras">
+              <a href="https://instagram.com/campussutras">
                 <AiFillInstagram style={{ marginBottom: "-0.18rem" }} />{" "}
                 Instagram{" "}
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to="https://twitter.com/campussutras">
+              <a href="https://twitter.com/campussutras">
                 <AiFillTwitterSquare style={{ marginBottom: "-0.18rem" }} /> X{" "}
                 {`(Twitter)`}{" "}
-              </Link>
+              </a>
             </li>
           </ul>
           <ul className="mMenus mLegal">
             <li>
-              <Link to={`${import.meta.env.VITE_COM_URL}/privacy-and-policy`}>
+              <a href={`${import.meta.env.VITE_COM_URL}/privacy-and-policy`}>
                 Privacy Policy{" "}
                 <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to={`${import.meta.env.VITE_COM_URL}/terms-and-conditions`}>
+              <a href={`${import.meta.env.VITE_COM_URL}/terms-and-conditions`}>
                 Terms & Conditions{" "}
                 <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
-              </Link>
+              </a>
             </li>
             <li>
-              <Link to={`${import.meta.env.VITE_COM_URL}/cookie-policy`}>
+              <a href={`${import.meta.env.VITE_COM_URL}/cookie-policy`}>
                 Cookie Policy{" "}
                 <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

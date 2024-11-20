@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { api } from "../../Utils/Api";
 import { message } from "antd";
+import Vibrate from "../../Utils/Vibrate";
 export interface User {
   id: string;
   name: string;
@@ -252,7 +253,13 @@ const Profile = () => {
                   "Verified"
                 ) : (
                   <>
-                    <button className="sendVCode" onClick={sendVCode}>
+                    <button
+                      className="sendVCode"
+                      onClick={() => {
+                        sendVCode();
+                        Vibrate();
+                      }}
+                    >
                       {vLoading ? "Sending..." : "Verify Email"}
                     </button>
                   </>
@@ -262,7 +269,13 @@ const Profile = () => {
           </div>
         </div>
         <div className="myProfileButtons flex gap05">
-          <button className="myProfileLogout" onClick={logout}>
+          <button
+            className="myProfileLogout"
+            onClick={() => {
+              logout();
+              Vibrate();
+            }}
+          >
             {loading ? "Logging Out..." : "Logout"}
           </button>
           {user.assessments?.length > 0 ? (
@@ -270,13 +283,17 @@ const Profile = () => {
               <a
                 href="/my-assessments"
                 className="myProfileChangePassword mainBlueHoverBtn"
+                onClick={Vibrate}
               >
                 My Assessments
               </a>
             </>
           ) : null}
 
-          <button className="myProfileUpdate mainBlueHoverBtn">
+          <button
+            className="myProfileUpdate mainBlueHoverBtn"
+            onClick={Vibrate}
+          >
             <a href="/update">Update Profile</a>
           </button>
           <a
@@ -290,6 +307,7 @@ const Profile = () => {
               <a
                 className="myProfileChangePassword mainBlueHoverBtn"
                 href="/users"
+                onClick={Vibrate}
               >
                 All Users
               </a>
@@ -300,6 +318,7 @@ const Profile = () => {
               <a
                 className="myProfileChangePassword mainBlueHoverBtn"
                 href="/assessments-data"
+                onClick={Vibrate}
               >
                 All Assessments
               </a>
