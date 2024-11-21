@@ -20,21 +20,17 @@ const Footer = () => {
             <h3>Pages</h3>
             <ul>
               <li>
-                <Link to={`${import.meta.env.VITE_COM_URL}`}>Home</Link>
+                <Link to={`https://www.campussutras.com`}>Home</Link>
               </li>
 
               <li>
-                <Link to={`${import.meta.env.VITE_COM_URL}/about`}>About</Link>
+                <Link to={`https://www.campussutras.com/about`}>About</Link>
               </li>
               <li>
-                <Link to={`${import.meta.env.VITE_COM_URL}/events`}>
-                  Events
-                </Link>
+                <Link to={`https://www.campussutras.com/events`}>Events</Link>
               </li>
               <li>
-                <Link to={`${import.meta.env.VITE_COM_URL}/contact`}>
-                  Contact
-                </Link>
+                <Link to={`https://www.campussutras.com/contact`}>Contact</Link>
               </li>
             </ul>
           </div>
@@ -112,14 +108,14 @@ const Footer = () => {
       </div>
       <div className="footerLegal width95 maxWidth flex alignCenter spaceBtw">
         <div className="footerLContainer flex width45 spaceBtw">
-          <a href={`${import.meta.env.VITE_COM_URL}/privacy-and-policy`}>
+          <a href={`https://www.campussutras.com/privacy-and-policy`}>
             Privacy Policy <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
-          <a href={`${import.meta.env.VITE_COM_URL}/terms-and-conditions`}>
+          <a href={`https://www.campussutras.com/terms-and-conditions`}>
             Terms & Conditions{" "}
             <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
-          <a href={`${import.meta.env.VITE_COM_URL}/cookie-policy`}>
+          <a href={`https://www.campussutras.com/cookie-policy`}>
             Cookie Policy <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
         </div>
