@@ -32,7 +32,9 @@ const User = () => {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const response = await axios.get(`${api.user}/${id}`);
+        const response = await axios.get(`${api.user}/${id}`, {
+          withCredentials: true,
+        });
 
         setUser(response.data.data);
         console.log(response.data.data);

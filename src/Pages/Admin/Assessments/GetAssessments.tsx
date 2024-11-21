@@ -19,7 +19,9 @@ const GetAssessments = () => {
   useEffect(() => {
     const getAssessments = async () => {
       try {
-        const response = await axios.get(`${api.getUserAssessments}/${id}`);
+        const response = await axios.get(`${api.getUserAssessments}/${id}`, {
+          withCredentials: true,
+        });
         setAssessments(response.data.data);
       } catch (error) {
         console.log(error);

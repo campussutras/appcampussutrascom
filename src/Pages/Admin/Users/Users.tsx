@@ -29,7 +29,9 @@ const Users = () => {
     const getUsers = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(api.users);
+        const response = await axios.get(api.users, {
+          withCredentials: true,
+        });
         console.log(response.data.data);
 
         setUsers(response.data.data);
