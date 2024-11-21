@@ -29,7 +29,9 @@ const AssessmentsData = () => {
     const getAssessments = async () => {
       try {
         setLoading(true);
-        const response = await axios.get(api.getAssessments);
+        const response = await axios.get(api.getAssessments, {
+          withCredentials: true,
+        });
 
         setAssessments(response.data.data);
 
