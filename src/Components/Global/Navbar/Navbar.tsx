@@ -37,7 +37,7 @@ const Navbar = () => {
         }`}
       >
         <div className="navLogo">
-          <a href={`https://www.campussutras.com`}>
+          <a href={`${import.meta.env.COM_URL}`}>
             <img src={logo} alt="Campus Sutras Logo" />
           </a>
         </div>
@@ -61,13 +61,13 @@ const Navbar = () => {
               <a href="/assessments">Assessments</a>
             </li>
             <li>
-              <a href={`https://www.campussutras.com/events`}>Events</a>
+              <a href={`${import.meta.env.COM_URL}/events`}>Events</a>
             </li>
             <li>
-              <a href={`https://www.campussutras.com/about`}>About</a>
+              <a href={`${import.meta.env.COM_URL}/about`}>About</a>
             </li>
           </ul>
-          <a href={`https://www.campussutras.com/contact`}>
+          <a href={`${import.meta.env.COM_URL}/contact`}>
             Contact <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
           <ul className="mMenus">
@@ -96,19 +96,19 @@ const Navbar = () => {
           </ul>
           <ul className="mMenus mLegal">
             <li>
-              <a href={`https://www.campussutras.com/privacy-and-policy`}>
+              <a href={`${import.meta.env.COM_URL}/privacy-and-policy`}>
                 Privacy Policy{" "}
                 <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
               </a>
             </li>
             <li>
-              <a href={`https://www.campussutras.com/terms-and-conditions`}>
+              <a href={`${import.meta.env.COM_URL}/terms-and-conditions`}>
                 Terms & Conditions{" "}
                 <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
               </a>
             </li>
             <li>
-              <a href={`https://www.campussutras.com/cookie-policy`}>
+              <a href={`${import.meta.env.COM_URL}/cookie-policy`}>
                 Cookie Policy{" "}
                 <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
               </a>
