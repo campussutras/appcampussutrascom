@@ -99,7 +99,10 @@ const App = () => {
             path="/my-assessments"
             element={<ProtectedRoute element={<MyAssessments />} />}
           />
-          <Route path="/assessments-data" element={<AssessmentsData />} />
+          <Route
+            path="/assessments-data"
+            element={<AdminProtectedRoute element={<AssessmentsData />} />}
+          />
           <Route path="*" element={<NotFound />} />
           {/* admin routes */}
           <Route path="/user-assessments/:id" element={<GetAssessments />} />
@@ -107,7 +110,10 @@ const App = () => {
             path="/users"
             element={<AdminProtectedRoute element={<Users />} />}
           />
-          <Route path="/user/:id" element={<User />} />
+          <Route
+            path="/user/:id"
+            element={<AdminProtectedRoute element={<User />} />}
+          />
           <Route
             path="/assessment/:assessmentName"
             element={<ProtectedRoute element={<Assessment />} />}
