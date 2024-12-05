@@ -7,45 +7,72 @@ import { isLoginAtom, userAtom } from "../../../store/atoms/userAtom";
 import { Link, useNavigate } from "react-router-dom";
 import { api } from "../../../Utils/Api";
 import { Helmet } from "react-helmet";
+import ValidateEmail from "../../../Utils/EmailValidator";
 const Login = () => {
+  // State for displaying error/success messages
   const [messageApi, contextHolder] = message.useMessage();
+
+  // Function to navigate to different routes
   const navigate = useNavigate();
+
+  // Functions to update user and login state in Recoil
   const setUser = useSetRecoilState(userAtom);
   const setLogin = useSetRecoilState(isLoginAtom);
+
+  // State for loading indicator during API requests
   const [loading, setLoading] = useState(false);
+
+  // State to store user input for email and password
   const [loginData, setLoginData] = useState({
     email: "",
     password: "",
   });
 
+  // Function to handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    try {
-      setLoading(true);
-      const response = await axios.post(api.login, loginData, {
-        withCredentials: true,
+
+    // Validate email address
+    if (!ValidateEmail(loginData.email)) {
+      messageApi.open({
+        type: "error",
+        content: "Please enter a valid email address.",
       });
-      const success = () => {
-        messageApi.open({
-          type: "success",
-          content: response.data.message,
-        });
-      };
-      success();
+      return; // Prevent form submission if email is invalid
+    }
+    try {
+      setLoading(true); // Show loading indicator
+
+      // Send a POST request to the login API endpoint
+      const response = await axios.post(api.login, loginData, {
+        withCredentials: true, // Include cookies for authentication
+      });
+
+      // Display a success message
+      messageApi.open({
+        type: "success",
+        content: response.data.message,
+      });
+
+      // Update user and login state in Recoil
       setUser(response.data.data);
       setLogin(true);
+
+      // Clear form fields
       setLoginData({
         email: "",
         password: "",
       });
       setLoading(false);
-      navigate("/assessments");
+      navigate("/assessments"); // Navigate to assessments page
     } catch (error: any) {
       setLoading(false);
       setLoginData({
         email: "",
         password: "",
-      });
+      }); // Clear form fields on error
+
+      // Handle different error scenarios
       if (error.response) {
         // Access and display specific error message from server response
         const errorMessage = error.response.data.error || "Error logging in.";
@@ -71,6 +98,7 @@ const Login = () => {
         // Handle other errors (e.g., setting up the request)
         console.error("Other error:", error.message);
         const errorContent = () => {
+          // Other errors
           messageApi.open({
             type: "error",
             content: "An unexpected error occurred. Please try again later.",
@@ -81,6 +109,7 @@ const Login = () => {
     }
   };
 
+  // Function to handle changes in form fields
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -114,7 +143,6 @@ const Login = () => {
                 value={loginData.email}
                 required
               />
-
               <h3>Password</h3>
               <input
                 placeholder="********"

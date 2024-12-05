@@ -15,13 +15,34 @@ import { api } from "../../Utils/Api";
 import Vibrate from "../../Utils/Vibrate";
 
 const Assessment = () => {
+  // Get the assessment name from the URL
   const { assessmentName } = useParams();
-  const [showInstructions, setShowInstructions] = React.useState(true); // this useState is for assessment instructions
+
+  // Display the instruction screen
+  const [showInstructions, setShowInstructions] = React.useState(true);
+
+  // Display the MCQ screen
   const [showMcqs, setShowMcqs] = React.useState(false);
+
+  // Store user answers
   const [userAnswers, setUserAnswers] = React.useState(new Array(10).fill(""));
-  const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0); // Track the currently displayed question
-  const [score, setScore] = React.useState(0); // setting the score count
+
+  // Current question index
+  const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
+
+  // User's score
+  const [score, setScore] = React.useState(0);
+
   const [showResult, setShowResult] = React.useState(false); // for showing the result section
+
+  // Timer in seconds (10 minutes)
+  const [timeRemaining, setTimeRemaining] = React.useState(600);
+
+  // Find the current assessment based on the slug in the URL
+  const currentAssessment = assessments.find(
+    (assessment) => assessment.slug === assessmentName
+  );
+
   const offInstructions = () => {
     // function to show and hide the instruction
     setShowInstructions(false);
@@ -34,9 +55,6 @@ const Assessment = () => {
     setUserAnswers(newUserAnswers);
   };
 
-  const totalTime = 600; // 10 minutes in seconds
-  const [timeRemaining, setTimeRemaining] = React.useState(totalTime);
-
   const formatTime = (seconds: any) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
@@ -46,10 +64,6 @@ const Assessment = () => {
 
     return `${formattedMinutes}:${formattedSeconds}`;
   };
-
-  const currentAssessment = assessments.find(
-    (assessment) => assessment.slug === assessmentName
-  );
 
   const calculateScore = () => {
     let newScore = 0;

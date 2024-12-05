@@ -4,6 +4,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import { RiArrowGoBackLine } from "react-icons/ri";
 import { api } from "../../../Utils/Api";
+
+// Define the user interface for better type safety
 interface UserInterface {
   id: string;
   name: string;
@@ -27,8 +29,12 @@ interface UserInterface {
   };
 }
 const User = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // Extract user ID from the URL
+
+  // State to store user data
   const [user, setUser] = useState<Partial<UserInterface>>({});
+
+  // Fetch user data on component mount or when `id` changes
   useEffect(() => {
     const getUser = async () => {
       try {
@@ -37,14 +43,17 @@ const User = () => {
         });
 
         setUser(response.data.data);
-        console.log(response.data.data);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching user data:", error);
       }
     };
 
     getUser();
-  }, []);
+  }, [id]);
+
+  // Helper function to handle fallback display text
+  const renderField = (field: any, fallback: string = "Not Updated Yet") =>
+    field ? field : fallback;
   return (
     <section className="adminUser width100 flex alignCenter justifyCenter flexColumn">
       <div className="adminUContainer width95 maxWidth">
@@ -53,110 +62,49 @@ const User = () => {
             Return <RiArrowGoBackLine style={{ marginBottom: "-0.15rem" }} />
           </a>
         </div>
-        <h1>{user.name ? user.name : "Loading..."}</h1>
+
+        {/* User Name or Loading Indicator */}
+        <h1>{renderField(user.name, "Loading...")}</h1>
+
+        {/* User Information Display */}
         <div className="adminUInfo">
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>Email</h3>
+          {[
+            { label: "Email", value: user.email },
+            { label: "Phone", value: user.phone },
+            {
+              label: "Assessments",
+              value: user._count?.assessments || "Loading...",
+            },
+            { label: "Profile", value: user.profileType },
+            { label: "Address", value: user.localAddress },
+            { label: "City", value: user.city },
+            { label: "Zip", value: user.zip },
+            { label: "State", value: user.state },
+            { label: "Country", value: user.country },
+            {
+              label: "Verified",
+              value: user.isVerified ? "Verified" : "Not Verified",
+            },
+            { label: "Admin", value: user.isAdmin ? "Admin" : "Not Admin" },
+            {
+              label: "Since",
+              value: user.createdAt
+                ? new Date(user.createdAt).toLocaleDateString()
+                : "Loading...",
+            },
+          ].map(({ label, value }) => (
+            <div
+              className="userInfoTab flex alignStart justifyStart"
+              key={label}
+            >
+              <div className="userInfoLeft">
+                <h3>{label}</h3>
+              </div>
+              <div className="userInfoRight">
+                <p>{renderField(value)}</p>
+              </div>
             </div>
-            <div className="userInfoRight">
-              <p>{user.email ? user.email : "Loading..."}</p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>Phone</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>{user.phone ? user.phone : "Loading..."}</p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>Assessments</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>
-                {user && user._count ? user._count.assessments : "Loading..."}
-              </p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>Profile</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>{user.profileType ? user.profileType : "Loading..."}</p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>Address</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>{user.localAddress ? user.localAddress : `Not Updated Yet`}</p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>City</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>{user.city ? user.city : `Not Updated Yet`}</p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>Zip</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>{user.zip ? user.zip : `Not Updated Yet`}</p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>State</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>{user.state ? user.state : `Not Updated Yet`}</p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>Country</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>{user.country ? user.country : `Not Updated Yet`}</p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>Verified</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>{!user.isVerified ? `Not Verified` : `Verified`}</p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>Admin</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>{!user.isAdmin ? `Not Admin` : `Admin`}</p>
-            </div>
-          </div>
-          <div className="userInfoTab flex alignStart justifyStart">
-            <div className="userInfoLeft">
-              <h3>Since</h3>
-            </div>
-            <div className="userInfoRight">
-              <p>
-                {user.createdAt
-                  ? new Date(user.createdAt).toLocaleDateString()
-                  : "Loading..."}
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
         {user && user._count && user._count.assessments > 0 ? (
           <>

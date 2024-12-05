@@ -1,5 +1,5 @@
-const userUrl = `https://backend.campussutras.com/api/v1/user`;
-const assessUrl = `https://backend.campussutras.com/api/v1/assessment`;
+const userUrl = `https://www.backend.campussutras.com/api/v1/user`;
+const assessUrl = `http://www.backend.campussutras.com/api/v1/assessment`;
 export const api = {
   signup: `${userUrl}/signup`,
   login: `${userUrl}/login`,

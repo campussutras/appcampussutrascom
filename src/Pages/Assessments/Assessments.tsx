@@ -7,16 +7,21 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Vibrate from "../../Utils/Vibrate";
 const Assessments = () => {
+  // State variables
   const [currentPage, setCurrentPage] = React.useState(1); // Start with page 1
   const [searchString, setSearchString] = React.useState("");
   const [selectedCategory, setSelectedCategory] = React.useState("All");
-  const assessmentsPerPage = 9;
+  const assessmentsPerPage = 9; // Items per page
 
+  // Calculate total pages for pagination
   const totalPages = Math.ceil(catalog.length / assessmentsPerPage);
+
+  // Handle page change
   const handlePageChange = (newPage: number) => {
     setCurrentPage(newPage);
   };
 
+  // Generate pagination numbers dynamically
   const generatePageNumbers = () => {
     const pageNumbers = [];
     for (let i = 1; i <= totalPages; i++) {
@@ -35,6 +40,7 @@ const Assessments = () => {
     return pageNumbers;
   };
 
+  // Filter catalog based on search string and selected category
   const filteredCatalog = catalog.filter((item) => {
     // Filter assessments based on the search string and selected category
     const search = searchString.toLowerCase();
@@ -43,7 +49,10 @@ const Assessments = () => {
     return item.title.toLowerCase().includes(search) && categoryFilter;
   });
 
+  // Generate pagination numbers
   const pageNumbers = generatePageNumbers();
+
+  // Scroll to top on page change
   React.useEffect(() => {
     // Scroll to the top of the page when currentPage changes
     window.scrollTo({ top: 0, behavior: "smooth" });

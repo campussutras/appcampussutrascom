@@ -19,15 +19,22 @@ nav > .navContainer > .mainMenu > ul {
 }
 
 nav > .navContainer > .mainMenu > ul > li > a {
-  color: var(--mainBlue);
-  font-weight: 500;
+  color: var(--textColor3);
+  font-weight: 600;
 }
 
 nav > .navContainer > .mainMenu > a {
-  background-color: var(--mainBlue);
-  padding: 0.5rem;
-  color: white;
+  background-color: transparent;
+  border: 1px solid var(--mainBlue);
+  padding: 0.9rem 2rem;
+  color: var(--mainBlue);
   border-radius: 0.3rem;
+  transition: 0.2s all ease-in-out;
+}
+
+nav > .navContainer > .mainMenu > a:hover {
+  background-color: var(--mainBlue);
+  color: white;
 }
 
 .mMenus {
@@ -86,6 +93,9 @@ nav > .navContainer > .mainMenu > a {
   nav > .navContainer > .mainMenu > a {
     border-top: 0.5px solid white;
     border-bottom: 0.5px solid white;
+    color: white;
+    border-left: none;
+    border-right: none;
     width: 100%;
     border-radius: 0;
     background: transparent;

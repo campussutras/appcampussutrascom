@@ -47,6 +47,9 @@ const Navbar = () => {
           }`}
         >
           <ul className="flex gap2">
+            <li>
+              <a href="https://www.campussutras.com">Home</a>
+            </li>
             {!isLogin ? (
               <li>
                 <a href="/login">Login</a>
@@ -59,6 +62,9 @@ const Navbar = () => {
 
             <li>
               <a href="/assessments">Assessments</a>
+            </li>
+            <li>
+              <a href="https://www.campussutras.com/courses">Courses</a>
             </li>
             <li>
               <a href={`https://www.campussutras.com/events`}>Events</a>

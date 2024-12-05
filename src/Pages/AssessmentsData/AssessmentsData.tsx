@@ -8,37 +8,44 @@ import { CSVLink } from "react-csv";
 import { RiArrowDownLine } from "react-icons/ri";
 import Vibrate from "../../Utils/Vibrate";
 
-const AssessmentsData = () => {
-  const [loading, setLoading] = useState(false);
-  interface Assessment {
-    id: string;
+// Define Assessment interface for type safety
+interface Assessment {
+  id: string;
+  name: string;
+  duration: string;
+  score: string;
+  format: string;
+  createdAt: string;
+  user: {
     name: string;
-    duration: string;
-    score: string;
-    format: string;
-    createdAt: string;
-    user: {
-      name: string;
-      id: string;
-    };
-  }
+    id: string;
+  };
+}
+
+const AssessmentsData = () => {
+  // State for loading status
+  const [loading, setLoading] = useState(false);
+
+  // State for storing assessments data
   const [assessments, setAssessments] = useState<Assessment[]>([]);
+
+  // State for pagination
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // Show 10 users per page
+
+  // Fetch assessments data on component mount
   useEffect(() => {
     const getAssessments = async () => {
       try {
         setLoading(true);
         const response = await axios.get(api.getAssessments, {
-          withCredentials: true,
+          withCredentials: true, // Include credentials for authentication
         });
 
-        setAssessments(response.data.data);
-
-        console.log(response.data.data);
+        setAssessments(response.data.data); // Store fetched data
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        console.error("Error fetching assessments:", error);
         setLoading(false);
       }
     };
@@ -46,6 +53,7 @@ const AssessmentsData = () => {
     getAssessments();
   }, []);
 
+  // Calculate total pages
   const totalPages = Math.ceil(assessments.length / itemsPerPage);
 
   // Calculate the users to display on the current page
@@ -55,8 +63,8 @@ const AssessmentsData = () => {
     startIndex + itemsPerPage
   );
 
+  // CSV export settings
   const fileName = "Campus-Sutras-Assessments";
-
   const headers = [
     { label: "Name", key: "name" },
     { label: "Format", key: "format" },

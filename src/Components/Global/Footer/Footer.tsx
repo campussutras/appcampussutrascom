@@ -59,9 +59,9 @@ const Footer = () => {
               <li>
                 <Link to="/assessments">Assessments </Link>
               </li>
-              {/* <li>
-                <a href="/hire-from-us">Hire From Us</a>
-              </li> */}
+              <li>
+                <Link to={`https://www.campussutras.com/courses`}>Courses</Link>
+              </li>
             </ul>
           </div>
           <div className="footerTab">
