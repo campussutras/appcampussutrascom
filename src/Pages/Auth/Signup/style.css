@@ -132,3 +132,9 @@
     padding: 1rem;
   }
 }
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .signup > .signupContainer > .signupRight > .signupForm {
+    width: 70%;
+  }
+}

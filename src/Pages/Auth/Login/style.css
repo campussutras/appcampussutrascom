@@ -80,3 +80,9 @@
     padding: 1rem;
   }
 }
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  .login > .loginContainer > .loginRight > .loginForm {
+    width: 70%;
+  }
+}

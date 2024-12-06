@@ -102,3 +102,44 @@ footer > .footerCopyright {
     text-align: center;
   }
 }
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+  footer > .footer {
+    flex-direction: column;
+  }
+
+  footer > .footer > .footerLeft {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  footer > .footer > .footerLeft > .footerTab {
+    margin: 0 0 1rem 0;
+  }
+
+  footer > .footer > .footerRight {
+    width: 100%;
+  }
+
+  footer > .footer > .footerRight > .footerTab > .footerLogo > a {
+    justify-content: flex-start;
+  }
+  footer > .footerLegal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  footer > .footerLegal > .footerLContainer {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 0 1rem 0;
+    width: 100%;
+  }
+
+  footer > .footerCopyright {
+    text-align: center;
+  }
+  footer > .footer > .footerRight > .footerTab > .footerLogo > a > img {
+    width: 30%;
+  }
+}
