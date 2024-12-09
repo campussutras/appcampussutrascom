@@ -50,15 +50,6 @@ const Navbar = () => {
             <li>
               <a href="https://www.campussutras.com">Home</a>
             </li>
-            {!isLogin ? (
-              <li>
-                <a href="/login">Login</a>
-              </li>
-            ) : (
-              <li>
-                <a href="/profile">{user.name}</a>
-              </li>
-            )}
 
             <li>
               <a href="/assessments">Assessments</a>
@@ -72,8 +63,23 @@ const Navbar = () => {
             <li>
               <a href={`https://www.campussutras.com/about`}>About</a>
             </li>
+            <li className="navDivider">|</li>
+            {!isLogin ? (
+              <li>
+                <a href="/login">Login</a>
+              </li>
+            ) : (
+              <li>
+                <a href="/profile">{user.name}</a>
+              </li>
+            )}
+            {!isLogin ? (
+              <li className="navSignupBtn">
+                <a href="/signup">Signup</a>
+              </li>
+            ) : null}
           </ul>
-          <a href={`https://www.campussutras.com/contact`}>
+          <a href={`https://www.campussutras.com/contact`} className="mMenus">
             Contact <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
           <ul className="mMenus">

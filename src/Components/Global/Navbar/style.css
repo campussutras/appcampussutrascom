@@ -19,8 +19,17 @@ nav > .navContainer > .mainMenu > ul {
 }
 
 nav > .navContainer > .mainMenu > ul > li > a {
-  color: var(--textColor3);
-  font-weight: 600;
+  color: var(--textColor);
+  /* font-weight: 600; */
+  /* font-size: 0.9rem; */
+
+  padding: 0.3rem;
+  transition: 0.2s all ease-in-out;
+  border-radius: 0.3rem;
+}
+
+nav > .navContainer > .mainMenu > ul > li > a:hover {
+  background-color: rgb(241, 236, 236);
 }
 
 nav > .navContainer > .mainMenu > a {
@@ -41,6 +50,20 @@ nav > .navContainer > .mainMenu > a:hover {
   display: none;
 }
 
+.navDivider {
+  color: grey;
+}
+
+.navSignupBtn > a {
+  padding: 0.3rem 1rem !important;
+  background-color: var(--mainBlue);
+  color: white !important;
+}
+
+.navSignupBtn > a:hover {
+  color: var(--mainBlue) !important;
+}
+
 @media screen and (min-width: 200px) and (max-width: 480px) {
   nav > .navContainer > .navLogo > a > img {
     width: 60%;
@@ -48,6 +71,16 @@ nav > .navContainer > .mainMenu > a:hover {
   }
   .mMenus {
     display: block;
+  }
+  .navDivider {
+    display: none;
+  }
+  .navSignupBtn > a {
+    padding: 0 !important;
+    background-color: transparent;
+  }
+  .navSignupBtn > a:hover {
+    background-color: transparent;
   }
   nav > .navContainer > .mainMenu {
     left: -100%;
@@ -89,6 +122,8 @@ nav > .navContainer > .mainMenu > a:hover {
   }
   nav > .navContainer > .mainMenu > ul > li > a {
     color: white;
+    padding: none !important;
+    padding: 0;
   }
   nav > .navContainer > .mainMenu > a {
     border-top: 0.5px solid white;
@@ -121,6 +156,16 @@ nav > .navContainer > .mainMenu > a:hover {
   .mMenus {
     display: block;
   }
+  .navDivider {
+    display: none;
+  }
+  .navSignupBtn > a {
+    padding: 0 !important;
+    background-color: transparent;
+  }
+  .navSignupBtn > a:hover {
+    background-color: transparent;
+  }
   nav > .navContainer > .mainMenu {
     left: -100%;
     position: fixed;
@@ -161,6 +206,8 @@ nav > .navContainer > .mainMenu > a:hover {
   }
   nav > .navContainer > .mainMenu > ul > li > a {
     color: white;
+    padding: none !important;
+    padding: 0;
   }
   nav > .navContainer > .mainMenu > a {
     border-top: 0.5px solid white;
