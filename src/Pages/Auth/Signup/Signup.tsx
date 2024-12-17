@@ -24,24 +24,46 @@ const Signup = () => {
     position: "",
   });
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+
+    setSignupData({ ...signupData, [name]: value });
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setLoading(true);
+
     try {
-      const response = await axios.post(api.signup, signupData, {
-        withCredentials: true,
-      });
-      const success = () => {
-        messageApi.open({
-          type: "success",
-          content: response.data.message,
+      setLoading(true);
+      // Validate phone number length:
+      if (signupData.phone.length !== 10) {
+        const errorMessage = "Phone number must be 10 digits.";
+        const errorContent = () => {
+          messageApi.open({
+            type: "error",
+            content: errorMessage,
+          });
+        };
+        errorContent();
+        setLoading(false);
+      } else {
+        const response = await axios.post(api.signup, signupData, {
+          withCredentials: true,
         });
-      };
-      success();
-      setUser(response.data.data);
-      setLogin(true);
-      setLoading(false);
-      navigate("/assessments");
+        const success = () => {
+          messageApi.open({
+            type: "success",
+            content: response.data.message,
+          });
+        };
+        success();
+        setUser(response.data.data);
+        setLogin(true);
+        setLoading(false);
+        navigate("/assessments");
+      }
     } catch (error: any) {
       setLoading(false);
       if (error.response) {
@@ -80,12 +102,6 @@ const Signup = () => {
     }
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setSignupData({ ...signupData, [name]: value });
-  };
   return (
     <section className="signup width100 flex alignCenter justifyCenter flexColumn">
       {contextHolder}
@@ -210,10 +226,7 @@ const Signup = () => {
                 onChange={handleChange}
                 value={signupData.password}
               />
-              <h3>
-                Confirm Password<span>*</span>
-              </h3>
-              <input placeholder="********" type="password" name="cPassword" />
+
               <button type="submit" style={{ display: "block" }}>
                 {loading ? <span className="btnLoader"></span> : "Sign Up"}
               </button>
