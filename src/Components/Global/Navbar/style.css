@@ -125,6 +125,9 @@ nav > .navContainer > .mainMenu > a:hover {
     padding: none !important;
     padding: 0;
   }
+  nav > .navContainer > .mainMenu > ul > li > a:hover {
+    background-color: transparent;
+  }
   nav > .navContainer > .mainMenu > a {
     border-top: 0.5px solid white;
     border-bottom: 0.5px solid white;
@@ -135,6 +138,9 @@ nav > .navContainer > .mainMenu > a:hover {
     border-radius: 0;
     background: transparent;
     padding: 0.5rem 0;
+  }
+  nav > .navContainer > .mainMenu > a:hover {
+    background-color: transparent;
   }
   nav > .navContainer > .mainMenu > .mMenus {
     display: flex;
@@ -209,6 +215,9 @@ nav > .navContainer > .mainMenu > a:hover {
     padding: none !important;
     padding: 0;
   }
+  nav > .navContainer > .mainMenu > ul > li > a:hover {
+    background-color: transparent;
+  }
   nav > .navContainer > .mainMenu > a {
     border-top: 0.5px solid white;
     border-bottom: 0.5px solid white;
@@ -219,6 +228,9 @@ nav > .navContainer > .mainMenu > a:hover {
     border-radius: 0;
     background: transparent;
     padding: 0.5rem 0;
+  }
+  nav > .navContainer > .mainMenu > a:hover {
+    background-color: transparent;
   }
   nav > .navContainer > .mainMenu > .mMenus {
     display: flex;
