@@ -1,6 +1,128 @@
 export const assessments = [
   // languages
   {
+    slug: "artificial-intelligence",
+    title: "Artificial Intelligence",
+    questions: [
+      {
+        id: 1,
+        question: "1. What is Artificial Intelligence (AI)?",
+        options: [
+          "A branch of computer science that aims to create machines that can perform tasks that require human intelligence",
+          "A type of database management system",
+          "A programming language used to develop software",
+          "A hardware component used in computers",
+        ],
+        correctOption:
+          "A branch of computer science that aims to create machines that can perform tasks that require human intelligence",
+      },
+      {
+        id: 2,
+        question: "2. What is Machine Learning (ML) in the context of AI?",
+        options: [
+          "A method that allows machines to learn from data without explicit programming",
+          "A type of robot that mimics human behavior",
+          "A programming technique for developing games",
+          "A process of manually coding intelligent behavior into a system",
+        ],
+        correctOption:
+          "A method that allows machines to learn from data without explicit programming",
+      },
+      {
+        id: 3,
+        question:
+          "3. What is the difference between Supervised and Unsupervised Learning?",
+        options: [
+          "Supervised learning requires labeled data, whereas unsupervised learning works with unlabeled data",
+          "There is no difference between them",
+          "Supervised learning is used for text processing, while unsupervised learning is for images",
+          "Unsupervised learning is faster than supervised learning",
+        ],
+        correctOption:
+          "Supervised learning requires labeled data, whereas unsupervised learning works with unlabeled data",
+      },
+      {
+        id: 4,
+        question: "4. What is Deep Learning?",
+        options: [
+          "A subset of Machine Learning that uses neural networks to model complex patterns",
+          "A technique for storing large amounts of data",
+          "A way to make AI systems operate without any human input",
+          "A rule-based AI system that does not require data",
+        ],
+        correctOption:
+          "A subset of Machine Learning that uses neural networks to model complex patterns",
+      },
+      {
+        id: 5,
+        question: "5. What is Natural Language Processing (NLP) used for?",
+        options: [
+          "To enable computers to understand and process human language",
+          "To analyze images and recognize objects",
+          "To develop robotic hardware components",
+          "To increase the speed of data processing in databases",
+        ],
+        correctOption:
+          "To enable computers to understand and process human language",
+      },
+      {
+        id: 6,
+        question:
+          "6. Which of the following is an example of AI in daily life?",
+        options: [
+          "Voice assistants like Siri and Alexa",
+          "Manually writing a document in MS Word",
+          "Sending an email without an internet connection",
+          "Using a calculator to solve math problems",
+        ],
+        correctOption: "Voice assistants like Siri and Alexa",
+      },
+      {
+        id: 7,
+        question: "7. What is a Neural Network in AI?",
+        options: [
+          "A computational model inspired by the structure of the human brain",
+          "A type of database that stores information",
+          "A programming language used to build AI systems",
+          "A type of robot that learns from human interaction",
+        ],
+        correctOption:
+          "A computational model inspired by the structure of the human brain",
+      },
+      {
+        id: 8,
+        question: "8. What does the term 'computer vision' refer to in AI?",
+        options: [
+          "The ability of computers to interpret and process visual data from the world",
+          "A computer monitor with high resolution",
+          "A system used to track the health of a computer",
+          "A feature in AI that converts text into speech",
+        ],
+        correctOption:
+          "The ability of computers to interpret and process visual data from the world",
+      },
+      {
+        id: 9,
+        question: "9. What is an AI algorithm?",
+        options: [
+          "A set of rules or procedures that guide AI decision-making",
+          "A physical component of an AI system",
+          "A human-written document explaining AI concepts",
+          "A type of AI that does not require programming",
+        ],
+        correctOption:
+          "A set of rules or procedures that guide AI decision-making",
+      },
+      {
+        id: 10,
+        question:
+          "10. Which of the following is a common AI programming language?",
+        options: ["Python", "HTML", "CSS", "Excel"],
+        correctOption: "Python",
+      },
+    ],
+  },
+  {
     slug: "basic-excel",
     title: "Basic Excel",
     questions: [

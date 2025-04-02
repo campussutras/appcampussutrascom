@@ -329,4 +329,12 @@ export const catalog = [
     format: "MCQs",
     link: "/assessment/cybersecurity",
   },
+  {
+    id: 41,
+    title: "Artificial Intelligence",
+    category: "Artificial Intelligence",
+    time: "10 Minutes",
+    format: "MCQs",
+    link: "/assessment/artificial-intelligence",
+  },
 ];
