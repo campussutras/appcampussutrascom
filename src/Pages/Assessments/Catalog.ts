@@ -337,4 +337,12 @@ export const catalog = [
     format: "MCQs",
     link: "/assessment/artificial-intelligence",
   },
+  {
+    id: 42,
+    title: "Machine Learning",
+    category: "Machine Learning",
+    time: "10 Minutes",
+    format: "MCQs",
+    link: "/assessment/machine-learning",
+  },
 ];

@@ -1,6 +1,126 @@
 export const assessments = [
   // languages
   {
+    slug: "machine-learning",
+    title: "Machine Learning",
+    questions: [
+      {
+        id: 1,
+        question: "1. What is Machine Learning (ML)?",
+        options: [
+          "A field of AI that enables computers to learn from data and make decisions",
+          "A programming language used for AI development",
+          "A type of hardware used in AI systems",
+          "A manual process of coding AI behavior",
+        ],
+        correctOption:
+          "A field of AI that enables computers to learn from data and make decisions",
+      },
+      {
+        id: 2,
+        question: "2. What are the main types of Machine Learning?",
+        options: [
+          "Supervised, Unsupervised, and Reinforcement Learning",
+          "Linear, Non-Linear, and Probabilistic Learning",
+          "Cloud, Edge, and Embedded Learning",
+          "Static, Dynamic, and Hybrid Learning",
+        ],
+        correctOption: "Supervised, Unsupervised, and Reinforcement Learning",
+      },
+      {
+        id: 3,
+        question:
+          "3. What is the difference between Supervised and Unsupervised Learning?",
+        options: [
+          "Supervised Learning uses labeled data, while Unsupervised Learning uses unlabeled data",
+          "Supervised Learning is used only for image processing, whereas Unsupervised Learning is for text analysis",
+          "There is no difference between them",
+          "Unsupervised Learning is always faster than Supervised Learning",
+        ],
+        correctOption:
+          "Supervised Learning uses labeled data, while Unsupervised Learning uses unlabeled data",
+      },
+      {
+        id: 4,
+        question: "4. What is a Neural Network in Machine Learning?",
+        options: [
+          "A model inspired by the human brain that helps in pattern recognition and deep learning",
+          "A physical network of computers used in AI systems",
+          "A type of supervised learning algorithm",
+          "A machine learning library in Python",
+        ],
+        correctOption:
+          "A model inspired by the human brain that helps in pattern recognition and deep learning",
+      },
+      {
+        id: 5,
+        question: "5. What is Overfitting in Machine Learning?",
+        options: [
+          "When a model learns the training data too well and fails to generalize to new data",
+          "When a model is too simple and performs poorly on both training and test data",
+          "When a model is optimized for speed instead of accuracy",
+          "When a model uses too many layers in a neural network",
+        ],
+        correctOption:
+          "When a model learns the training data too well and fails to generalize to new data",
+      },
+      {
+        id: 6,
+        question: "6. What is Reinforcement Learning?",
+        options: [
+          "A type of learning where an agent learns by interacting with an environment and receiving rewards or penalties",
+          "A method of teaching computers using supervised labeled data",
+          "A way of optimizing database performance using AI techniques",
+          "A form of machine learning that only applies to robotics",
+        ],
+        correctOption:
+          "A type of learning where an agent learns by interacting with an environment and receiving rewards or penalties",
+      },
+      {
+        id: 7,
+        question: "7. What is a Decision Tree in Machine Learning?",
+        options: [
+          "A flowchart-like model used for decision making in classification and regression problems",
+          "A tree structure that stores data for AI algorithms",
+          "A neural network used in deep learning",
+          "A type of reinforcement learning model",
+        ],
+        correctOption:
+          "A flowchart-like model used for decision making in classification and regression problems",
+      },
+      {
+        id: 8,
+        question: "8. What is Feature Engineering?",
+        options: [
+          "The process of selecting, modifying, and creating new input features to improve a machine learning model",
+          "The method of training a deep learning model",
+          "A way to make AI systems operate without human intervention",
+          "A tool used for visualizing AI models",
+        ],
+        correctOption:
+          "The process of selecting, modifying, and creating new input features to improve a machine learning model",
+      },
+      {
+        id: 9,
+        question: "9. What is a common Machine Learning library in Python?",
+        options: ["Scikit-learn", "TensorFlow", "PyTorch", "All of the above"],
+        correctOption: "All of the above",
+      },
+      {
+        id: 10,
+        question: "10. What is Gradient Descent in Machine Learning?",
+        options: [
+          "An optimization algorithm used to minimize the error in a machine learning model",
+          "A method of increasing the complexity of neural networks",
+          "A type of supervised learning technique",
+          "A visualization tool for AI systems",
+        ],
+        correctOption:
+          "An optimization algorithm used to minimize the error in a machine learning model",
+      },
+    ],
+  },
+  {
     slug: "artificial-intelligence",
     title: "Artificial Intelligence",
     questions: [
