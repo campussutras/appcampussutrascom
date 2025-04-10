@@ -12,6 +12,7 @@ import {
   AiFillTwitterSquare,
 } from "react-icons/ai";
 import { RiCloseFill, RiMenuFill } from "react-icons/ri";
+import { campussutrasComUrl } from "../../../Utils/routes";
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
@@ -37,7 +38,7 @@ const Navbar = () => {
         }`}
       >
         <div className="navLogo">
-          <a href={`https://www.campussutras.com`}>
+          <a href={campussutrasComUrl}>
             <img src={logo} alt="Campus Sutras Logo" />
           </a>
         </div>
@@ -48,20 +49,23 @@ const Navbar = () => {
         >
           <ul className="flex gap2">
             <li>
-              <a href="https://www.campussutras.com">Home</a>
+              <a href={campussutrasComUrl}>Home</a>
             </li>
 
             <li>
               <a href="/assessments">Assessments</a>
             </li>
             <li>
-              <a href="https://www.campussutras.com/courses">Courses</a>
+              <a href={`${campussutrasComUrl}/internship`}>Internship</a>
             </li>
             <li>
-              <a href={`https://www.campussutras.com/events`}>Events</a>
+              <a href={`${campussutrasComUrl}/courses`}>Courses</a>
             </li>
             <li>
-              <a href={`https://www.campussutras.com/about`}>About</a>
+              <a href={`${campussutrasComUrl}/events`}>Events</a>
+            </li>
+            <li>
+              <a href={`${campussutrasComUrl}/about`}>About</a>
             </li>
             <li className="navDivider">|</li>
             {!isLogin ? (
@@ -79,7 +83,7 @@ const Navbar = () => {
               </li>
             ) : null}
           </ul>
-          <a href={`https://www.campussutras.com/contact`} className="mMenus">
+          <a href={`${campussutrasComUrl}/contact`} className="mMenus">
             Contact <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
           </a>
           <ul className="mMenus">
@@ -108,19 +112,19 @@ const Navbar = () => {
           </ul>
           <ul className="mMenus mLegal">
             <li>
-              <a href={`https://www.campussutras.com/privacy-and-policy`}>
+              <a href={`${campussutrasComUrl}/privacy-and-policy`}>
                 Privacy Policy{" "}
                 <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
               </a>
             </li>
             <li>
-              <a href={`https://www.campussutras.com/terms-and-conditions`}>
+              <a href={`${campussutrasComUrl}/terms-and-conditions`}>
                 Terms & Conditions{" "}
                 <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
               </a>
             </li>
             <li>
-              <a href={`https://www.campussutras.com/cookie-policy`}>
+              <a href={`${campussutrasComUrl}/cookie-policy`}>
                 Cookie Policy{" "}
                 <FiArrowRight style={{ marginBottom: "-0.18rem" }} />
               </a>

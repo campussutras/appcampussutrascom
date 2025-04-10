@@ -1,5 +1,13 @@
-const userUrl = `https://www.backend.campussutras.com/api/v1/user`;
-const assessUrl = `https://www.backend.campussutras.com/api/v1/assessment`;
+export const appEnv = "dev";
+export const prod = "prod";
+const productionUser = `https://www.backend.campussutras.com/api/v1/user`;
+const productionAssess = `https://www.backend.campussutras.com/api/v1/assessment`;
+const devUser = `http://localhost:3002/api/v1/user`;
+const devAssess = `http://localhost:3002/api/v1/assessment`;
+
+const userUrl = prod !== "prod" ? devUser : productionUser;
+const assessUrl = prod !== "prod" ? devAssess : productionAssess;
+
 export const api = {
   signup: `${userUrl}/signup`,
   login: `${userUrl}/login`,
