@@ -15,6 +15,7 @@ import { api } from "../../Utils/Api";
 import Vibrate from "../../Utils/Vibrate";
 
 const Assessment = () => {
+  const [hasSubmitted, setHasSubmitted] = React.useState(false);
   // Get the assessment name from the URL
   const { assessmentName } = useParams();
 
@@ -66,6 +67,8 @@ const Assessment = () => {
   };
 
   const calculateScore = () => {
+    if (hasSubmitted) return; // Prevent multiple executions
+    setHasSubmitted(true); // Mark as submitted
     let newScore = 0;
     const currentAssessment = assessments.find(
       (assessment) => assessment.slug === assessmentName
@@ -114,10 +117,12 @@ const Assessment = () => {
   };
 
   const handleTimerCompletion = () => {
-    Vibrate();
-    calculateScore();
     setShowResult(true);
     setShowMcqs(false);
+    if (!hasSubmitted) {
+      Vibrate();
+      calculateScore(); // already guarded inside
+    }
   };
 
   React.useEffect(() => {
